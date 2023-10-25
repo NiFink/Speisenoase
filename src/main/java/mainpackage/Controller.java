@@ -8,6 +8,7 @@ public class Controller {
 
     @FXML
     private void sayHello(ActionEvent event) {
+
         System.out.println("Hello!");
     }
 }
