@@ -16,7 +16,7 @@ public class Main extends Application {
         URL fxmlFileUrl = getClass().getClassLoader().getResource("sample.fxml");
         Parent root = FXMLLoader.load(Objects.requireNonNull(fxmlFileUrl));
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
     }
 
