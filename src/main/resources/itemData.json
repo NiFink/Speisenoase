@@ -1,20 +1,20 @@
-[
-  {
+{
+  "banane": {
     "id": 1,
     "name": "banane",
     "price": 0.4,
-    "weight": 200,
-    "available": true,
+    "weight": 200.0,
+    "available": 5,
     "description": "Sie liefern schnell Energie und stellen eine gute Zwischenmahlzeit auch für unterwegs dar. Die Krümmung der Banane entsteht während des Wachstums hormonbedingt.",
     "favourite": false
   },
-  {
+  "apfel": {
     "id": 2,
     "name": "apfel",
     "price": 0.6,
-    "weight": 200,
-    "available": true,
+    "weight": 200.0,
+    "available": 5,
     "description": "Saftig, knackig, würzig, fruchtig, feinsäuerlich-süß. Äpfel stellen roh verzehrt (am besten mit Schale) eine ideale Zwischenmahlzeit dar.",
     "favourite": false
   }
-]
+}
