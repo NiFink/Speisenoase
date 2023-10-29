@@ -34,7 +34,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Button fx:id="btLogin" layoutX="55.0" layoutY="270.0" mnemonicParsing="false" onAction="#checkLogin_Click" prefHeight="25.0" prefWidth="60.0" text="Login" />
+      <Button fx:id="btLogin" layoutX="55.0" layoutY="270.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="Login" />
       <PasswordField fx:id="pbPassword" layoutX="55.0" layoutY="222.0" promptText="Password" />
       <TextField fx:id="tbUsername" layoutX="55.0" layoutY="170.0" promptText="Username" />
       <Button fx:id="btRegister" layoutX="144.0" layoutY="270.0" mnemonicParsing="false" text="Register" />
