@@ -13,10 +13,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        URL fxmlFileUrl = getClass().getClassLoader().getResource("sample.fxml");
+
+        URL fxmlFileUrl = getClass().getClassLoader().getResource("Login.fxml");
+
         Parent root = FXMLLoader.load(Objects.requireNonNull(fxmlFileUrl));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Speisenoase");
         primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
