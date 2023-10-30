@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="500.0" prefWidth="667.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.Controller">
+<BorderPane prefHeight="500.0" prefWidth="667.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerLogin">
    <right>
       <AnchorPane prefHeight="448.0" prefWidth="397.0" BorderPane.alignment="CENTER">
          <children>
@@ -47,7 +47,7 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <Button fx:id="btRegister" layoutX="174.0" layoutY="295.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #022235;" text="Register" textFill="WHITE">
+            <Button fx:id="btRegister" layoutX="174.0" layoutY="295.0" mnemonicParsing="false" onAction="#checkRegisterClick" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #022235;" text="Register" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>

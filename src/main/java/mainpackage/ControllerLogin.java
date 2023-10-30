@@ -11,9 +11,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
-public class Controller {
+public class ControllerLogin {
     @FXML
     private Button btLogin;
     @FXML
@@ -27,8 +26,21 @@ public class Controller {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Mainpage.fxml"));
-            Parent root = fxmlLoader.load();
-            Scene scene = new Scene(root, 775, 506);
+            Scene scene = new Scene(fxmlLoader.load(), 775, 506);
+            Stage stage = Main.getStage();
+            stage.setTitle("Mainpage");
+            stage.setResizable(false);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.getMessage();
+        }
+    }
+    public void checkRegisterClick(ActionEvent event) {
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Register.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 775, 506);
             Stage stage = Main.getStage();
             stage.setTitle("Mainpage");
             stage.setResizable(false);
