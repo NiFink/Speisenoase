@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.net.URL;
 import java.util.Objects;
@@ -24,6 +25,7 @@ public class Main extends Application {
         primaryStage.setTitle("Speisenoase");
         primaryStage.setScene(new Scene(root, 775, 506));
         primaryStage.setResizable(false);
+        stage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
     }
 
