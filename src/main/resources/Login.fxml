@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="500.0" prefWidth="667.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="500.0" prefWidth="667.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.Controller">
    <right>
       <AnchorPane prefHeight="448.0" prefWidth="397.0" BorderPane.alignment="CENTER">
          <children>
@@ -37,7 +37,7 @@
                   <Font size="14.0" />
                </font>
             </PasswordField>
-            <Button fx:id="btLogin" layoutX="55.0" layoutY="295.0" mnemonicParsing="false"  prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #01212E;" text="Login" textFill="WHITE">
+            <Button fx:id="btLogin" layoutX="55.0" layoutY="295.0" mnemonicParsing="false" onAction="#checkLoginClick" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #01212E;" text="Login" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>

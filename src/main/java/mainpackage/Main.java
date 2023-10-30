@@ -11,8 +11,12 @@ import java.util.Objects;
 
 public class Main extends Application {
 
+    private static Stage stage;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
+
+        Main.stage  = primaryStage;
 
         URL fxmlFileUrl = getClass().getClassLoader().getResource("Login.fxml");
 
@@ -23,10 +27,12 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    public static Stage getStage(){
+        return stage;
+    }
+
     public static void main(String[] args) {
 
         launch(args);
     }
-    //Kommentar von Jan zum testen
-    //Kommentar von Michelle zum testen :)
 }
