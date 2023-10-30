@@ -24,7 +24,7 @@ public class Controller {
     private PasswordField pbPassword;
     @FXML
     protected void checkLoginClick(ActionEvent event) {
-        System.out.println("hello");
+
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Mainpage.fxml"));
             Parent root = fxmlLoader.load();
