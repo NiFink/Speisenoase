@@ -27,8 +27,8 @@ public class User {
 
 
     public static void main(String[] args) throws IOException, ParseException {
-        User michelle = new User("Michelle@gmail.com", "Michelle" , "1234");
-        registerNewUser(michelle);
+        User user = new User("Michelle@gmail.com", "Michelle" , "1234");
+        registerNewUser(user);
     }
 
 
@@ -70,11 +70,9 @@ public class User {
 
         }
 
-
-
-
-
     }
+
+
 
     @Override
 
