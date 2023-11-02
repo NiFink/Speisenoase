@@ -38,7 +38,8 @@ public class ControllerRegister {
             e.getMessage();
         }
     }
-    public void checkBackClick(ActionEvent event) {
+    @FXML
+    protected void checkBackClick(ActionEvent event) {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Login.fxml"));
@@ -51,5 +52,9 @@ public class ControllerRegister {
         } catch (IOException e) {
             e.getMessage();
         }
+    }
+    @FXML
+    protected void checkExitClick(ActionEvent event) {
+        System.exit(0);
     }
 }
