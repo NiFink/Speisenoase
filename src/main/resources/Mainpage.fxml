@@ -1,31 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21">
-   <children>
-      <MenuBar layoutX="1.0" layoutY="8.0" prefHeight="61.0" prefWidth="600.0">
-         <menus>
-            <Menu mnemonicParsing="false" text="File">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Close" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Edit">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Delete" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Help">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="About" />
-               </items>
-            </Menu>
-         </menus>
-      </MenuBar>
-   </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerMainpage">
+   <top>
+      <AnchorPane prefHeight="59.0" prefWidth="860.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btExit" layoutX="808.0" layoutY="14.0" minWidth="38.0" mnemonicParsing="false" onAction="#checkExitClick" prefHeight="32.0" prefWidth="38.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" text="X" textFill="#01212e">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="460.0" prefWidth="200.0" style="-fx-background-color: #01212E;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label prefHeight="45.0" prefWidth="200.0" style="-fx-border-color: #ffffff;" text="Food:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btVegetable" mnemonicParsing="false" onAction="#checkBtVegetablesClick" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #01212E; -fx-border-color: #ffffff;" text="Vegetable" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btFruit" mnemonicParsing="false" onAction="#checkBtFruitClick" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #01212E; -fx-border-color: #ffffff;" text="Fruit" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btSweeties" mnemonicParsing="false" onAction="#checkBtSweetiesClick" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #01212E; -fx-border-color: #ffffff;" text="Sweeties" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Label prefHeight="45.0" prefWidth="200.0" style="-fx-border-color: #ffffff;" text="Beverages:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btWine" mnemonicParsing="false" onAction="#checkBtWineClick" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #01212E; -fx-border-color: #ffffff;" text="Wine" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btBeer" mnemonicParsing="false" onAction="#checkBtBeerClick" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #01212E; -fx-border-color: #ffffff;" text="Beer" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btLiquir" mnemonicParsing="false" onAction="#checkBtLiquirClick" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #01212E; -fx-border-color: #ffffff;" text="Liquir" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
