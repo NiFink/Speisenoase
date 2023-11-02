@@ -26,7 +26,7 @@ public class ControllerLogin {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Mainpage.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 775, 506);
+            Scene scene = new Scene(fxmlLoader.load(), 850, 550);
             Stage stage = Main.getStage();
             stage.setTitle("Mainpage");
             stage.setResizable(false);
@@ -36,11 +36,12 @@ public class ControllerLogin {
             e.getMessage();
         }
     }
-    public void checkRegisterClick(ActionEvent event) {
+    @FXML
+    protected void checkRegisterClick(ActionEvent event) {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Register.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 775, 506);
+            Scene scene = new Scene(fxmlLoader.load(), 860, 550);
             Stage stage = Main.getStage();
             stage.setTitle("Mainpage");
             stage.setResizable(false);
@@ -50,4 +51,10 @@ public class ControllerLogin {
             e.getMessage();
         }
     }
+    @FXML
+    protected void checkExitClick(ActionEvent event) {
+        System.exit(0);
+    }
+
+
 }

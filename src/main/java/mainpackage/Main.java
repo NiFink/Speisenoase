@@ -23,7 +23,7 @@ public class Main extends Application {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(fxmlFileUrl));
         primaryStage.setTitle("Speisenoase");
-        primaryStage.setScene(new Scene(root, 775, 506));
+        primaryStage.setScene(new Scene(root, 860, 550));
         primaryStage.setResizable(false);
         stage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();

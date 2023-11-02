@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="500.0" prefWidth="667.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerLogin">
+<BorderPane prefHeight="550.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerLogin">
    <right>
       <AnchorPane prefHeight="448.0" prefWidth="397.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="459.0" fitWidth="462.0" layoutX="-62.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="577.0" fitWidth="715.0" layoutX="-180.0" layoutY="-56.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@SpeisenOase-Logo.jpg" />
                </image>
@@ -25,7 +25,7 @@
    <top>
       <AnchorPane prefHeight="55.0" prefWidth="775.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="737.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #01212E;" text="X" textFill="WHITE" />
+            <Button fx:id="btExit" layoutX="822.0" layoutY="15.0" mnemonicParsing="false" onAction="#checkExitClick" style="-fx-background-color: #01212E;" text="X" textFill="WHITE" />
          </children>
       </AnchorPane>
    </top>

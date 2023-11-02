@@ -28,7 +28,7 @@ public class ControllerRegister {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Mainpage.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 775, 506);
+            Scene scene = new Scene(fxmlLoader.load(), 860, 550);
             Stage stage = Main.getStage();
             stage.setTitle("Mainpage");
             stage.setResizable(false);
@@ -42,7 +42,7 @@ public class ControllerRegister {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Login.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 775, 506);
+            Scene scene = new Scene(fxmlLoader.load(), 860, 550);
             Stage stage = Main.getStage();
             stage.setTitle("Mainpage");
             stage.setResizable(false);
