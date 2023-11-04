@@ -37,7 +37,7 @@
                         <Font size="14.0" />
                     </font>
                 </PasswordField>
-                <Button fx:id="btBack" layoutX="166.0" layoutY="336.0" mnemonicParsing="false" onAction="#checkBackClick" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #01212E;" text="Back" textFill="WHITE">
+                <Button fx:id="btBack" layoutX="166.0" layoutY="360.0" mnemonicParsing="false" onAction="#checkBackClick" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #01212E;" text="Back" textFill="WHITE">
                     <font>
                         <Font size="15.0" />
                     </font>
@@ -47,17 +47,17 @@
                   <Font size="14.0" />
                </font>
                 </TextField>
-                <Button fx:id="btRegister" layoutX="57.0" layoutY="336.0" mnemonicParsing="false" onAction="#checkRegisterClick" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #022235;" text="Register" textFill="WHITE">
+                <Button fx:id="btRegister" layoutX="57.0" layoutY="360.0" mnemonicParsing="false" onAction="#checkRegisterClick" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #022235;" text="Register" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Button>
-                <Label layoutX="65.0" layoutY="59.0" prefHeight="58.0" prefWidth="158.0" text="Register" textFill="#022235">
+                <Label layoutX="67.0" layoutY="41.0" prefHeight="58.0" prefWidth="158.0" text="Register" textFill="#022235">
                     <font>
                         <Font name="Yu Gothic UI Bold" size="40.0" />
                     </font>
                 </Label>
-            <TextField fx:id="tbEmail" layoutX="56.0" layoutY="173.0" prefHeight="27.0" prefWidth="177.0" promptText="Emaill" style="-fx-background-color: transparent; -fx-border-color: #022235; -fx-border-width: 0px 0px 2px 0px;">
+            <TextField fx:id="tbEmail" layoutX="57.0" layoutY="173.0" prefHeight="27.0" prefWidth="177.0" promptText="Emaill" style="-fx-background-color: transparent; -fx-border-color: #022235; -fx-border-width: 0px 0px 2px 0px;">
                <font>
                   <Font size="14.0" />
                </font>
@@ -67,6 +67,7 @@
                   <Font size="14.0" />
                </font>
             </PasswordField>
+            <Label fx:id="lbRegisterfailed" layoutX="57.0" layoutY="312.0" prefHeight="39.0" prefWidth="174.0" textFill="#01212e" wrapText="true" />
             </children>
         </AnchorPane>
     </left>

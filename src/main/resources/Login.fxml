@@ -14,7 +14,7 @@
    <right>
       <AnchorPane prefHeight="448.0" prefWidth="397.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="577.0" fitWidth="715.0" layoutX="-180.0" layoutY="-56.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="583.0" fitWidth="592.0" layoutX="-186.0" layoutY="-55.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@SpeisenOase-Logo.jpg" />
                </image>
@@ -25,7 +25,7 @@
    <top>
       <AnchorPane prefHeight="55.0" prefWidth="775.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btExit" layoutX="822.0" layoutY="15.0" mnemonicParsing="false" onAction="#checkExitClick" style="-fx-background-color: #01212E;" text="X" textFill="WHITE" />
+            <Button fx:id="btExit" layoutX="822.0" layoutY="15.0" mnemonicParsing="false" onAction="#checkbtExitClick" style="-fx-background-color: #01212E;" text="X" textFill="WHITE" />
          </children>
       </AnchorPane>
    </top>
@@ -37,7 +37,7 @@
                   <Font size="14.0" />
                </font>
             </PasswordField>
-            <Button fx:id="btLogin" layoutX="55.0" layoutY="295.0" mnemonicParsing="false" onAction="#checkLoginClick" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #01212E;" text="Login" textFill="WHITE">
+            <Button fx:id="btLogin" layoutX="55.0" layoutY="331.0" mnemonicParsing="false" onAction="#checkbtLoginClick" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #01212E;" text="Login" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
@@ -47,7 +47,7 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <Button fx:id="btRegister" layoutX="174.0" layoutY="295.0" mnemonicParsing="false" onAction="#checkRegisterClick" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #022235;" text="Register" textFill="WHITE">
+            <Button fx:id="btRegister" layoutX="165.0" layoutY="332.0" mnemonicParsing="false" onAction="#checkbtRegisterClick" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #022235;" text="Register" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -57,6 +57,7 @@
                   <Font name="Yu Gothic UI Bold" size="52.0" />
                </font>
             </Label>
+            <Label fx:id="lbLoginfailed" layoutX="43.0" layoutY="291.0" prefHeight="17.0" prefWidth="201.0" textFill="#022235" />
          </children>
       </AnchorPane>
    </left>

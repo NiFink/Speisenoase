@@ -3,9 +3,8 @@ package mainpackage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -14,30 +13,35 @@ import java.io.IOException;
 
 public class ControllerLogin {
     @FXML
-    private Button btLogin;
-    @FXML
-    private Button btRegister;
+    private Label lbLoginfailed;
     @FXML
     private TextField tbUsername;
     @FXML
     private PasswordField pbPassword;
     @FXML
-    protected void checkLoginClick(ActionEvent event) {
+    protected void checkbtLoginClick(ActionEvent event) {
+        //TODO: If abfrage ob das Passwort stimmt mit der Datenbank eintrag überein
 
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Mainpage.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 850, 550);
-            Stage stage = Main.getStage();
-            stage.setTitle("Mainpage");
-            stage.setResizable(false);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.getMessage();
+        if(tbUsername.getText().isBlank() == false && pbPassword.getText().isBlank() == false){
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Mainpage.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), 850, 550);
+                Stage stage = Main.getStage();
+                stage.setTitle("Mainpage");
+                stage.setResizable(false);
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.getMessage();
+            }
         }
+        else {
+            lbLoginfailed.setText("Please enter username and password.");
+        }
+
     }
     @FXML
-    protected void checkRegisterClick(ActionEvent event) {
+    protected void checkbtRegisterClick(ActionEvent event) {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Register.fxml"));
@@ -52,8 +56,13 @@ public class ControllerLogin {
         }
     }
     @FXML
-    protected void checkExitClick(ActionEvent event) {
+    protected void checkbtExitClick(ActionEvent event) {
         System.exit(0);
+    }
+
+    @FXML
+    protected void validateLogin(){
+        //TODO: Database connection
     }
 
 
