@@ -29,26 +29,29 @@ public class ControllerRegister {
     @FXML
     protected void checkRegisterClick(ActionEvent event) {
         if(tbUsername.getText().isBlank() == false && pbPassword.getText().isBlank() == false && pbPasswordcheck.getText().isBlank() == false && tbEmail.getText().isBlank() == false ) {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Mainpage.fxml"));
-                Scene scene = new Scene(fxmlLoader.load(), 860, 550);
-                Stage stage = Main.getStage();
-                stage.setTitle("Mainpage");
-                stage.setResizable(false);
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException e) {
-                e.getMessage();
+            if(pbPassword.getText() != pbPasswordcheck.getText()) {
+                lbRegisterfailed.setText("You have to enter the same Password twice!");
             }
-        }
-        else if(pbPassword.getText() != pbPasswordcheck.getText()){
-            lbRegisterfailed.setText("You have to enter the same Password twice!");
+            //TODO: Alle Fehler quellen durchgehen
+            else{
+                try {
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Mainpage.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load(), 860, 550);
+                    Stage stage = Main.getStage();
+                    stage.setTitle("Mainpage");
+                    stage.setResizable(false);
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException e) {
+                    e.getMessage();
+                }
+            }
         }
         else{
             lbRegisterfailed.setText("Please fill in all fields.");
-
         }
     }
+
     @FXML
     protected void checkBackClick(ActionEvent event) {
 
