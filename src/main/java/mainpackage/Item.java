@@ -24,7 +24,7 @@ public class Item {
     JSONObject itemData = (JSONObject) parser.parse(new FileReader("src/main/resources/itemData.json"));
 
     public static void main(String[] args) throws IOException, ParseException {
-        Item item = new Item("apfel");
+        Item item = new Item("banane");
         System.out.println(item.toString());
         item.favor();
         item.updateData();
@@ -84,4 +84,5 @@ public class Item {
                 ",\n favourite=" + favourite +
                 "\n}";
     }
+
 }
