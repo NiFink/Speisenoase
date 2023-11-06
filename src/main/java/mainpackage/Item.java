@@ -1,8 +1,4 @@
 package mainpackage;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -12,77 +8,83 @@ import java.util.ArrayList;
 
 public class Item {
 
-    private long id;
+    private int id;
     private String name;
     private double price;
     private double weight;
     private long available;
-    private String description;
     private boolean favourite;
+    private String description;
 
-    JSONParser parser = new JSONParser();
-    JSONObject itemData = (JSONObject) parser.parse(new FileReader("src/main/resources/itemData.json"));
-
-    public static void main(String[] args) throws IOException, ParseException {
-        Item item = new Item("banane");
-        System.out.println(item.toString());
-        item.favor();
-        item.updateData();
-        System.out.println(item.toString());
+    public Item() {
     }
 
-    /**
-     * Konstruktor erstellt Item anhand des Parameter name und holt sich die dazugehörigen Daten aus der itemData.json Datei
-     * @param name Name des Items das erstellt wird
-     */
-    public Item(String name) throws IOException, ParseException {
-        JSONObject item = (JSONObject) itemData.get(name);
-
-        this.id = (Long) item.get("id");
-        this.name = (String) item.get("name");
-        this.price = (Double) item.get("price");
-        this.weight = (Double) item.get("weight");
-        this.available = (Long) item.get("available");
-        this.description = (String) item.get("description");
-        this.favourite = (Boolean) item.get("favourite");
+    public int getId() {
+        return id;
     }
 
-    private void select(){    }
-
-    /**
-     * Inverts the boolean favourite
-     */
-    private void favor(){
-        favourite = !favourite;
+    public void setId(int id) {
+        this.id = id;
     }
-    private void showDetails(){    }
 
-    /**
-     *  Updates Data in the json file (currently only favourite)
-     */
-    private void updateData() throws IOException {
-        JSONObject item = (JSONObject) itemData.get(this.name);
-        if((Boolean) item.get("favourite") != favourite){
-            item.put("favourite", true);
-            itemData.put(name, item);
-            try(FileWriter file = new FileWriter("src/main/resources/itemData.json")){
-                file.write(itemData.toString());
-                file.close();
-            }
-        }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public long getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(long available) {
+        this.available = available;
+    }
+
+    public boolean getFavourite() {
+        return favourite;
+    }
+
+    public void setFavourite(boolean favourite) {
+        this.favourite = favourite;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
     public String toString() {
         return "Item {" +
-                "\n id=" + id +
-                ",\n name='" + name + '\'' +
+                "\n  id=" + id +
+                ",\n name='" + name +
                 ",\n price=" + price +
                 ",\n weight=" + weight +
                 ",\n available=" + available +
-                ",\n description='" + description + '\'' +
                 ",\n favourite=" + favourite +
-                "\n}";
+                ",\n description='" + description +
+                ",\n}";
     }
-
 }
