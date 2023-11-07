@@ -25,7 +25,8 @@ public class Main extends Application {
         primaryStage.setTitle("Speisenoase");
         primaryStage.setScene(new Scene(root, 860, 550));
         primaryStage.setResizable(false);
-        stage.initStyle(StageStyle.UNDECORATED);
+        //windowsbar hide
+        //stage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
     }
 

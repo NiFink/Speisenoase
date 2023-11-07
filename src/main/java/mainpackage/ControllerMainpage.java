@@ -18,12 +18,7 @@ public class ControllerMainpage {
     private Button btFruit;
     @FXML
     private Button btSweeties;
-    @FXML
-    private Button btWine;
-    @FXML
-    private Button btBeer;
-    @FXML
-    private Button btLiquir;
+
 
 
     @FXML
@@ -38,14 +33,7 @@ public class ControllerMainpage {
     protected void checkBtSweetiesClick(ActionEvent event) {
         System.exit(0);
     }
-    @FXML
-    protected void checkBtWineClick(ActionEvent event) {
-        System.exit(0);
-    }
-    @FXML
-    protected void checkBtBeerClick(ActionEvent event) {
-        System.exit(0);
-    }
+
     @FXML
     protected void checkBtLiquirClick(ActionEvent event) {
         System.exit(0);

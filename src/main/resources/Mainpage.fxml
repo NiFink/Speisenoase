@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
@@ -9,57 +10,48 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerMainpage">
    <top>
-      <AnchorPane prefHeight="59.0" prefWidth="860.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="71.0" prefWidth="860.0" style="-fx-background-color: #022235;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btExit" layoutX="805.0" layoutY="14.0" minWidth="41.0" mnemonicParsing="false" onAction="#checkExitClick" prefHeight="32.0" prefWidth="41.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" text="X" textFill="#01212e">
+            <Button fx:id="btVegetable" mnemonicParsing="false" onAction="#checkBtVegetablesClick" prefHeight="85.0" prefWidth="135.0" style="-fx-background-color: #022235;" text="Moin" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="17.0" />
                </font>
             </Button>
+            <TextField layoutX="223.0" layoutY="25.0" prefHeight="36.0" prefWidth="427.0" promptText="Search" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #ffffff;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" layoutX="196.0" layoutY="51.0" size="25" wrappingWidth="26.300000190734863" />
          </children>
       </AnchorPane>
    </top>
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="491.0" prefWidth="135.0" style="-fx-background-color: #01212E;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+            <VBox prefHeight="492.0" prefWidth="135.0" style="-fx-background-color: #01212E;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label prefHeight="40.0" prefWidth="135.0" style="-fx-border-color: #ffffff;" text="Food:" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="btVegetable" mnemonicParsing="false" onAction="#checkBtVegetablesClick" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #01212E; -fx-border-color: #ffffff;" text="Vegetable" textFill="WHITE">
+                  <Button fx:id="btVegetable1" mnemonicParsing="false" onAction="#checkBtVegetablesClick" prefHeight="100.0" prefWidth="135.0" style="-fx-background-color: #043B62; -fx-border-color: #ffffff;" text="Vegetable" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btFruit" mnemonicParsing="false" onAction="#checkBtFruitClick" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #01212E; -fx-border-color: #ffffff;" text="Fruit" textFill="WHITE">
+                  <Button fx:id="btFruit" mnemonicParsing="false" onAction="#checkBtFruitClick" prefHeight="100.0" prefWidth="135.0" style="-fx-background-color: #043B62; -fx-border-color: #ffffff;" text="Fruit" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btSweeties" mnemonicParsing="false" onAction="#checkBtSweetiesClick" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #01212E; -fx-border-color: #ffffff;" text="Sweeties" textFill="WHITE">
+                  <Button fx:id="btSweeties" mnemonicParsing="false" onAction="#checkBtSweetiesClick" prefHeight="100.0" prefWidth="135.0" style="-fx-background-color: #043B62; -fx-border-color: #ffffff;" text="Sweeties" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Button>
-                  <Label prefHeight="45.0" prefWidth="200.0" style="-fx-border-color: #ffffff;" text="Beverages:" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="btWine" mnemonicParsing="false" onAction="#checkBtWineClick" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #01212E; -fx-border-color: #ffffff;" text="Wine" textFill="WHITE">
+                  <Button fx:id="btBackery" mnemonicParsing="false" onAction="#checkBtLiquirClick" prefHeight="100.0" prefWidth="135.0" style="-fx-background-color: #043B62; -fx-border-color: #ffffff;" text="bakery" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btBeer" mnemonicParsing="false" onAction="#checkBtBeerClick" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #01212E; -fx-border-color: #ffffff;" text="Beer" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="17.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btLiquir" mnemonicParsing="false" onAction="#checkBtLiquirClick" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #01212E; -fx-border-color: #ffffff;" text="Liquir" textFill="WHITE">
+                  <Button fx:id="btLiquir" mnemonicParsing="false" onAction="#checkBtLiquirClick" prefHeight="100.0" prefWidth="135.0" style="-fx-background-color: #043B62; -fx-border-color: #ffffff;" text="Liquir" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>

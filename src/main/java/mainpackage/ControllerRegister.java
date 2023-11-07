@@ -32,7 +32,7 @@ public class ControllerRegister {
             if(pbPassword.getText() != pbPasswordcheck.getText()) {
                 lbRegisterfailed.setText("You have to enter the same Password twice!");
             }
-            //TODO: Alle Fehler quellen durchgehen
+            //TODO: Alle Fehlerquellen durchgehen
             else{
                 try {
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Mainpage.fxml"));
