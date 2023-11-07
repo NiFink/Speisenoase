@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerMainpage">
+    <top>
+        <AnchorPane prefHeight="89.0" prefWidth="860.0" style="-fx-background-color: #022235;" BorderPane.alignment="CENTER">
+            <children>
+                <TextField layoutX="310.0" layoutY="30.0" prefHeight="46.0" prefWidth="334.0" promptText="Search" style="-fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px; -fx-background-color: #022235;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </TextField>
+            <ImageView fitHeight="115.0" fitWidth="108.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@SpeisenOase-Logo.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="126.0" layoutY="33.0" text="Speisenoase" textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </top>
+    <left>
+        <AnchorPane prefHeight="445.0" prefWidth="107.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox prefHeight="466.0" prefWidth="125.0" style="-fx-background-color: #01212E;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Button fx:id="btVegetable1" mnemonicParsing="false" onAction="#checkBtVegetablesClick" prefHeight="100.0" prefWidth="135.0" style="-fx-background-color: #03334F; -fx-border-color: #F6ECCB;" text="Vegetable" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="17.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btFruit" mnemonicParsing="false" onAction="#checkBtFruitClick" prefHeight="87.0" prefWidth="140.0" style="-fx-background-color: #03334F; -fx-border-color: #ffffff;" text="Fruit" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="17.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btSweeties" mnemonicParsing="false" onAction="#checkBtSweetiesClick" prefHeight="100.0" prefWidth="135.0" style="-fx-background-color: #03334F; -fx-border-color: #ffffff;" text="Sweeties" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="17.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btBackery" mnemonicParsing="false" onAction="#checkBtLiquirClick" prefHeight="100.0" prefWidth="135.0" style="-fx-background-color: #03334F; -fx-border-color: #ffffff;" text="bakery" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="17.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btLiquir" mnemonicParsing="false" onAction="#checkBtLiquirClick" prefHeight="100.0" prefWidth="135.0" style="-fx-background-color: #03334F; -fx-border-color: #ffffff;" text="Liquir" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="17.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </left>
+   <center>
+      <ScrollPane prefHeight="465.0" prefWidth="716.0" style="-fx-background-color: #D2D9BF;" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="697.0" prefWidth="720.0" style="-fx-background-color: #F6ECCB;">
+               <children>
+                  <Label layoutX="262.0" layoutY="127.0" prefHeight="103.0" prefWidth="111.0" text="Jan" textFill="WHITE">
+                     <font>
+                        <Font size="70.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </center>
+</BorderPane>
