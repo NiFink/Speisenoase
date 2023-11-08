@@ -24,8 +24,8 @@ public class ControllerLogin {
 
         if(tbUsername.getText().isBlank() == false && pbPassword.getText().isBlank() == false){
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Mainpage.fxml"));
-                Scene scene = new Scene(fxmlLoader.load(), 850, 550);
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("HeadPage.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), 860, 550);
                 Stage stage = Main.getStage();
                 stage.setTitle("Mainpage");
                 stage.setResizable(false);
