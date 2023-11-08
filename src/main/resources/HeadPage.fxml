@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -15,7 +16,7 @@
     <top>
         <AnchorPane prefHeight="89.0" prefWidth="860.0" style="-fx-background-color: #022235;" BorderPane.alignment="CENTER">
             <children>
-                <TextField layoutX="310.0" layoutY="30.0" prefHeight="46.0" prefWidth="334.0" promptText="Search" style="-fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px; -fx-background-color: #022235;">
+                <TextField alignment="CENTER" layoutX="322.0" layoutY="30.0" prefHeight="46.0" prefWidth="350.0" promptText="Search" style="-fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px; -fx-background-color: #022235;">
                     <font>
                         <Font size="20.0" />
                     </font>
@@ -25,11 +26,14 @@
                   <Image url="@SpeisenOase-Logo.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="126.0" layoutY="33.0" text="Speisenoase" textFill="WHITE">
+            <Label layoutX="126.0" layoutY="33.0" opacity="0.58" text="Speisenoase" textFill="WHITE">
                <font>
                   <Font size="27.0" />
                </font>
             </Label>
+            <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="744.0" layoutY="67.0" size="40" wrappingWidth="24.142857551574707" />
+            <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" layoutX="297.0" layoutY="67.0" size="25" wrappingWidth="24.142857551574707" />
+            <FontAwesomeIconView fill="WHITE" glyphName="GEAR" layoutX="803.0" layoutY="67.0" size="40" />
             </children>
         </AnchorPane>
     </top>
@@ -47,6 +51,13 @@
                             <font>
                                 <Font name="System Bold" size="17.0" />
                             </font>
+                     <graphic>
+                        <ImageView fitHeight="57.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Apple.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                         </Button>
                         <Button fx:id="btSweeties" mnemonicParsing="false" onAction="#checkBtSweetiesClick" prefHeight="100.0" prefWidth="135.0" style="-fx-background-color: #03334F; -fx-border-color: #ffffff;" text="Sweeties" textFill="WHITE">
                             <font>
