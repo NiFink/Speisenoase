@@ -1,17 +1,121 @@
 [ {
-  "id" : 1,
+  "id" : 0,
   "name" : "apfel",
   "price" : 0.6,
-  "weight" : 200.0,
+  "category" : "obst",
   "available" : 4,
-  "favourite" : true,
-  "description" : "Saftig, knackig, würzig, fruchtig, feinsäuerlich-süß. Äpfel stellen roh verzehrt (am besten mit Schale) eine ideale Zwischenmahlzeit dar."
+  "favourite" : false,
+  "description" : "Rund 31 kg Äpfel, umgerechnet ungefähr 200 Stück, genießt jeder Verbraucher im Durchschnitt pro Jahr."
 }, {
-  "id" : 2,
+  "id" : 1,
   "name" : "banane",
   "price" : 0.4,
-  "weight" : 200.0,
+  "category" : "obst",
   "available" : 5,
-  "favourite" : true,
-  "description" : "Sie liefern schnell Energie und stellen eine gute Zwischenmahlzeit auch für unterwegs dar. Die Krümmung der Banane entsteht während des Wachstums hormonbedingt."
+  "favourite" : false,
+  "description" : "Sie werden auf besonderen Bananenschiffen in die Verbraucherländer transportiert."
+}, {
+  "id" : 2,
+  "name" : "trauben",
+  "price" : 2.39,
+  "category" : "obst",
+  "available" : 5,
+  "favourite" : false,
+  "description" : "Tafeltrauben sind für den Frischverzehr angebaute Sorten, die möglichst kernarm sind."
+}, {
+  "id" : 3,
+  "name" : "gurke",
+  "price" : 1.39,
+  "category" : "gemüse",
+  "available" : 5,
+  "favourite" : false,
+  "description" : "Die Früchte sind etwa 30-40 cm lang, schlank und an den Enden verjüngt."
+}, {
+  "id" : 4,
+  "name" : "paprika",
+  "price" : 1.25,
+  "category" : "gemüse",
+  "available" : 5,
+  "favourite" : false,
+  "description" : "Gemüsepaprika gehören zu den süßen und milden Paprika und sind Nachtschattengewächse."
+}, {
+  "id" : 5,
+  "name" : "tomaten",
+  "price" : 1.89,
+  "category" : "gemüse",
+  "available" : 5,
+  "favourite" : false,
+  "description" : "Cherry-/Cocktailtomaten sind etwa 2 cm groß und haben ein Gewicht um die 40g."
+}, {
+  "id" : 6,
+  "name" : "brot",
+  "price" : 3.79,
+  "category" : "backwaren",
+  "available" : 5,
+  "favourite" : false,
+  "description" : "Ist halt Brot."
+}, {
+  "id" : 7,
+  "name" : "mehl",
+  "price" : 0.85,
+  "category" : "backwaren",
+  "available" : 5,
+  "favourite" : false,
+  "description" : "Naturland Getreide aus kontrolliert biologischem Anbau."
+}, {
+  "id" : 8,
+  "name" : "nudeln",
+  "price" : 2.09,
+  "category" : "backwaren",
+  "available" : 5,
+  "favourite" : false,
+  "description" : "Ihre Rillen sind ideal, um aus jeder Art Sauce etwas Besonderes zu machen."
+}, {
+  "id" : 9,
+  "name" : "kinder riegel",
+  "price" : 2.59,
+  "category" : "süßigkeiten",
+  "available" : 5,
+  "favourite" : false,
+  "description" : "Feine Milchcreme umhüllt von zartschmelzender Vollmichschokolade."
+}, {
+  "id" : 10,
+  "name" : "duplo",
+  "price" : 2.59,
+  "category" : "süßigkeiten",
+  "available" : 5,
+  "favourite" : false,
+  "description" : "Die wahrscheinlich längste Praline der Welt."
+}, {
+  "id" : 11,
+  "name" : "lebkuchen",
+  "price" : 2.59,
+  "category" : "süßigkeiten",
+  "available" : 5,
+  "favourite" : false,
+  "description" : "Der klassische, würzige Lebkuchen. Steht gefühlt im Sommer schon im Regal."
+}, {
+  "id" : 12,
+  "name" : "wasser",
+  "price" : 3.90,
+  "category" : "getränke",
+  "available" : 5,
+  "favourite" : false,
+  "description" : "Durch Vulkanstein gefiltert (eigentlich nicht aber klingt cool)."
+}, {
+  "id" : 13,
+  "name" : "bier",
+  "price" : 4.99,
+  "category" : "getränke",
+  "available" : 5,
+  "favourite" : false,
+  "description" : "Bitte ein Bit."
+}, {
+  "id" : 14,
+  "name" : "apfelsaft",
+  "price" : 1.29,
+  "category" : "getränke",
+  "available" : 5,
+  "favourite" : false,
+  "description" : "Fruchtig frischer Genuss. 100% Fruchtgehalt."
 } ]

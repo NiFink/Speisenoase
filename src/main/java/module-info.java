@@ -6,4 +6,5 @@ module SE2StartupProject {
     requires com.fasterxml.jackson.databind;
 
     opens mainpackage;
+    opens mainpackage.itempackage;
 }

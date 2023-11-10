@@ -1,22 +1,36 @@
-package mainpackage;
+package mainpackage.itempackage;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
-public class Item {
+class Grocery implements Item{
 
     private int id;
     private String name;
     private double price;
-    private double weight;
+    private String category;
     private long available;
     private boolean favourite;
     private String description;
 
-    public Item() {
+    ObjectMapper objectMapper = new ObjectMapper();
+
+    Grocery createGrocery(int id) {
+        return getItemlist().get(id);
+    }
+
+    private List<Grocery> getItemlist(){
+        try{
+            return  objectMapper.readValue(new File("src/main/resources/itemData.json"), new TypeReference<List<Grocery>>() {});
+        } catch(IOException e){
+            System.err.println(e.getMessage());
+        }
+        return null;
     }
 
     public int getId() {
@@ -41,12 +55,12 @@ public class Item {
         this.price = price;
     }
 
-    public double getWeight() {
-        return weight;
+    public String getCategory(){
+        return category;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public void setCategory(String category){
+        this.category = category;
     }
 
     public long getAvailable() {
@@ -79,7 +93,7 @@ public class Item {
                 "\n  id=" + id +
                 ",\n name='" + name +
                 ",\n price=" + price +
-                ",\n weight=" + weight +
+                ",\n category=" + category +
                 ",\n available=" + available +
                 ",\n favourite=" + favourite +
                 ",\n description='" + description +
