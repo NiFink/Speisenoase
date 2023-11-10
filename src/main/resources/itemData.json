@@ -4,7 +4,7 @@
   "price" : 0.6,
   "weight" : 200.0,
   "available" : 4,
-  "favourite" : false,
+  "favourite" : true,
   "description" : "Saftig, knackig, würzig, fruchtig, feinsäuerlich-süß. Äpfel stellen roh verzehrt (am besten mit Schale) eine ideale Zwischenmahlzeit dar."
 }, {
   "id" : 2,

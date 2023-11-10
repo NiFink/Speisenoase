@@ -35,7 +35,7 @@ public class ItemManager {
 
     public static void main(String[] args) {
         createItemList();
-        items.get(0).setFavourite(false);
+        items.get(0).setFavourite(true);
         writeItemsToJson();
     }
 }
