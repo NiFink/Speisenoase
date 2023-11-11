@@ -1,1 +1,17 @@
-{}
+{
+  "Michelle" : {
+    "userName" : "Michelle",
+    "userEmail" : "Michelle@gmail.com",
+    "password" : "1234"
+  },
+  "Jan" : {
+    "userName" : "Jan",
+    "userEmail" : "Jan@gmail.com",
+    "password" : "password"
+  },
+  "Nils" : {
+    "userName" : "Nils",
+    "userEmail" : "Nils@gmail.com",
+    "password" : "hallo"
+  }
+}
