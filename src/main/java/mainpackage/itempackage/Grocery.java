@@ -1,7 +1,11 @@
 package mainpackage.itempackage;
 
+import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,17 +22,20 @@ class Grocery implements Item{
     private boolean favourite;
     private String description;
 
+    private static Logger log = LogManager.getLogger(Grocery.class);
     ObjectMapper objectMapper = new ObjectMapper();
 
     Grocery createGrocery(int id) {
+        log.debug("Grocery with id: " + id + " is returned from temporary List");
         return getItemlist().get(id);
     }
 
     private List<Grocery> getItemlist(){
         try{
-            return  objectMapper.readValue(new File("src/main/resources/itemData.json"), new TypeReference<List<Grocery>>() {});
-        } catch(IOException e){
-            System.err.println(e.getMessage());
+            log.debug("ObjectMapper read itemData.json file and creates temporary List");
+            return  objectMapper.readValue(new File("src/main/resources/json/itemData.json"), new TypeReference<List<Grocery>>() {});
+        } catch (IOException e) {
+            log.error("Json file could not be read. " + e);
         }
         return null;
     }

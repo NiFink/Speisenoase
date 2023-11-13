@@ -20,7 +20,7 @@ public class UserManager {
 
         //getting current userData from json file
 
-        ObjectNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/userData.json"));
+        ObjectNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/json/userData.json"));
 
         // adding new user as node
 
