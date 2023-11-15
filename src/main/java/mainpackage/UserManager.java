@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class UserManager {
 
-    private void registerNewUser (String username, String userEmail, String userPassword) throws IOException, ParseException {
+     void registerNewUser (String username, String userEmail, String userPassword) throws IOException, ParseException {
 
         ObjectMapper objectMapper = new ObjectMapper();
         User user = new User(userEmail, username, userPassword );
@@ -32,33 +32,40 @@ public class UserManager {
 
         //writing new data node to json file
 
-        PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/userData.json")));
+        PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
         objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
         System.out.println(user.toString() + " \n added successfully");
 
 
     }
 
-    private void userLogin(String username, String password) throws IOException {
+    public boolean userLogin(String username, String password) throws IOException {
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        JsonNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/userData.json"));
+        JsonNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/json/userData.json"));
         try{
             JsonNode userNode = userData.get(username);
             User user = objectMapper.treeToValue(userNode, User.class);
+            if(user == null){
+                System.err.println("wrong username :(");
+                return false;
+            }
             if(!password.equals(user.getPassword())){
 
                 System.err.println("incorrect password :(");
+                return false;
             }
 
             else {
                 System.out.println("successfully logged in as " + username);
+                return true;
             }
         }
 
         catch(Exception e){
             System.out.println(e);
+            return false;
         }
 
 
@@ -69,7 +76,7 @@ public class UserManager {
 
         UserManager userManager = new UserManager();
         //userManager.registerNewUser("Nils", "Nils@gmail.com", "hallo");
-        userManager.userLogin("Nils", "hallo");
+        System.out.println(userManager.userLogin("hallo", "hallo"));
 
 
 
