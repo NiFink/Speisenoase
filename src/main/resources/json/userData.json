@@ -18,5 +18,10 @@
     "userName" : "Tim",
     "userEmail" : "TimUndStruppi99@gmail.com",
     "password" : "TimUndStruppi99"
+  },
+  "Lorenz" : {
+    "userName" : "Lorenz",
+    "userEmail" : "NilsStan99@gmail.com",
+    "password" : "f"
   }
 }
