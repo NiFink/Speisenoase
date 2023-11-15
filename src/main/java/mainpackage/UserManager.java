@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class UserManager {
 
-     void registerNewUser (String username, String userEmail, String userPassword) throws IOException, ParseException {
+     boolean registerNewUser (String username, String userEmail, String userPassword) throws IOException, ParseException {
 
         ObjectMapper objectMapper = new ObjectMapper();
         User user = new User(userEmail, username, userPassword );
@@ -22,19 +22,27 @@ public class UserManager {
 
         ObjectNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/json/userData.json"));
 
-        // adding new user as node
+        if(userData.get(username) == null) {
 
-        JsonNode newUser= objectMapper.valueToTree(user);
+            // adding new user as node
 
-        userData.set(username, newUser);
+            JsonNode newUser = objectMapper.valueToTree(user);
 
-        JsonNode updatedUserData = userData;
+            userData.set(username, newUser);
 
-        //writing new data node to json file
+            JsonNode updatedUserData = userData;
 
-        PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
-        objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
-        System.out.println(user.toString() + " \n added successfully");
+            //writing new data node to json file
+
+            PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
+            System.out.println(user.toString() + " \n added successfully");
+            return true;
+        }
+        else
+            return false;
+
+
 
 
     }
@@ -75,8 +83,8 @@ public class UserManager {
     public static void main(String[] args) throws IOException, ParseException {
 
         UserManager userManager = new UserManager();
-        //userManager.registerNewUser("Nils", "Nils@gmail.com", "hallo");
-        System.out.println(userManager.userLogin("hallo", "hallo"));
+        userManager.registerNewUser("Tim", "TimUndStruppi99@gmail.com", "TimUndStruppi99");
+        System.out.println(userManager.userLogin("Tim", "TimUndStruppi99"));
 
 
 

@@ -37,7 +37,7 @@ public class ControllerRegister {
             }
             //TODO: Alle Fehlerquellen durchgehen
             else{
-                userManager.registerNewUser(tbUsername.getText(), tbEmail.getText(), pbPassword.getText());
+                if(userManager.registerNewUser(tbUsername.getText(), tbEmail.getText(), pbPassword.getText())){
                 try {
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Mainpage.fxml"));
                     Scene scene = new Scene(fxmlLoader.load(), 860, 550);
@@ -49,6 +49,10 @@ public class ControllerRegister {
                 } catch (IOException e) {
                     e.getMessage();
                 }
+
+                }
+                else
+                    lbRegisterfailed.setText("please choose a different username");
             }
         }
         else{
