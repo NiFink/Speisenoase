@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
 
@@ -26,14 +27,17 @@ public class ControllerRegister {
     private PasswordField pbPassword;
     @FXML
     private PasswordField pbPasswordcheck;
+
+    private UserManager userManager = new UserManager();
     @FXML
-    protected void checkRegisterClick(ActionEvent event) {
+    protected void checkRegisterClick(ActionEvent event) throws IOException, ParseException {
         if(tbUsername.getText().isBlank() == false && pbPassword.getText().isBlank() == false && pbPasswordcheck.getText().isBlank() == false && tbEmail.getText().isBlank() == false ) {
             if(pbPassword.getText() != pbPasswordcheck.getText()) {
                 lbRegisterfailed.setText("You have to enter the same Password twice!");
             }
             //TODO: Alle Fehlerquellen durchgehen
             else{
+                if(userManager.registerNewUser(tbUsername.getText(), tbEmail.getText(), pbPassword.getText())){
                 try {
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Mainpage.fxml"));
                     Scene scene = new Scene(fxmlLoader.load(), 860, 550);
@@ -45,6 +49,10 @@ public class ControllerRegister {
                 } catch (IOException e) {
                     e.getMessage();
                 }
+
+                }
+                else
+                    lbRegisterfailed.setText("please choose a different username");
             }
         }
         else{

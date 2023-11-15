@@ -13,5 +13,10 @@
     "userName" : "Nils",
     "userEmail" : "Nils@gmail.com",
     "password" : "hallo"
+  },
+  "Tim" : {
+    "userName" : "Tim",
+    "userEmail" : "TimUndStruppi99@gmail.com",
+    "password" : "TimUndStruppi99"
   }
 }

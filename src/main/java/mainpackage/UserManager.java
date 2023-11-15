@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class UserManager {
 
-    private void registerNewUser (String username, String userEmail, String userPassword) throws IOException, ParseException {
+     boolean registerNewUser (String username, String userEmail, String userPassword) throws IOException, ParseException {
 
         ObjectMapper objectMapper = new ObjectMapper();
         User user = new User(userEmail, username, userPassword );
@@ -22,43 +22,58 @@ public class UserManager {
 
         ObjectNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/json/userData.json"));
 
-        // adding new user as node
+        if(userData.get(username) == null) {
 
-        JsonNode newUser= objectMapper.valueToTree(user);
+            // adding new user as node
 
-        userData.set(username, newUser);
+            JsonNode newUser = objectMapper.valueToTree(user);
 
-        JsonNode updatedUserData = userData;
+            userData.set(username, newUser);
 
-        //writing new data node to json file
+            JsonNode updatedUserData = userData;
 
-        PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/userData.json")));
-        objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
-        System.out.println(user.toString() + " \n added successfully");
+            //writing new data node to json file
+
+            PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
+            System.out.println(user.toString() + " \n added successfully");
+            return true;
+        }
+        else
+            return false;
+
+
 
 
     }
 
-    private void userLogin(String username, String password) throws IOException {
+    public boolean userLogin(String username, String password) throws IOException {
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        JsonNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/userData.json"));
+        JsonNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/json/userData.json"));
         try{
             JsonNode userNode = userData.get(username);
             User user = objectMapper.treeToValue(userNode, User.class);
+            if(user == null){
+                System.err.println("wrong username :(");
+                return false;
+            }
             if(!password.equals(user.getPassword())){
 
                 System.err.println("incorrect password :(");
+                return false;
             }
 
             else {
                 System.out.println("successfully logged in as " + username);
+                return true;
             }
         }
 
         catch(Exception e){
             System.out.println(e);
+            return false;
         }
 
 
@@ -68,8 +83,8 @@ public class UserManager {
     public static void main(String[] args) throws IOException, ParseException {
 
         UserManager userManager = new UserManager();
-        //userManager.registerNewUser("Nils", "Nils@gmail.com", "hallo");
-        userManager.userLogin("Nils", "hallo");
+        userManager.registerNewUser("Tim", "TimUndStruppi99@gmail.com", "TimUndStruppi99");
+        System.out.println(userManager.userLogin("Tim", "TimUndStruppi99"));
 
 
 
