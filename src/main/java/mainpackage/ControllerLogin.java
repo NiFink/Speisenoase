@@ -13,6 +13,7 @@ import java.io.IOException;
 
 public class ControllerLogin {
     @FXML
+
     private Label lbLoginfailed;
     @FXML
     private TextField tbUsername;
@@ -49,7 +50,7 @@ public class ControllerLogin {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Register.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 860, 550);
             Stage stage = Main.getStage();
-            stage.setTitle("Mainpage");
+            stage.setTitle("Register");
             stage.setResizable(false);
             stage.setScene(scene);
             stage.show();

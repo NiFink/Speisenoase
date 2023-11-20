@@ -25,13 +25,18 @@
    <top>
       <AnchorPane prefHeight="55.0" prefWidth="775.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btExit" layoutX="822.0" layoutY="15.0" mnemonicParsing="false" onAction="#checkbtExitClick" style="-fx-background-color: #01212E;" text="X" textFill="WHITE" />
+            <Button fx:id="btExit" layoutX="822.0" layoutY="15.0" mnemonicParsing="false" onAction="#checkbtExitClick" style="-fx-background-color: #01212E;" text="X" textFill="WHITE" visible="false" />
          </children>
       </AnchorPane>
    </top>
    <left>
       <AnchorPane prefHeight="454.0" prefWidth="378.0" BorderPane.alignment="CENTER">
          <children>
+            <TextField fx:id="tbUsername" layoutX="51.0" layoutY="153.0" prefHeight="43.0" prefWidth="184.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #022235; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
             <PasswordField fx:id="pbPassword" layoutX="55.0" layoutY="226.0" prefHeight="40.0" prefWidth="176.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #022235; -fx-border-width: 0px 0px 2px 0px;">
                <font>
                   <Font size="14.0" />
@@ -42,11 +47,6 @@
                   <Font size="15.0" />
                </font>
             </Button>
-            <TextField fx:id="tbUsername" layoutX="51.0" layoutY="153.0" prefHeight="43.0" prefWidth="184.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #022235; -fx-border-width: 0px 0px 2px 0px;">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </TextField>
             <Button fx:id="btRegister" layoutX="165.0" layoutY="332.0" mnemonicParsing="false" onAction="#checkbtRegisterClick" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #022235;" text="Register" textFill="WHITE">
                <font>
                   <Font size="14.0" />
