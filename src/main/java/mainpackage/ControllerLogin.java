@@ -39,7 +39,7 @@ public class ControllerLogin {
             }
         }
         else {
-            lbLoginfailed.setText("Please enter username and password.");
+            lbLoginfailed.setText("Please enter a correct username and password.");
         }
 
     }
