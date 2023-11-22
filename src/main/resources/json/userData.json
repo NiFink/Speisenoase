@@ -2,31 +2,37 @@
   "Michelle" : {
     "userName" : "Michelle",
     "userEmail" : "Michelle@gmail.com",
-    "password" : "1234"
+    "password" : "1234",
+    "favourites" : [ ]
   },
   "Jan" : {
     "userName" : "Jan",
     "userEmail" : "Jan@gmail.com",
-    "password" : "password"
+    "password" : "password",
+    "favourites" : [ ]
   },
   "Nils" : {
     "userName" : "Nils",
     "userEmail" : "Nils@gmail.com",
-    "password" : "derBeste"
+    "password" : "derBeste?",
+    "favourites" : [ ]
   },
   "Tim" : {
     "userName" : "Tim",
     "userEmail" : "TimUndStruppi99@gmail.com",
-    "password" : "TimUndStruppi99"
+    "password" : "TimUndStruppi99",
+    "favourites" : [ ]
   },
   "Lorenz" : {
     "userName" : "Lorenz",
     "userEmail" : "NilsStan99@gmail.com",
-    "password" : "f"
+    "password" : "f",
+    "favourites" : [ ]
   },
   "asdf" : {
     "userName" : "asdf",
     "userEmail" : "asdf",
-    "password" : "asdf"
+    "password" : "asdf",
+    "favourites" : [ ]
   }
 }

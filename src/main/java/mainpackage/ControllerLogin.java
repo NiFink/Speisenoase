@@ -24,7 +24,7 @@ public class ControllerLogin {
     protected void checkbtLoginClick(ActionEvent event) throws IOException {
         //TODO: If abfrage ob das Passwort stimmt mit der Datenbank eintrag überein
 
-        if(tbUsername.getText().isBlank() == false && pbPassword.getText().isBlank() == false && userManager.userLogin(tbUsername.getText(), pbPassword.getText())){
+        if(tbUsername.getText().isBlank() == false && pbPassword.getText().isBlank() == false && userManager.userLoginCheck(tbUsername.getText(), pbPassword.getText())){
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("MainPage.fxml"));
                 Scene scene = new Scene(fxmlLoader.load(), 860, 550);
