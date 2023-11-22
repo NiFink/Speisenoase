@@ -42,7 +42,7 @@ public class ControllerRegister {
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Mainpage.fxml"));
                     Scene scene = new Scene(fxmlLoader.load(), 860, 550);
                     Stage stage = Main.getStage();
-                    stage.setTitle("Mainpage");
+                    stage.setTitle("Speisenoase");
                     stage.setResizable(false);
                     stage.setScene(scene);
                     stage.show();
