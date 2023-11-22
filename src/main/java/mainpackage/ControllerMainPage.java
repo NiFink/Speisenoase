@@ -12,13 +12,6 @@ public class ControllerMainPage {
     @FXML
     private Button btSweeties;
 
-/*
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-
-            <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="744.0" layoutY="67.0" size="40" wrappingWidth="24.142857551574707" />
-            <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" layoutX="297.0" layoutY="67.0" size="25" wrappingWidth="24.142857551574707" />
-            <FontAwesomeIconView fill="WHITE" glyphName="GEAR" layoutX="803.0" layoutY="67.0" size="40" />
- */
 
     @FXML
     protected void checkBtVegetablesClick(ActionEvent event) {

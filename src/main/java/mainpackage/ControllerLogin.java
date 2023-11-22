@@ -13,7 +13,6 @@ import java.io.IOException;
 
 public class ControllerLogin {
     @FXML
-
     private Label lbLoginfailed;
     @FXML
     private TextField tbUsername;
@@ -44,7 +43,7 @@ public class ControllerLogin {
 
     }
     @FXML
-    protected void checkbtRegisterClick(ActionEvent event) {
+    protected void checkbtRegisterClick(ActionEvent event) throws IOException{
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Register.fxml"));

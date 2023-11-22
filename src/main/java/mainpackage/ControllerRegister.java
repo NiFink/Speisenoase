@@ -22,7 +22,7 @@ public class ControllerRegister {
     @FXML
     private TextField tbUsername;
     @FXML
-    private PasswordField tbEmail;
+    private TextField tbEmail;
     @FXML
     private PasswordField pbPassword;
     @FXML
@@ -31,14 +31,14 @@ public class ControllerRegister {
     private UserManager userManager = new UserManager();
     @FXML
     protected void checkRegisterClick(ActionEvent event) throws IOException, ParseException {
+
         if(tbUsername.getText().isBlank() == false && pbPassword.getText().isBlank() == false && pbPasswordcheck.getText().isBlank() == false && tbEmail.getText().isBlank() == false ) {
-            if(pbPassword.getText() != pbPasswordcheck.getText()) {
+            if(!pbPassword.getText().equals(pbPasswordcheck.getText())) {
                 lbRegisterfailed.setText("You have to enter the same Password twice!");
             }
-            //TODO: Alle Fehlerquellen durchgehen
             else{
-                if(userManager.registerNewUser(tbUsername.getText(), tbEmail.getText(), pbPassword.getText())){
                 try {
+                    userManager.registerNewUser(tbUsername.getText(), tbEmail.getText(), pbPassword.getText());
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Mainpage.fxml"));
                     Scene scene = new Scene(fxmlLoader.load(), 860, 550);
                     Stage stage = Main.getStage();
@@ -49,16 +49,20 @@ public class ControllerRegister {
                 } catch (IOException e) {
                     e.getMessage();
                 }
-
-                }
-                else
-                    lbRegisterfailed.setText("please choose a different username");
             }
+
+
+            //TODO: Alle Fehlerquellen durchgehen
+
+
+
         }
+
         else{
             lbRegisterfailed.setText("Please fill in all fields.");
         }
     }
+
 
     @FXML
     protected void checkBackClick(ActionEvent event) {
@@ -78,5 +82,9 @@ public class ControllerRegister {
     @FXML
     protected void checkExitClick(ActionEvent event) {
         System.exit(0);
+    }
+
+    private void valideRegister(){
+
     }
 }

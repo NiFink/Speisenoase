@@ -23,5 +23,10 @@
     "userName" : "Lorenz",
     "userEmail" : "NilsStan99@gmail.com",
     "password" : "f"
+  },
+  "asdf" : {
+    "userName" : "asdf",
+    "userEmail" : "asdf",
+    "password" : "asdf"
   }
 }
