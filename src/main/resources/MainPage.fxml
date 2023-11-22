@@ -43,7 +43,7 @@
                <graphic>
                   <ImageView fx:id="btShoppingcart" fitHeight="39.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/icons/einkaufswagen-schwarze-form.png" />
+                        <Image url="@images/icons/einkaufswagen-farbig.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
