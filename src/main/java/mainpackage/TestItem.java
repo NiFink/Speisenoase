@@ -1,64 +1,47 @@
 package mainpackage;
 
 import javafx.application.Application;
-import javafx.geometry.Pos;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
-import javafx.scene.text.Font;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.util.Objects;
+import java.io.IOException;
 
 public class TestItem extends Application {
+
+    @FXML
+    Label labelName;
+
     @Override
-    public void start(Stage stage) throws Exception{
-        BorderPane root = new BorderPane();
+    public void start(Stage primaryStage) throws Exception{
+        FlowPane root = new FlowPane();
+        root.getChildren().addAll(makeItemNode("/fxml/item.fxml"));
 
-        HBox hBox = new HBox();
+        System.out.println(labelName.getText());
 
-        Scene scene = new Scene(root, 300, 300);
+        primaryStage.setTitle("FXML Example");
+        primaryStage.setScene(new Scene(root, 400, 400));
+        primaryStage.show();
+    }
 
-        Label name = new Label("Banana");
-
-        File file = new File("src/main/resources/images/groceries/Banane.png");
-        Image productImg = new Image(file.toURI().toURL().toExternalForm(), 200.0, 200.0, true, true);
-        ImageView productImgView = new ImageView(productImg);
-        Button favor = new Button();
-        TextField amount = new TextField("1");
-        File file2 = new File("src/main/resources/images/icons/herzform-umriss.png");
-        Image heart = new Image(file2.toURI().toURL().toExternalForm(), 20, 20, true, true);
-        ImageView heartView = new ImageView(heart);
-        Button buy = new Button("buy");
-
-        favor.setGraphic(heartView);
-
-        name.setFont(new Font(40));
-        name.setTranslateY(20);
-        amount.setPrefSize(30,20);
-
-        hBox.getChildren().addAll(favor, amount, heartView, buy);
-        hBox.setAlignment(Pos.CENTER);
-        BorderPane.setAlignment(productImgView, Pos.CENTER);
-        BorderPane.setAlignment(name, Pos.CENTER);
-        BorderPane.setAlignment(hBox, Pos.CENTER);
-        root.setTop(name);
-        root.setCenter(productImgView);
-        root.setBottom(hBox);
-
-        stage.setTitle("Product");
-
-        stage.setScene(scene);
-
-        stage.show();
+    public Node makeItemNode(String url) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(url));
+        return fxmlLoader.load();
     }
 
     public static void main(String[] args) {
+
         launch(args);
     }
 }

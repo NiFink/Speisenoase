@@ -72,7 +72,7 @@
   "description" : "Ihre Rillen sind ideal, um aus jeder Art Sauce etwas Besonderes zu machen."
 }, {
   "id" : 9,
-  "name" : "kinder riegel",
+  "name" : "kinderRiegel",
   "price" : 2.59,
   "category" : "süßigkeiten",
   "available" : 5,
