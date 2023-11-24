@@ -3,11 +3,18 @@ package mainpackage;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.simple.parser.ParseException;
 
 import java.io.*;
 
 public class UserManager {
+
+   private User activeUser;
+
+
+    private static Logger logger = LogManager.getLogger(UserManager.class);
 
      boolean registerNewUser(String username, String userEmail, String userPassword) throws IOException, ParseException {
 
@@ -32,10 +39,12 @@ public class UserManager {
 
             PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
-            System.out.println(user.toString() + " \n added successfully");
+            logger.debug(user.toString() + " \n added successfully");
+            activeUser = user;
             return true;
         }
         else
+            logger.debug("Failed registration - username is not available");
             return false;
 
 
@@ -52,17 +61,18 @@ public class UserManager {
             JsonNode userNode = userData.get(username);
             User user = objectMapper.treeToValue(userNode, User.class);
             if(user == null){
-                System.err.println("wrong username :(");
+                logger.debug("wrong username :(");
                 return false;
             }
             if(!password.equals(user.getPassword())){
 
-                System.err.println("incorrect password :(");
+                logger.debug("incorrect password :(");
                 return false;
             }
 
             else {
-                System.out.println("successfully logged in as " + username);
+                logger.debug("successfully logged in as " + username);
+                activeUser = user;
                 return true;
             }
         }
@@ -74,6 +84,14 @@ public class UserManager {
 
 
 
+    }
+
+    public User getActiveUser() {
+        return activeUser;
+    }
+
+    public void setActiveUser(User activeUser) {
+        this.activeUser = activeUser;
     }
 
     public static void main(String[] args) throws IOException, ParseException {
@@ -89,7 +107,7 @@ public class UserManager {
 
     }
 
-    // TODO:  checking password method for registration
+
 
 
 }
