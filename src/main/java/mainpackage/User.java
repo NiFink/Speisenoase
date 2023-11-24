@@ -50,10 +50,12 @@ public class User {
 
     }
 
-
-
-
-
+    public User(User user) {
+        this.userEmail = user.userEmail;
+        this.userName = user.userName;
+        this.password = user.password;
+        this.favourites = user.favourites;
+    }
 
 
     @Override

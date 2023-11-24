@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.json.simple.parser.ParseException;
 
 import java.io.*;
+import java.util.Arrays;
 
 public class UserManager {
 
@@ -18,36 +19,38 @@ public class UserManager {
 
      boolean registerNewUser(String username, String userEmail, String userPassword) throws IOException, ParseException {
 
-        ObjectMapper objectMapper = new ObjectMapper();
         User user = new User(userEmail, username, userPassword);
 
-        //getting current userData from json file
+         ObjectMapper objectMapper = new ObjectMapper();
 
-        ObjectNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/json/userData.json"));
+         //getting current userData from json file:
 
-        if(userData.get(username) == null) {
+         ObjectNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/json/userData.json"));
 
-            // adding new user as node
+         if(userData.get(username) == null){
 
-            JsonNode newUser = objectMapper.valueToTree(user);
+             // adding updated user as node:
 
-            userData.set(username, newUser);
+             JsonNode newUser = objectMapper.valueToTree(user);
 
-            JsonNode updatedUserData = userData;
+             userData.set(user.getUserName(), newUser);
 
-            //writing new data node to json file
+             JsonNode updatedUserData = userData;
 
-            PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
-            logger.debug(user.toString() + " \n added successfully");
-            activeUser = user;
-            return true;
-        }
-        else
+             //writing new data node to json file:
+             PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
+             objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
+             logger.debug("added " + user.toString() + "\n successfully");
+             activeUser = user;
+             return true;
+
+
+         }
+
+        else {
             logger.debug("Failed registration - username is not available");
             return false;
-
-
+        }
 
 
     }
@@ -86,6 +89,95 @@ public class UserManager {
 
     }
 
+    private boolean updateUserData(User oldUser, User newUser) throws IOException {
+
+         ObjectMapper objectMapper = new ObjectMapper();
+
+        //getting current userData from json file:
+
+        ObjectNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/json/userData.json"));
+
+
+            if(newUser.getUserName() == oldUser.getUserName() || userData.get(newUser.getUserName()) == null) {
+
+                userData.set(newUser.getUserName(), (JsonNode) objectMapper.valueToTree(newUser));
+
+                // if updating username:
+                if (newUser.getUserName() != oldUser.getUserName()) {
+                    userData.remove(oldUser.getUserName());
+                }
+
+                JsonNode updatedUserData = userData;
+
+                //writing new data node to json file:
+                PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
+                objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
+                logger.debug("updated userdata successfully");
+                return true;
+            }
+            logger.debug("update failed - username exists already");
+            return false;
+
+
+    }
+
+    private boolean changePassword(User user, String oldPassword, String newpassword) throws IOException {
+
+         // TODO: check if old password equals new password in Userpage Controller
+
+         if(userLoginCheck(user.getUserName(), oldPassword)){
+
+             User newUser = new User(user);
+             newUser.setPassword(newpassword);
+
+             if(updateUserData(user, newUser));
+             logger.debug(user.getUserName() + " 's password: " + user.getPassword() + " updated to : " + newUser.getPassword());
+             user.setPassword(newpassword);
+             return true;
+
+         }
+         return false;
+
+    }
+
+    private boolean changeUserName(User user, String newUserName) throws IOException {
+
+         // TODO: check if new user name is actually new in userpage controller
+
+         User newUser = new User(user);
+         newUser.setUserName(newUserName);
+         if(updateUserData(user, newUser)){
+             logger.debug(user.getUserName() + " 's name updated to : " + newUser.getUserName());
+             user.setUserName(newUserName);
+             return true;
+         }
+         return false;
+    }
+
+    private void changeUserEmail(User user, String newEmail) throws IOException {
+
+        User newUser = new User(user);
+        newUser.setUserEmail(newEmail);
+        if(updateUserData(user, newUser)){
+            logger.debug(user.getUserName() + " 's email: " + user.getUserEmail() + " updated to : " + newUser.getUserEmail());
+            user.setUserEmail(newEmail);
+        }
+    }
+
+    private void updateFavorites(User user, String[] favourites) throws IOException {
+
+         User newUser = new User(user);
+         newUser.setFavourites(favourites);
+         if(updateUserData(user, newUser)) {
+             logger.debug(user.getUserName() + " 's favourites: " + Arrays.toString(user.getFavourites()) + " updated to : " + Arrays.toString(newUser.getFavourites()));
+             user.setFavourites(favourites);
+         }
+
+    }
+
+
+
+
     public User getActiveUser() {
         return activeUser;
     }
@@ -97,8 +189,10 @@ public class UserManager {
     public static void main(String[] args) throws IOException, ParseException {
 
         UserManager userManager = new UserManager();
-        userManager.registerNewUser("Tom", "TimUndStruppi99@gmail.com", "TimUndStruppi99");
-        System.out.println(userManager.userLoginCheck("Tom", "TimUndStruppi99"));
+        //System.out.println(userManager.registerNewUser("Tom", "TimUndStruppi99@gmail.com", "TimUndStruppi99"));
+       System.out.println(userManager.userLoginCheck("Nils", "derBeste?"));
+       String[] favoriten = {"Tofu", "Seitan", "Soja"};
+       userManager.updateFavorites(userManager.getActiveUser(), favoriten);
 
 
 
