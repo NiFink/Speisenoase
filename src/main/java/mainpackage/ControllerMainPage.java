@@ -2,7 +2,10 @@ package mainpackage;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class ControllerMainPage {
     @FXML
@@ -11,6 +14,10 @@ public class ControllerMainPage {
     private Button btFruit;
     @FXML
     private Button btSweeties;
+    @FXML
+    private Button  btProfil;
+    @FXML
+    private Button btShoppingcart;
 
 
     @FXML
@@ -32,7 +39,23 @@ public class ControllerMainPage {
     }
 
 
+    @FXML
+    protected void checkBtProfilClick(ActionEvent event) {
 
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Profil.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 860, 550);
+            Stage stage = Main.getStage();
+            stage.setTitle("Profil");
+            stage.setResizable(false);
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception e){
+            e.getMessage();
+        }
+
+    }
     @FXML
     protected void checkExitClick(ActionEvent event) {
         System.exit(0);

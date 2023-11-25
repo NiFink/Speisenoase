@@ -37,6 +37,7 @@ public class ControllerLogin {
                 stage.setResizable(false);
                 stage.setScene(scene);
                 stage.show();
+                log.debug("MainPage has generated");
             } catch (IOException e) {
                 e.getMessage();
             }
