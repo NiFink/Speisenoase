@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <BorderPane prefHeight="200" prefWidth="200">
+          <top>
+              <StackPane layoutY="12.0">
+                  <Label fx:id="labelName" style="-fx-font-size:20" text="unknown" translateY="10.0">
+                  <font>
+                     <Font name="System Bold" size="16.0" />
+                  </font>
+               </Label>
+              </StackPane>
+          </top>
+          <center>
+              <ImageView fx:id="imgViewItem" fitHeight="120.0" fitWidth="135.0">
+                  <Image url="@../images/groceries/banane.png" />
+              </ImageView>
+          </center>
+          <bottom>
+              <AnchorPane translateY="-10.0">
+                  <Button fx:id="btnFav" AnchorPane.leftAnchor="10.0">
+                      <graphic>
+                          <ImageView fx:id="imgHeartView" fitHeight="22" fitWidth="22">
+                              <Image fx:id="imgHeart" url="@../images/icons/herzform-umriss.png" />
+                          </ImageView>
+                      </graphic>
+                  </Button>
+                      <HBox AnchorPane.rightAnchor="10.0">
+                          <TextField prefHeight="30" prefWidth="30" text="1" />
+                          <Button prefHeight="30" prefWidth="40.0" text="buy" />
+                      </HBox>
+              </AnchorPane>
+          </bottom>
+      </BorderPane>
+   </children>
+</StackPane>
