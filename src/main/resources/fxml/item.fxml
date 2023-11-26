@@ -14,8 +14,8 @@
 
 <StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <BorderPane prefHeight="200" prefWidth="200">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="187.0" stroke="BLACK" strokeType="INSIDE" width="187.0" />
+      <BorderPane prefHeight="187" prefWidth="187">
           <top>
               <StackPane layoutY="12.0">
                   <Label fx:id="labelName" style="-fx-font-size:20" text="unknown" translateY="10.0">
@@ -26,8 +26,8 @@
               </StackPane>
           </top>
           <center>
-              <ImageView fx:id="imgViewItem" fitHeight="120.0" fitWidth="135.0">
-                  <Image url="@../images/groceries/banane.png" />
+              <ImageView fx:id="imgViewItem" fitHeight="100.0" fitWidth="100.0">
+                  <Image url="@file"/>
               </ImageView>
           </center>
           <bottom>

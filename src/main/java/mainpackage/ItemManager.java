@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
@@ -28,11 +29,11 @@ public class ItemManager extends Application {
     @FXML
     ImageView imgViewItem;
 
-    private static Logger log = LogManager.getLogger(ItemManager.class);
+    private static final Logger log = LogManager.getLogger(ItemManager.class);
 
-    private static List<Item> getItems(){
+    private static List<Item> getItems(int id){
         List<Item> items = new ArrayList<>();
-        for(int i = 0; i < 15; i++){
+        for(int i = 0; i < id; i++){
             items.add(ItemFactory.createItem(ItemType.GROCERY, i));
         }
         log.info("List with " + items.size() + " items was created");
@@ -40,12 +41,12 @@ public class ItemManager extends Application {
     }
 
     @FXML
-    private Node createItemNode(int id) throws IOException {
+    private Node createItemNode(List<Item> list, int id) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/item.fxml"));
         fxmlLoader.setController(this);
         Parent parent = fxmlLoader.load();
 
-        Item currentItem = ItemFactory.createItem(ItemType.GROCERY, id);
+        Item currentItem = (Item) list.get(id);
         labelName.setText(currentItem.getName());
         Image newItemImage = new Image(Objects.requireNonNull(getClass().getResource("/images/groceries/" + currentItem.getName() + ".png")).openStream());
         imgViewItem.setImage(newItemImage);
@@ -63,13 +64,17 @@ public class ItemManager extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        FlowPane root = new FlowPane();
+        ScrollPane root = new ScrollPane();
+        FlowPane flowPane = new FlowPane();
 
+        List<Item> groceryList = getItems(15);
         for(int i = 0; i < 15; i++){
-            root.getChildren().add(createItemNode(i));
+            flowPane.getChildren().add(createItemNode(groceryList, i));
         }
 
-        primaryStage.setScene(new Scene(root, 400, 400));
+        root.setFitToWidth(true);
+        root.setContent(flowPane);
+        primaryStage.setScene(new Scene(root, 750, 400));
         primaryStage.show();
     }
 

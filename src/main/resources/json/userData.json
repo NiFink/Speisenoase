@@ -34,5 +34,11 @@
     "userEmail" : "asdf",
     "password" : "asdf",
     "favourites" : [ ]
+  },
+  "jan" : {
+    "userName" : "jan",
+    "userEmail" : "blabla",
+    "password" : "test123",
+    "favourites" : [ ]
   }
 }
