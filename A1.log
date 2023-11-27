@@ -1,7 +1,3 @@
-main DEBUG mainpackage.UserManager - successfully logged in as jan
-main DEBUG mainpackage.UserManager - successfully deleted: 
- user: 
- name: jan
- email: blabla
- password: test123
- favourite Items: []
+JavaFX Application Thread DEBUG mainpackage.UserManager - successfully logged in as asdf
+JavaFX Application Thread INFO  mainpackage.ItemManager - User: asdf has logged in
+JavaFX Application Thread DEBUG mainpackage.ItemManager - MainPage has generated

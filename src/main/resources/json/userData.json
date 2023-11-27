@@ -28,5 +28,11 @@
     "userEmail" : "NilsStan99@gmail.com",
     "password" : "sicheresPasswort",
     "favourites" : [ ]
+  },
+  "asdf" : {
+    "userName" : "asdf",
+    "userEmail" : "asdf",
+    "password" : "asdf",
+    "favourites" : [ ]
   }
 }

@@ -25,11 +25,12 @@ public class ControllerLogin {
     private static Logger log = LogManager.getLogger(ItemManager.class);
     @FXML
     protected void checkbtLoginClick(ActionEvent event) throws IOException {
-        //TODO: If abfrage ob das Passwort stimmt mit der Datenbank eintrag überein
+        //TODO: If abfrage, ob das Passwort mit der Datenbank eintrag überein stimmt
 
         if(tbUsername.getText().isBlank() == false && pbPassword.getText().isBlank() == false && userManager.userLoginCheck(tbUsername.getText(), pbPassword.getText())){
             try {
                 log.info("User: " + tbUsername.getText() + " has logged in");
+
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("MainPage.fxml"));
                 Scene scene = new Scene(fxmlLoader.load(), 860, 550);
                 Stage stage = Main.getStage();
@@ -37,9 +38,11 @@ public class ControllerLogin {
                 stage.setResizable(false);
                 stage.setScene(scene);
                 stage.show();
+
                 log.debug("MainPage has generated");
+
             } catch (IOException e) {
-                e.getMessage();
+                System.out.println(e.getMessage());
             }
         }
         else {
