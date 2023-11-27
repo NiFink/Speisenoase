@@ -26,19 +26,7 @@
   "Lorenz" : {
     "userName" : "Lorenz",
     "userEmail" : "NilsStan99@gmail.com",
-    "password" : "f",
-    "favourites" : [ ]
-  },
-  "asdf" : {
-    "userName" : "asdf",
-    "userEmail" : "asdf",
-    "password" : "asdf",
-    "favourites" : [ ]
-  },
-  "jan" : {
-    "userName" : "jan",
-    "userEmail" : "blabla",
-    "password" : "test123",
+    "password" : "sicheresPasswort",
     "favourites" : [ ]
   }
 }

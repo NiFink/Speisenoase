@@ -175,6 +175,17 @@ public class UserManager {
 
     }
 
+    private void deleteUser(User user) throws IOException {
+
+         ObjectMapper objectMapper = new ObjectMapper();
+         ObjectNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/json/userData.json"));
+         userData.remove(user.getUserName());
+         JsonNode updatedUserData = userData;
+         PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
+         objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
+         logger.debug("successfully deleted: " + user.toString());
+    }
+
 
 
 
@@ -189,10 +200,13 @@ public class UserManager {
     public static void main(String[] args) throws IOException, ParseException {
 
         UserManager userManager = new UserManager();
-        //System.out.println(userManager.registerNewUser("Tom", "TimUndStruppi99@gmail.com", "TimUndStruppi99"));
-       System.out.println(userManager.userLoginCheck("Nils", "derBeste?"));
-       String[] favoriten = {"Tofu", "Seitan", "Soja"};
-       userManager.updateFavorites(userManager.getActiveUser(), favoriten);
+
+        System.out.println(userManager.userLoginCheck("Nils", "derBeste?"));
+        String[] favoriten = {"Tofu", "Seitan", "Soja"};
+        userManager.updateFavorites(userManager.getActiveUser(), favoriten);
+
+        //userManager.userLoginCheck("jan", "test123");
+        //userManager.deleteUser(userManager.getActiveUser());
 
 
 
