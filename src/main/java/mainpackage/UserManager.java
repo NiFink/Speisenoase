@@ -41,7 +41,7 @@ public class UserManager {
              PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
              objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
              logger.debug("added " + user.toString() + "\n successfully");
-             activeUser = user;
+             setActiveUser(user);
              return true;
 
 
@@ -75,7 +75,7 @@ public class UserManager {
 
             else {
                 logger.debug("successfully logged in as " + username);
-                activeUser = user;
+                setActiveUser(user);
                 return true;
             }
         }

@@ -62,7 +62,7 @@ public class User {
 
     public String toString(){
 
-        return "\n user: \n name: " + userName + "\n email: " + userEmail + "\n password: " + password + "\n favourite Items: " + Arrays.toString(favourites);
+        return " user: \n name: " + userName + "\n email: " + userEmail + "\n password: " + password + "\n favourite Items: " + Arrays.toString(favourites);
     }
 
     public String getUserName() {
