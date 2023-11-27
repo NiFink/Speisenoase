@@ -10,6 +10,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mainpackage.itempackage.Item;
 import mainpackage.itempackage.ItemFactory;
@@ -31,7 +32,7 @@ public class ItemManager extends Application {
 
     private static final Logger log = LogManager.getLogger(ItemManager.class);
 
-    private static List<Item> getItems(int id){
+    private List<Item> getItems(int id){
         List<Item> items = new ArrayList<>();
         for(int i = 0; i < id; i++){
             items.add(ItemFactory.createItem(ItemType.GROCERY, i));
@@ -41,7 +42,7 @@ public class ItemManager extends Application {
     }
 
     @FXML
-    private Node createItemNode(List<Item> list, int id) throws IOException {
+    private Node getItemNode(List<Item> list, int id) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/item.fxml"));
         fxmlLoader.setController(this);
         Parent parent = fxmlLoader.load();
@@ -52,6 +53,33 @@ public class ItemManager extends Application {
         imgViewItem.setImage(newItemImage);
 
         return parent;
+    }
+
+    private FlowPane getItempaneCategory(String category) throws IOException {
+        FlowPane flowPane = new FlowPane();
+        List<Item> groceryList = getItems(15);
+        for(int i = 0; i < groceryList.size(); i++){
+            if(category.equals("all") || groceryList.get(i).getCategory().equals(category)){
+                flowPane.getChildren().add(getItemNode(groceryList, i));
+            }
+        }
+        return flowPane;
+    }
+
+    private FlowPane getItempaneName(String name) throws IOException {
+        FlowPane flowPane = new FlowPane();
+        List<Item> groceryList = getItems(15);
+        for(int i = 0; i < groceryList.size(); i++){
+            if(groceryList.get(i).getName().contains(name)){
+                flowPane.getChildren().add(getItemNode(groceryList, i));
+            }
+        }
+        return flowPane;
+    }
+
+    @FXML
+    public void heartClicked(){
+
     }
 
     /*private static void writeItemsToJson(){
@@ -65,13 +93,8 @@ public class ItemManager extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         ScrollPane root = new ScrollPane();
-        FlowPane flowPane = new FlowPane();
-
-        List<Item> groceryList = getItems(15);
-        for(int i = 0; i < 15; i++){
-            flowPane.getChildren().add(createItemNode(groceryList, i));
-        }
-
+        FlowPane flowPane = getItempaneCategory("all");
+        //FlowPane flowPane = getItempaneName("apf");
         root.setFitToWidth(true);
         root.setContent(flowPane);
         primaryStage.setScene(new Scene(root, 750, 400));
