@@ -27,29 +27,27 @@ import java.util.Objects;
 public class ItemManager extends Application {
 
     @FXML
-    Label labelName;
+    private Label labelName;
 
     @FXML
-    Label labelPrice;
+    private Label labelPrice;
     @FXML
-    ImageView imgViewItem;
+    private ImageView imgViewItem;
 
-    private List<Item> items;
+    private List<Item> items = getItems(15);
     private static final Logger log = LogManager.getLogger(ItemManager.class);
 
-    private void setItems(int id){
+    public List<Item> getItems(int id){
         items = new ArrayList<>();
         for(int i = 0; i < id; i++){
             items.add(ItemFactory.createItem(ItemType.GROCERY, i));
         }
         log.info("List with " + items.size() + " items was created");
-    }
-    private List<Item> getItems(){
         return items;
     }
 
     @FXML
-    private Node getItemNode(List<Item> list, int id) throws IOException {
+    public Node getItemNode(List<Item> list, int id) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/item.fxml"));
         fxmlLoader.setController(this);
         Parent parent = fxmlLoader.load();
@@ -63,26 +61,34 @@ public class ItemManager extends Application {
         return parent;
     }
 
-    private FlowPane getItempaneCategory(String category) throws IOException {
-        FlowPane flowPane = new FlowPane();
-        List<Item> groceryList = getItems();
-        for(int i = 0; i < groceryList.size(); i++){
-            if(category.equals("all") || groceryList.get(i).getCategory().equals(category)){
-                flowPane.getChildren().add(getItemNode(groceryList, i));
+    public FlowPane getItempaneCategory(String category) {
+        try {
+            FlowPane flowPane = new FlowPane();
+            for(int i = 0; i < items.size(); i++){
+                if(category.toLowerCase().equals("all") || items.get(i).getCategory().toLowerCase().equals(category)){
+                    flowPane.getChildren().add(getItemNode(items, i));
+                }
             }
+            return flowPane;
+        } catch (IOException ioe){
+            ioe.getMessage();
         }
-        return flowPane;
+        return null;
     }
 
-    private FlowPane getItempaneName(String name) throws IOException {
-        FlowPane flowPane = new FlowPane();
-        List<Item> groceryList = getItems();
-        for(int i = 0; i < groceryList.size(); i++){
-            if(groceryList.get(i).getName().contains(name)){
-                flowPane.getChildren().add(getItemNode(groceryList, i));
+    public FlowPane getItempaneName(String name){
+        try {
+            FlowPane flowPane = new FlowPane();
+            for(int i = 0; i < items.size(); i++){
+                if(items.get(i).getName().toLowerCase().contains(name.toLowerCase())){
+                    flowPane.getChildren().add(getItemNode(items, i));
+                }
             }
+            return flowPane;
+        } catch (IOException ioe){
+            ioe.getMessage();
         }
-        return flowPane;
+        return null;
     }
 
     @FXML
@@ -100,7 +106,6 @@ public class ItemManager extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        setItems(15);
 
         ScrollPane root = new ScrollPane();
         FlowPane flowPane = getItempaneCategory("all");
