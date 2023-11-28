@@ -14,20 +14,25 @@
 
 <StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="178.0" stroke="BLACK" strokeType="INSIDE" width="178.0" />
-      <BorderPane prefHeight="187" prefWidth="187">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="235.0" stroke="BLACK" strokeType="INSIDE" translateX="3.0" translateY="3.0" width="185.0" />
+      <BorderPane prefHeight="240.0" prefWidth="190.0">
           <top>
-              <StackPane layoutY="12.0">
-                  <Label fx:id="labelName" style="-fx-font-size:20" text="unknown" translateY="10.0">
-                  <font>
+              <AnchorPane translateX="20.0">
+                  <Label fx:id="labelName" style="-fx-font-size:20" text="unknown" translateY="10.0" AnchorPane.leftAnchor="0.00">
+                    <font>
                      <Font name="System Bold" size="16.0" />
-                  </font>
-               </Label>
-              </StackPane>
+                    </font>
+                  </Label>
+                  <Label fx:id="labelPrice" style="-fx-font-size:15" text="0.00€" translateX="10.0" translateY="15.0" AnchorPane.rightAnchor="45.00">
+                      <font>
+                          <Font name="System Bold" size="16.0" />
+                      </font>
+                  </Label>
+              </AnchorPane>
           </top>
           <center>
-              <ImageView fx:id="imgViewItem" fitHeight="100.0" fitWidth="100.0">
-                  <Image url="@file" />
+              <ImageView fx:id="imgViewItem" fitHeight="130.0" fitWidth="130.0">
+                  <Image url="@images/groceries/Apple.png" />
               </ImageView>
           </center>
           <bottom>

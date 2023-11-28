@@ -1,120 +1,120 @@
 [ {
   "id" : 0,
-  "name" : "apfel",
+  "name" : "Apple",
   "price" : 0.6,
-  "category" : "obst",
+  "category" : "fruit",
   "available" : 4,
   "favourite" : false,
   "description" : "Rund 31 kg Äpfel, umgerechnet ungefähr 200 Stück, genießt jeder Verbraucher im Durchschnitt pro Jahr."
 }, {
   "id" : 1,
-  "name" : "banane",
+  "name" : "Banana",
   "price" : 0.4,
-  "category" : "obst",
+  "category" : "fruit",
   "available" : 5,
   "favourite" : false,
   "description" : "Sie werden auf besonderen Bananenschiffen in die Verbraucherländer transportiert."
 }, {
   "id" : 2,
-  "name" : "trauben",
+  "name" : "Grapes",
   "price" : 2.39,
-  "category" : "obst",
+  "category" : "fruit",
   "available" : 5,
   "favourite" : false,
   "description" : "Tafeltrauben sind für den Frischverzehr angebaute Sorten, die möglichst kernarm sind."
 }, {
   "id" : 3,
-  "name" : "gurke",
+  "name" : "Cucumber",
   "price" : 1.39,
-  "category" : "gemüse",
+  "category" : "vegetable",
   "available" : 5,
   "favourite" : false,
   "description" : "Die Früchte sind etwa 30-40 cm lang, schlank und an den Enden verjüngt."
 }, {
   "id" : 4,
-  "name" : "paprika",
+  "name" : "Bell-pepper",
   "price" : 1.25,
-  "category" : "gemüse",
+  "category" : "vegetable",
   "available" : 5,
   "favourite" : false,
   "description" : "Gemüsepaprika gehören zu den süßen und milden Paprika und sind Nachtschattengewächse."
 }, {
   "id" : 5,
-  "name" : "tomaten",
+  "name" : "Tomatoes",
   "price" : 1.89,
-  "category" : "gemüse",
+  "category" : "vegetable",
   "available" : 5,
   "favourite" : false,
   "description" : "Cherry-/Cocktailtomaten sind etwa 2 cm groß und haben ein Gewicht um die 40g."
 }, {
   "id" : 6,
-  "name" : "brot",
+  "name" : "Bread",
   "price" : 3.79,
-  "category" : "backwaren",
+  "category" : "bakery",
   "available" : 5,
   "favourite" : false,
   "description" : "Ist halt Brot."
 }, {
   "id" : 7,
-  "name" : "mehl",
+  "name" : "Flour",
   "price" : 0.85,
-  "category" : "backwaren",
+  "category" : "bakery",
   "available" : 5,
   "favourite" : false,
   "description" : "Naturland Getreide aus kontrolliert biologischem Anbau."
 }, {
   "id" : 8,
-  "name" : "nudeln",
+  "name" : "Noodles",
   "price" : 2.09,
-  "category" : "backwaren",
+  "category" : "bakery",
   "available" : 5,
   "favourite" : false,
   "description" : "Ihre Rillen sind ideal, um aus jeder Art Sauce etwas Besonderes zu machen."
 }, {
   "id" : 9,
-  "name" : "kinderRiegel",
+  "name" : "KinderRiegel",
   "price" : 2.59,
-  "category" : "süßigkeiten",
+  "category" : "sweets",
   "available" : 5,
   "favourite" : false,
   "description" : "Feine Milchcreme umhüllt von zartschmelzender Vollmichschokolade."
 }, {
   "id" : 10,
-  "name" : "duplo",
+  "name" : "Duplo",
   "price" : 2.59,
-  "category" : "süßigkeiten",
+  "category" : "sweets",
   "available" : 5,
   "favourite" : false,
   "description" : "Die wahrscheinlich längste Praline der Welt."
 }, {
   "id" : 11,
-  "name" : "lebkuchen",
+  "name" : "Gingerbread",
   "price" : 2.59,
-  "category" : "süßigkeiten",
+  "category" : "sweets",
   "available" : 5,
   "favourite" : false,
   "description" : "Der klassische, würzige Lebkuchen. Steht gefühlt im Sommer schon im Regal."
 }, {
   "id" : 12,
-  "name" : "wasser",
+  "name" : "Water",
   "price" : 3.90,
-  "category" : "getränke",
+  "category" : "beverage",
   "available" : 5,
   "favourite" : false,
   "description" : "Durch Vulkanstein gefiltert (eigentlich nicht aber klingt cool)."
 }, {
   "id" : 13,
-  "name" : "bier",
+  "name" : "Beer",
   "price" : 4.99,
-  "category" : "getränke",
+  "category" : "beverage",
   "available" : 5,
   "favourite" : false,
   "description" : "Bitte ein Bit."
 }, {
   "id" : 14,
-  "name" : "apfelsaft",
+  "name" : "Apple-juice",
   "price" : 1.29,
-  "category" : "getränke",
+  "category" : "beverage",
   "available" : 5,
   "favourite" : false,
   "description" : "Fruchtig frischer Genuss. 100% Fruchtgehalt."
