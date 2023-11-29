@@ -5,14 +5,13 @@
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
 
-<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.control.TextField?>
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="235.0" stroke="BLACK" strokeType="INSIDE" translateX="3.0" translateY="3.0" width="183.0" />
       <BorderPane prefHeight="240.0" prefWidth="188.0">
@@ -40,17 +39,9 @@
                   <ImageView fx:id="imgHeartView" fitHeight="30.0" fitWidth="30.0" layoutX="16.0">
                       <Image fx:id="imgHeart" url="@../images/icons/herzform-umriss.png" />
                   </ImageView>
-                  <!--Button fx:id="btnFav" AnchorPane.leftAnchor="10.0">
-                      <graphic>
-
-                      </graphic>
-                  </Button-->
                   <HBox AnchorPane.rightAnchor="10.0">
-                      <Spinner fx:id="spinner" editable="true" prefHeight="30.0" prefWidth="50.0" />
-                      <Button fx:id="button" prefHeight="30" prefWidth="40.0" style="-fx-background-color: #01212E;" text="buy" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font></Button>
+                      <TextField fx:id="tfValue" prefHeight="30.0" prefWidth="50.0"/>
+                      <Button fx:id="button" prefHeight="30" prefWidth="40.0" text="buy" />
                   </HBox>
               </AnchorPane>
           </bottom>
