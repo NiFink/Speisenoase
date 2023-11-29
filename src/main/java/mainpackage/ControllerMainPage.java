@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -96,7 +97,7 @@ public class ControllerMainPage {
     }
 
     @FXML
-    protected void checkBtHomeClick(ActionEvent event) {
+    protected void checkBtHomeClick(MouseEvent event) {
         scrollPaneItems.setContent(itemManager.getItempaneCategory("all"));
     }
     @FXML

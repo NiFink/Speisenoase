@@ -19,15 +19,11 @@
                         <Font size="18.0" />
                     </font>
                 </TextField>
-            <Button fx:id="btHome" mnemonicParsing="false" onAction="#checkBtHomeClick" prefHeight="84.0" prefWidth="74.0" style="-fx-background-color: transparent">
-               <graphic>
-                  <ImageView fitHeight="84.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true" style="-fx-fit-width: 100%; -fx-fit-height: 100%;">
-                     <image>
-                        <Image url="@images/other/SpeisenOase-Logo.jpg" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
+            <ImageView fitHeight="111.0" fitWidth="81.0" onMouseClicked="#checkBtHomeClick" pickOnBounds="true" preserveRatio="true" style="-fx-fit-width: 100%; -fx-fit-height: 100%;">
+               <image>
+                  <Image url="@images/other/SpeisenOase-Logo.jpg" />
+               </image>
+            </ImageView>
             <Button fx:id="btProfil" layoutX="122.0" layoutY="19.0" mnemonicParsing="false" onAction="#checkBtProfilClick" prefHeight="51.0" prefWidth="207.0" style="-fx-background-color: #022235;" text="Username" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="27.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
