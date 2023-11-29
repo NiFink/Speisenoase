@@ -37,27 +37,10 @@ public class ControllerRegister {
                 lbRegisterfailed.setText("You have to enter the same Password twice!");
             }
             else{
-                try {
-                    userManager.registerNewUser(tbUsername.getText(), tbEmail.getText(), pbPassword.getText());
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Mainpage.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load(), 860, 550);
-                    Stage stage = Main.getStage();
-                    stage.setTitle("Speisenoase");
-                    stage.setResizable(false);
-                    stage.setScene(scene);
-                    stage.show();
-                } catch (IOException e) {
-                    e.getMessage();
-                }
+                Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
+                sceneSwitcher.switchTo("MainPage.fxml", "Mainpage", 860, 550);
             }
-
-
-            //TODO: Alle Fehlerquellen durchgehen
-
-
-
         }
-
         else{
             lbRegisterfailed.setText("Please fill in all fields.");
         }
@@ -67,17 +50,8 @@ public class ControllerRegister {
     @FXML
     protected void checkBackClick(ActionEvent event) {
 
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Login.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 860, 550);
-            Stage stage = Main.getStage();
-            stage.setTitle("Mainpage");
-            stage.setResizable(false);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.getMessage();
-        }
+        Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
+        sceneSwitcher.switchTo("Login.fxml", "Login", 860, 550);
     }
     @FXML
     protected void checkExitClick(ActionEvent event) {

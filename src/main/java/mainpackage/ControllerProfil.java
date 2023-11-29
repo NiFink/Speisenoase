@@ -22,22 +22,7 @@ public class ControllerProfil {
 
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("MainPage.fxml", "Mainpage", 860, 550);
-        /*
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("MainPage.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 860, 550);
-            Stage stage = Main.getStage();
-            stage.setTitle("Mainpage");
-            stage.setResizable(false);
-            stage.setScene(scene);
-            stage.show();
-            log.debug("MainPage has generated");
 
-            //controllerMainPage.initializeMainPage();
-            log.debug("MainPage has initialized");
-        } catch (IOException e) {
-            e.getMessage();
-        }*/
     }
 
 }
