@@ -75,6 +75,9 @@ public class ControllerMainPage {
     @FXML
     protected void checkBtProfilClick(ActionEvent event) {
 
+        Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
+        sceneSwitcher.switchTo("Profil.fxml", "Profil", 860, 550);
+        /*
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Profil.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 860, 550);
@@ -87,6 +90,8 @@ public class ControllerMainPage {
         catch (Exception e){
             e.getMessage();
         }
+
+         */
 
     }
 

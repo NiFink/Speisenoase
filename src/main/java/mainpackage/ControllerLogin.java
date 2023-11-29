@@ -30,7 +30,14 @@ public class ControllerLogin {
         //TODO: If abfrage, ob das Passwort mit der Datenbank eintrag überein stimmt
 
         if(tbUsername.getText().isBlank() == false && pbPassword.getText().isBlank() == false && userManager.userLoginCheck(tbUsername.getText(), pbPassword.getText())){
+            Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
+            sceneSwitcher.switchTo("MainPage.fxml", "Mainpage", 860, 550);
+            /*
             try {
+
+                //TODO: Sceneswitcher
+
+
                 log.info("User: " + tbUsername.getText() + " has logged in");
 
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("MainPage.fxml"));
@@ -46,7 +53,7 @@ public class ControllerLogin {
 
             } catch (IOException e) {
                 System.out.println(e.getMessage());
-            }
+            }*/
         }
         else {
             log.info("The user is attempting to log in with incorrect information.");
@@ -56,18 +63,8 @@ public class ControllerLogin {
     }
     @FXML
     protected void checkbtRegisterClick(ActionEvent event) throws IOException{
-
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Register.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 860, 550);
-            Stage stage = Main.getStage();
-            stage.setTitle("Register");
-            stage.setResizable(false);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.getMessage();
-        }
+        Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
+        sceneSwitcher.switchTo("MainPage.fxml", "Mainpage", 860, 550);
     }
     @FXML
     protected void checkbtExitClick(ActionEvent event) {

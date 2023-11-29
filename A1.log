@@ -45,7 +45,6 @@ JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 14 is ret
 JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
 JavaFX Application Thread INFO  mainpackage.ItemManager - List with 15 items was created
 JavaFX Application Thread DEBUG mainpackage.UserManager - successfully logged in as asdf
-JavaFX Application Thread INFO  mainpackage.ItemManager - User: asdf has logged in
 JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 0 of type: GROCERY is being created
 JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 0 is returned from temporary List
 JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
@@ -92,4 +91,95 @@ JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 14 of ty
 JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 14 is returned from temporary List
 JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
 JavaFX Application Thread INFO  mainpackage.ItemManager - List with 15 items was created
-JavaFX Application Thread DEBUG mainpackage.ItemManager - MainPage has generated
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 0 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 0 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 1 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 1 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 2 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 2 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 3 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 3 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 4 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 4 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 5 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 5 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 6 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 6 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 7 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 7 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 8 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 8 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 9 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 9 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 10 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 10 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 11 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 11 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 12 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 12 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 13 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 13 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 14 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 14 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread INFO  mainpackage.ItemManager - List with 15 items was created
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 0 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 0 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 1 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 1 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 2 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 2 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 3 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 3 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 4 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 4 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 5 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 5 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 6 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 6 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 7 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 7 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 8 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 8 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 9 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 9 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 10 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 10 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 11 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 11 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 12 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 12 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 13 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 13 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 14 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 14 is returned from temporary List
+JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
+JavaFX Application Thread INFO  mainpackage.ItemManager - List with 15 items was created

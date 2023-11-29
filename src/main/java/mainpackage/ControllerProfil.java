@@ -19,6 +19,10 @@ public class ControllerProfil {
 
     @FXML
     protected void checkBtHomeClick(ActionEvent event) throws IOException {
+
+        Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
+        sceneSwitcher.switchTo("MainPage.fxml", "Mainpage", 860, 550);
+        /*
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("MainPage.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 860, 550);
@@ -33,7 +37,7 @@ public class ControllerProfil {
             log.debug("MainPage has initialized");
         } catch (IOException e) {
             e.getMessage();
-        }
+        }*/
     }
 
 }
