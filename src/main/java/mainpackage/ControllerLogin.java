@@ -37,7 +37,7 @@ public class ControllerLogin {
                 Scene scene = new Scene(fxmlLoader.load(), 860, 550);
                 Stage stage = Main.getStage();
                 stage.setTitle("Mainpage");
-                stage.setResizable(false);
+                stage.setResizable(true);
                 stage.setScene(scene);
                 stage.show();
 

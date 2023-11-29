@@ -33,10 +33,11 @@ public class ControllerMainPage {
     private Button btShoppingcart;
 
     private final ItemManager itemManager = new ItemManager();
+    private UserManager userManager = new UserManager();
 
     public void initialize(){
-
         scrollPaneItems.setContent(itemManager.getItempaneCategory("all"));
+        //btProfil.setText(userManager.getActiveUser().getUserName());
     }
 
     @FXML
@@ -79,7 +80,7 @@ public class ControllerMainPage {
             Scene scene = new Scene(fxmlLoader.load(), 860, 550);
             Stage stage = Main.getStage();
             stage.setTitle("Profil");
-            stage.setResizable(false);
+            stage.setResizable(true);
             stage.setScene(scene);
             stage.show();
         }
@@ -87,6 +88,11 @@ public class ControllerMainPage {
             e.getMessage();
         }
 
+    }
+
+    @FXML
+    protected void checkBtHomeClick(ActionEvent event) {
+        scrollPaneItems.setContent(itemManager.getItempaneCategory("all"));
     }
     @FXML
     protected void checkExitClick(ActionEvent event) {
