@@ -41,7 +41,7 @@ public class ControllerLogin {
                 stage.setScene(scene);
                 stage.show();
 
-                controllerMainPage.initializeMainPage();
+                //controllerMainPage.initializeMainPage();
                 log.debug("MainPage has generated");
 
             } catch (IOException e) {

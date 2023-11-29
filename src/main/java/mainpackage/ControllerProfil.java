@@ -29,7 +29,7 @@ public class ControllerProfil {
             stage.show();
             log.debug("MainPage has generated");
 
-            controllerMainPage.initializeMainPage();
+            //controllerMainPage.initializeMainPage();
             log.debug("MainPage has initialized");
         } catch (IOException e) {
             e.getMessage();
