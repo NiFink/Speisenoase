@@ -22,6 +22,8 @@ public class ControllerLogin {
     private PasswordField pbPassword;
 
     private UserManager userManager = new UserManager();
+    private ControllerMainPage controllerMainPage = new ControllerMainPage();
+
     private static Logger log = LogManager.getLogger(ItemManager.class);
     @FXML
     protected void checkbtLoginClick(ActionEvent event) throws IOException {
@@ -39,6 +41,7 @@ public class ControllerLogin {
                 stage.setScene(scene);
                 stage.show();
 
+                controllerMainPage.initializeMainPage();
                 log.debug("MainPage has generated");
 
             } catch (IOException e) {
