@@ -35,6 +35,7 @@ public class ControllerMainPage {
     private final ItemManager itemManager = new ItemManager();
 
     public void initialize(){
+
         scrollPaneItems.setContent(itemManager.getItempaneCategory("all"));
     }
 

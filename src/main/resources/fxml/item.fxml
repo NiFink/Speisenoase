@@ -46,8 +46,8 @@
                       </graphic>
                   </Button-->
                   <HBox AnchorPane.rightAnchor="10.0">
-                      <Spinner editable="true" prefHeight="30.0" prefWidth="50.0" />
-                      <Button prefHeight="30" prefWidth="40.0" text="buy" />
+                      <Spinner fx:id="spinner" editable="true" prefHeight="30.0" prefWidth="50.0" />
+                      <Button fx:id="button" prefHeight="30" prefWidth="40.0" text="buy" />
                   </HBox>
               </AnchorPane>
           </bottom>

@@ -1,13 +1,16 @@
 package mainpackage;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Spinner;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -25,6 +28,11 @@ import java.util.List;
 import java.util.Objects;
 
 public class ItemManager extends Application {
+
+    @FXML
+    private Button button;
+    @FXML
+    private Spinner spinner;
 
     @FXML
     private Label labelName;
@@ -110,6 +118,9 @@ public class ItemManager extends Application {
         ScrollPane root = new ScrollPane();
         FlowPane flowPane = getItempaneCategory("all");
         //FlowPane flowPane = getItempaneName("apf");
+        button.setOnAction((ActionEvent) -> {
+            System.out.println("a");
+        });
         flowPane.setBackground(new Background(new BackgroundFill(Color.web("#022235"), CornerRadii.EMPTY, Insets.EMPTY)));
         root.setFitToWidth(true);
         root.setContent(flowPane);
