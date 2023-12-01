@@ -4,11 +4,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.net.URL;
 
 public class Sceneswitcher {
+    private static Logger log = LogManager.getLogger(ItemManager.class);
 
     private static Sceneswitcher instance;
 

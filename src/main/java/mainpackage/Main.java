@@ -6,12 +6,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.net.URL;
 import java.util.Objects;
 
 public class Main extends Application {
 
+    private static Logger log = LogManager.getLogger(ItemManager.class);
     private static Stage stage;
 
     @Override

@@ -15,6 +15,8 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ControllerMainPage {
 
@@ -35,6 +37,7 @@ public class ControllerMainPage {
 
     private final ItemManager itemManager = new ItemManager();
     private UserManager userManager = new UserManager();
+    private static Logger log = LogManager.getLogger(ItemManager.class);
 
     public void initialize(){
         scrollPaneItems.setContent(itemManager.getItempaneCategory("all"));
