@@ -7,10 +7,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Spinner;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -27,21 +24,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import static javafx.scene.input.KeyCode.UP;
+
 public class ItemManager extends Application {
 
     @FXML
-    private Button button;
-    @FXML
-    private Spinner spinner;
-
-    @FXML
     private Label labelName;
-
     @FXML
     private Label labelPrice;
     @FXML
     private ImageView imgViewItem;
-
     private List<Item> items = getItems(15);
     private static final Logger log = LogManager.getLogger(ItemManager.class);
 
@@ -99,10 +91,12 @@ public class ItemManager extends Application {
         return null;
     }
 
-    @FXML
-    public void heartClicked(){
-
-    }
+    /*@FXML
+    public void heartClicked(ActionEvent event){
+        ((Button) flowPane.lookup("#" + buttonId)).setOnAction(actionEvent -> {
+            System.out.println(((TextField) flowPane.lookup("#" + textfieldId)).getText());;
+        });
+    }*/
 
     /*private static void writeItemsToJson(){
         try{
@@ -117,10 +111,8 @@ public class ItemManager extends Application {
 
         ScrollPane root = new ScrollPane();
         FlowPane flowPane = getItempaneCategory("all");
-        //FlowPane flowPane = getItempaneName("apf");
-        button.setOnAction((ActionEvent) -> {
-            System.out.println("a");
-        });
+        System.out.println(flowPane.getChildren());
+
         flowPane.setBackground(new Background(new BackgroundFill(Color.web("#022235"), CornerRadii.EMPTY, Insets.EMPTY)));
         root.setFitToWidth(true);
         root.setContent(flowPane);
@@ -131,4 +123,6 @@ public class ItemManager extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+    //todo: Klasse die Manuell eine Node mit JavaFX erstellt und dann kann man von dieser Klasse Objekte erstellen
 }
