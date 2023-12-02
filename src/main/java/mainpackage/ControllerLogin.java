@@ -48,7 +48,7 @@ public class ControllerLogin {
     protected void checkbtRegisterClick(ActionEvent event) throws IOException{
 
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
-        sceneSwitcher.switchTo("MainPage.fxml", "Mainpage", 860, 550);
+        sceneSwitcher.switchTo("Register.fxml", "Register", 860, 550);
         log.debug("Register scene has been loaded");
     }
     @FXML
