@@ -38,9 +38,9 @@ public class ControllerRegister {
         if(tbUsername.getText().isBlank() == false && pbPassword.getText().isBlank() == false && pbPasswordcheck.getText().isBlank() == false && tbEmail.getText().isBlank() == false ) {
             if(!pbPassword.getText().equals(pbPasswordcheck.getText())) {
                 lbRegisterfailed.setText("You have to enter the same Password twice!");
-                log.info("Registered successfully");
+                log.info("Registration failed");
             }
-            else{
+            else if (userManager.registerNewUser(tbUsername.getText(), tbEmail.getText(), pbPassword.getText())){
                 Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
                 sceneSwitcher.switchTo("MainPage.fxml", "Mainpage", 860, 550);
                 log.debug("Registered successfully");
@@ -48,7 +48,7 @@ public class ControllerRegister {
         }
         else{
             lbRegisterfailed.setText("Please fill in all fields.");
-            log.debug("Registered successfully");
+            log.debug("Registeration failed");
         }
     }
 
