@@ -13,9 +13,17 @@ import java.util.Arrays;
 public class UserManager {
 
    private User activeUser;
-
+   private static UserManager instance;
 
     private static Logger logger = LogManager.getLogger(UserManager.class);
+
+    public static UserManager getInstance(){
+
+        if(instance == null){
+            instance = new UserManager();
+        }
+        return instance;
+    }
 
      boolean registerNewUser(String username, String userEmail, String userPassword) throws IOException, ParseException {
 

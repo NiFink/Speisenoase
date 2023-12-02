@@ -34,5 +34,11 @@
     "userEmail" : "asdf",
     "password" : "asdf",
     "favourites" : [ ]
+  },
+  "Jana" : {
+    "userName" : "Jana",
+    "userEmail" : "Bärchi123@web.de",
+    "password" : "test",
+    "favourites" : [ ]
   }
 }

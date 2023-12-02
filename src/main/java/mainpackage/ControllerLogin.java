@@ -21,7 +21,7 @@ public class ControllerLogin {
     @FXML
     private PasswordField pbPassword;
 
-    private UserManager userManager = new UserManager();
+    private UserManager userManager = UserManager.getInstance();
     private ControllerMainPage controllerMainPage = new ControllerMainPage();
 
     private static Logger log = LogManager.getLogger(ItemManager.class);
@@ -34,7 +34,7 @@ public class ControllerLogin {
             Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
             sceneSwitcher.switchTo("MainPage.fxml", "Mainpage", 860, 550);
 
-            log.debug("Login succesfully");
+            log.debug("Logged in successfully");
 
         }
         else {

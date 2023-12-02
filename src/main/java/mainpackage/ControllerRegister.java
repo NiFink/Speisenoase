@@ -30,7 +30,7 @@ public class ControllerRegister {
     @FXML
     private PasswordField pbPasswordcheck;
 
-    private UserManager userManager = new UserManager();
+    private UserManager userManager = UserManager.getInstance();
     private static Logger log = LogManager.getLogger(ItemManager.class);
     @FXML
     protected void checkRegisterClick(ActionEvent event) throws IOException, ParseException {
@@ -38,17 +38,17 @@ public class ControllerRegister {
         if(tbUsername.getText().isBlank() == false && pbPassword.getText().isBlank() == false && pbPasswordcheck.getText().isBlank() == false && tbEmail.getText().isBlank() == false ) {
             if(!pbPassword.getText().equals(pbPasswordcheck.getText())) {
                 lbRegisterfailed.setText("You have to enter the same Password twice!");
-                log.info("Register succesfully");
+                log.info("Registered successfully");
             }
             else{
                 Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
                 sceneSwitcher.switchTo("MainPage.fxml", "Mainpage", 860, 550);
-                log.debug("Register succesfully");
+                log.debug("Registered successfully");
             }
         }
         else{
             lbRegisterfailed.setText("Please fill in all fields.");
-            log.debug("Register succesfully");
+            log.debug("Registered successfully");
         }
     }
 

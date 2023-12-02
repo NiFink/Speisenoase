@@ -36,12 +36,18 @@ public class ControllerMainPage {
     private Button btShoppingcart;
 
     private final ItemManager itemManager = new ItemManager();
-    private UserManager userManager = new UserManager();
+    private UserManager userManager;
+
+    public void setUserManager(UserManager userManager) {
+        this.userManager = userManager;
+    }
+
     private static Logger log = LogManager.getLogger(ItemManager.class);
 
     public void initialize(){
         scrollPaneItems.setContent(itemManager.getItempaneCategory("all"));
-        //btProfil.setText(userManager.getActiveUser().getUserName());
+        setUserManager(UserManager.getInstance());
+       btProfil.setText(userManager.getActiveUser().getUserName());
     }
 
     @FXML
