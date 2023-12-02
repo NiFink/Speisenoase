@@ -16,6 +16,12 @@ public class ControllerProfil {
 
     private ControllerMainPage controllerMainPage = new ControllerMainPage();
     private static Logger log = LogManager.getLogger(ItemManager.class);
+    private UserManager userManager;
+
+    public void setUserManager(UserManager userManager) {
+        this.userManager = userManager;
+    }
+
 
 
     @FXML
