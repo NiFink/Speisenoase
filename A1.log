@@ -44,13 +44,9 @@ JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 14 of ty
 JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 14 is returned from temporary List
 JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
 JavaFX Application Thread INFO  mainpackage.ItemManager - List with 15 items was created
-JavaFX Application Thread DEBUG mainpackage.ItemManager - Register scene has been loaded
-JavaFX Application Thread DEBUG mainpackage.UserManager - added  user: 
- name: A
- email: aa
- password: a
- favourite Items: []
- successfully
+JavaFX Application Thread INFO  mainpackage.ItemManager - List with 15 Stackpanes of Items was created
+JavaFX Application Thread DEBUG mainpackage.UserManager - successfully logged in as asdf
+JavaFX Application Thread INFO  mainpackage.ItemManager - User: asdfhas logged in
 JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 0 of type: GROCERY is being created
 JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 0 is returned from temporary List
 JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
@@ -97,4 +93,5 @@ JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 14 of ty
 JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 14 is returned from temporary List
 JavaFX Application Thread DEBUG itempackage.Grocery - ObjectMapper read itemData.json file and creates temporary List
 JavaFX Application Thread INFO  mainpackage.ItemManager - List with 15 items was created
-JavaFX Application Thread DEBUG mainpackage.ItemManager - Registered successfully
+JavaFX Application Thread INFO  mainpackage.ItemManager - List with 15 Stackpanes of Items was created
+JavaFX Application Thread DEBUG mainpackage.ItemManager - Logged in successfully

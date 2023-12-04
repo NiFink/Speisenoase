@@ -30,12 +30,12 @@ public class ControllerRegister {
     @FXML
     private PasswordField pbPasswordcheck;
 
-    private UserManager userManager = UserManager.getInstance();
-    private static Logger log = LogManager.getLogger(ItemManager.class);
+    private final UserManager userManager = UserManager.getInstance();
+    private static final Logger log = LogManager.getLogger(ItemManager.class);
     @FXML
     protected void checkRegisterClick(ActionEvent event) throws IOException, ParseException {
 
-        if(tbUsername.getText().isBlank() == false && pbPassword.getText().isBlank() == false && pbPasswordcheck.getText().isBlank() == false && tbEmail.getText().isBlank() == false ) {
+        if(!tbUsername.getText().isBlank() && !pbPassword.getText().isBlank() && !pbPasswordcheck.getText().isBlank() && !tbEmail.getText().isBlank()) {
             if(!pbPassword.getText().equals(pbPasswordcheck.getText())) {
                 lbRegisterfailed.setText("You have to enter the same Password twice!");
                 log.info("Registration failed");

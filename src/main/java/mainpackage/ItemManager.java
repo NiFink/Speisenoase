@@ -52,7 +52,7 @@ public class ItemManager extends Application {
         fxmlLoader.setController(this);
         Parent parent = fxmlLoader.load();
 
-        Item currentItem = (Item) list.get(id);
+        Item currentItem = list.get(id);
         labelName.setText(currentItem.getName());
         labelPrice.setText(String.format("%,.2f", currentItem.getPrice()) + "€");
         Image newItemImage = new Image(Objects.requireNonNull(getClass().getResource("/images/groceries/" + currentItem.getName() + ".png")).openStream());
@@ -65,7 +65,7 @@ public class ItemManager extends Application {
         try {
             FlowPane flowPane = new FlowPane();
             for(int i = 0; i < items.size(); i++){
-                if(category.toLowerCase().equals("all") || items.get(i).getCategory().toLowerCase().equals(category)){
+                if(category.equalsIgnoreCase("all") || items.get(i).getCategory().toLowerCase().equals(category)){
                     flowPane.getChildren().add(getItemNode(items, i));
                 }
             }

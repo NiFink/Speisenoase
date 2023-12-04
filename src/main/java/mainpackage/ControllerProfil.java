@@ -14,8 +14,8 @@ import java.io.IOException;
 public class ControllerProfil {
 
 
-    private ControllerMainPage controllerMainPage = new ControllerMainPage();
-    private static Logger log = LogManager.getLogger(ItemManager.class);
+    private final ControllerMainPage controllerMainPage = new ControllerMainPage();
+    private static final Logger log = LogManager.getLogger(ItemManager.class);
     private UserManager userManager;
 
     public void setUserManager(UserManager userManager) {

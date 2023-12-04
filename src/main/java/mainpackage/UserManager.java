@@ -15,7 +15,7 @@ public class UserManager {
    private User activeUser;
    private static UserManager instance;
 
-    private static Logger logger = LogManager.getLogger(UserManager.class);
+    private static final Logger logger = LogManager.getLogger(UserManager.class);
 
     public static UserManager getInstance(){
 
@@ -48,7 +48,7 @@ public class UserManager {
              //writing new data node to json file:
              PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
              objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
-             logger.debug("added " + user.toString() + "\n successfully");
+             logger.debug("added " + user + "\n successfully");
              setActiveUser(user);
              return true;
 
@@ -67,7 +67,7 @@ public class UserManager {
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        JsonNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/json/userData.json"));
+        JsonNode userData = objectMapper.readTree(new File("src/main/resources/json/userData.json"));
         try{
             JsonNode userNode = userData.get(username);
             User user = objectMapper.treeToValue(userNode, User.class);
@@ -108,7 +108,7 @@ public class UserManager {
 
             if(newUser.getUserName() == oldUser.getUserName() || userData.get(newUser.getUserName()) == null) {
 
-                userData.set(newUser.getUserName(), (JsonNode) objectMapper.valueToTree(newUser));
+                userData.set(newUser.getUserName(), objectMapper.valueToTree(newUser));
 
                 // if updating username:
                 if (newUser.getUserName() != oldUser.getUserName()) {
@@ -191,7 +191,7 @@ public class UserManager {
          JsonNode updatedUserData = userData;
          PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
          objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
-         logger.debug("successfully deleted: " + user.toString());
+         logger.debug("successfully deleted: " + user);
     }
 
 

@@ -14,7 +14,7 @@ import java.util.Objects;
 
 public class Main extends Application {
 
-    private static Logger log = LogManager.getLogger(ItemManager.class);
+    private static final Logger log = LogManager.getLogger(ItemManager.class);
     private static Stage stage;
 
     @Override

@@ -21,15 +21,15 @@ public class ControllerLogin {
     @FXML
     private PasswordField pbPassword;
 
-    private UserManager userManager = UserManager.getInstance();
-    private ControllerMainPage controllerMainPage = new ControllerMainPage();
+    private final UserManager userManager = UserManager.getInstance();
+    private final ControllerMainPage controllerMainPage = new ControllerMainPage();
 
-    private static Logger log = LogManager.getLogger(ItemManager.class);
+    private static final Logger log = LogManager.getLogger(ItemManager.class);
     @FXML
     protected void checkbtLoginClick(ActionEvent event) throws IOException {
         //TODO: If abfrage, ob das Passwort mit der Datenbank eintrag überein stimmt
 
-        if(tbUsername.getText().isBlank() == false && pbPassword.getText().isBlank() == false && userManager.userLoginCheck(tbUsername.getText(), pbPassword.getText())){
+        if(!tbUsername.getText().isBlank() && !pbPassword.getText().isBlank() && userManager.userLoginCheck(tbUsername.getText(), pbPassword.getText())){
             log.info("User: " + tbUsername.getText() + "has logged in");
             Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
             sceneSwitcher.switchTo("MainPage.fxml", "Mainpage", 860, 550);

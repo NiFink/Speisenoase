@@ -19,7 +19,7 @@ class Grocery implements Item{
     private boolean favourite;
     private String description;
 
-    private static Logger log = LogManager.getLogger(Grocery.class);
+    private static final Logger log = LogManager.getLogger(Grocery.class);
     ObjectMapper objectMapper = new ObjectMapper();
 
     Grocery createGrocery(int id) {
