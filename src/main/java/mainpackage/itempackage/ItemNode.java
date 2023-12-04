@@ -5,44 +5,33 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import mainpackage.itempackage.Item;
 
 import java.io.IOException;
 import java.util.Objects;
 
-public class ItemNode extends Application {
+public class ItemNode {
 
-    public static void main(String[] args) {
-        launch(args);
-    }
-
-    @Override
-    public void start(Stage primaryStage) {
-        StackPane sp = createPane(ItemFactory.createItem(ItemType.GROCERY, 0));
-        StackPane sp2 = createPane(ItemFactory.createItem(ItemType.GROCERY, 1));
-        FlowPane root = new FlowPane(sp, sp2);
-
-        Scene scene = new Scene(root, 376, 240);
-
-        primaryStage.setTitle("JavaFX Example");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
+    private int amountInCart = 0;
     private final StackPane itemNode;
 
-    public ItemNode (Item item) {
+    public ItemNode(Item item) {
         this.itemNode = createPane(item);
     }
 
-    public StackPane getItemNode(){
+    public StackPane getItemNode() {
         return itemNode;
     }
 
@@ -64,13 +53,11 @@ public class ItemNode extends Application {
 
         AnchorPane topAnchorPane = new AnchorPane();
         Label labelName = new Label(item.getName());
-        labelName.setStyle("-fx-font-size:20");
-        labelName.setFont(new javafx.scene.text.Font("System Bold", 16));
+        labelName.setFont(Font.font("Yu Gothic UI", FontWeight.BOLD, FontPosture.REGULAR, 20));
         labelName.setTranslateY(10);
 
         Label labelPrice = new Label(String.format("%,.2f", item.getPrice()) + "€");
-        labelPrice.setStyle("-fx-font-size:15");
-        labelPrice.setFont(new javafx.scene.text.Font("System Bold", 16));
+        labelPrice.setFont(Font.font("Yu Gothic UI", FontWeight.MEDIUM, FontPosture.REGULAR, 15));
         labelPrice.setTranslateY(15);
 
         topAnchorPane.getChildren().addAll(labelName, labelPrice);
@@ -85,7 +72,7 @@ public class ItemNode extends Application {
             imgViewItem.setFitHeight(130);
             imgViewItem.setFitWidth(130);
 
-        } catch (IOException ioe){
+        } catch (IOException ioe) {
             ioe.getMessage();
         }
         innerPane.setCenter(imgViewItem);
@@ -98,23 +85,65 @@ public class ItemNode extends Application {
             imgHeartView.setFitHeight(30);
             imgHeartView.setFitWidth(30);
             imgHeartView.setLayoutX(16);
-        } catch (IOException ioe){
+        } catch (IOException ioe) {
             ioe.getMessage();
         }
 
+        ImageView finalImgHeartView = imgHeartView;
+        finalImgHeartView.setOnMouseEntered(e -> {
+            try {
+                finalImgHeartView.setImage(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-silhouette.png")).openStream()));
+            } catch (IOException ioe) {
+                ioe.getMessage();
+            }
+        });
 
-        TextField tfValue = new TextField();
-        tfValue.setPrefHeight(30);
-        tfValue.setPrefWidth(50);
+        finalImgHeartView.setOnMouseExited(e -> {
+            // Change image on exit
+            try {
+                if (!item.getFavourite()) {
+                    finalImgHeartView.setImage(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-umriss.png")).openStream()));
+                } else {
+                    finalImgHeartView.setImage(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-silhouette.png")).openStream()));
+                }
+            } catch (IOException ioe) {
+                ioe.getMessage();
+            }
+        });
+
+        finalImgHeartView.setOnMouseClicked(e -> {
+            try {
+                if (item.getFavourite()) {
+                    finalImgHeartView.setImage(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-umriss.png")).openStream()));
+                } else {
+                    finalImgHeartView.setImage(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-silhouette.png")).openStream()));
+                }
+            } catch (IOException ioe) {
+                ioe.getMessage();
+            }
+            item.setFavourite(!item.getFavourite());
+            System.out.println("Fav: " + item.getFavourite());
+        });
+
+        Spinner<Integer> spinner = new Spinner<Integer>(0, 9, 1);
+        //spinner.setStyle("-fx-base: #022235");
+        spinner.setPrefHeight(30);
+        spinner.setPrefWidth(50);
 
         Button button = new Button("Buy");
+        button.setFont(Font.font("Yu Gothic UI", FontWeight.BOLD, FontPosture.REGULAR, 12));;
+        button.setStyle("-fx-background-color: #022235; -fx-text-fill: white;");
         button.setPrefHeight(30);
         button.setPrefWidth(40);
+        button.setOnAction(actionEvent -> {
+            amountInCart += spinner.getValue();
+            System.out.println(amountInCart + " " + item.getName() + " currently in shopping cart!");
+        });
 
-        HBox hbox = new HBox(tfValue, button);
+        HBox hbox = new HBox(spinner, button);
         AnchorPane.setRightAnchor(hbox, 10.0);
 
-        bottomAnchorPane.getChildren().addAll(imgHeartView, hbox);
+        bottomAnchorPane.getChildren().addAll(finalImgHeartView, hbox);
         bottomAnchorPane.setTranslateY(-10.0);
 
         innerPane.setBottom(bottomAnchorPane);

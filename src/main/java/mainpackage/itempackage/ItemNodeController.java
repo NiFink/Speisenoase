@@ -1,7 +1,8 @@
 package mainpackage.itempackage;
 
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.StackPane;
+import javafx.geometry.Insets;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import mainpackage.ItemManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,6 +14,7 @@ import java.util.List;
 public class ItemNodeController {
 
     private ArrayList<Item> items = getItems(15);
+    //private ArrayList<StackPane> favItems = getFavorites();
     private ArrayList<StackPane> itemNodes = getItemNodes(items);
     private static final Logger log = LogManager.getLogger(ItemManager.class);
 
@@ -34,6 +36,15 @@ public class ItemNodeController {
         return itemNodes;
     }
 
+    /*public ArrayList<StackPane> getFavorites() {
+        favItems = new ArrayList<>();
+        for (int i = 0; i < items.size(); i++) {
+
+        }
+        log.info("List with " + items.size() + " items was created");
+        return favItems;
+    }*/
+
     public FlowPane getItempaneCategory(String category) {
         FlowPane flowPane = new FlowPane();
         for (int i = 0; i < items.size(); i++) {
@@ -41,6 +52,7 @@ public class ItemNodeController {
                 flowPane.getChildren().add(itemNodes.get(i));
             }
         }
+        flowPane.setStyle("-fx-background-color:  #022235");
         return flowPane;
     }
 

@@ -49,7 +49,7 @@
         </AnchorPane>
     </top>
    <center>
-      <ScrollPane fx:id="scrollPaneItems" fitToWidth="true" prefHeight="465.0" prefWidth="716.0" style="-fx-background-color: #D2D9BF;" BorderPane.alignment="CENTER">
+      <ScrollPane fx:id="scrollPaneItems" fitToWidth="true" prefHeight="465.0" prefWidth="716.0" style="-fx-background-color: #022235;" BorderPane.alignment="CENTER">
         <content>
         </content>
       </ScrollPane>
