@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 
 public class Sceneswitcher {
-    private static final Logger log = LogManager.getLogger(ItemManager.class);
+    private static final Logger log = LogManager.getLogger(Sceneswitcher.class);
 
     private static Sceneswitcher instance;
 

@@ -15,7 +15,7 @@ public class ControllerProfil {
 
 
     private final ControllerMainPage controllerMainPage = new ControllerMainPage();
-    private static final Logger log = LogManager.getLogger(ItemManager.class);
+    private static final Logger log = LogManager.getLogger(ControllerProfil.class);
     private UserManager userManager;
 
     public void setUserManager(UserManager userManager) {

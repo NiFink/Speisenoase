@@ -1,25 +1,16 @@
 package mainpackage;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-import mainpackage.itempackage.ItemNodeController;
+import mainpackage.itempackage.ItemManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ControllerMainPage {
+public class ControllerMainPage{
 
     @FXML
     private ScrollPane scrollPaneItems;
@@ -35,54 +26,54 @@ public class ControllerMainPage {
     private Button btProfil;
     @FXML
     private Button btShoppingcart;
-    private final ItemNodeController itemNodeController = new ItemNodeController();
+    private final ItemManager itemController = new ItemManager();
     private UserManager userManager;
 
     public void setUserManager(UserManager userManager) {
         this.userManager = userManager;
     }
 
-    private static final Logger log = LogManager.getLogger(ItemManager.class);
+    private static final Logger log = LogManager.getLogger(ControllerMainPage.class);
 
     public void initialize() {
-        scrollPaneItems.setContent(itemNodeController.getItempaneCategory("all"));
+        scrollPaneItems.setContent(itemController.getItempaneCategory("all"));
         setUserManager(UserManager.getInstance());
         btProfil.setText(userManager.getActiveUser().getUserName());
     }
 
     @FXML
     protected void search() {
-        scrollPaneItems.setContent(itemNodeController.getItempaneName(tbSearch.getText().toLowerCase()));
+        scrollPaneItems.setContent(itemController.getItempaneName(tbSearch.getText().toLowerCase()));
     }
 
     @FXML
     protected void checkBtVegetablesClick(ActionEvent event) {
-        scrollPaneItems.setContent(itemNodeController.getItempaneCategory("vegetable"));
+        scrollPaneItems.setContent(itemController.getItempaneCategory("vegetable"));
     }
 
     @FXML
     protected void checkBtFruitClick(ActionEvent event) {
-        scrollPaneItems.setContent(itemNodeController.getItempaneCategory("fruit"));
+        scrollPaneItems.setContent(itemController.getItempaneCategory("fruit"));
     }
 
     @FXML
     protected void checkBtSweetiesClick(ActionEvent event) {
-        scrollPaneItems.setContent(itemNodeController.getItempaneCategory("sweets"));
+        scrollPaneItems.setContent(itemController.getItempaneCategory("sweets"));
     }
 
     @FXML
     public void checkBtBakeryClick(ActionEvent actionEvent) {
-        scrollPaneItems.setContent(itemNodeController.getItempaneCategory("bakery"));
+        scrollPaneItems.setContent(itemController.getItempaneCategory("bakery"));
     }
 
     @FXML
     protected void checkBtLiquirClick(ActionEvent event) {
-        scrollPaneItems.setContent(itemNodeController.getItempaneCategory("beverage"));
+        scrollPaneItems.setContent(itemController.getItempaneCategory("beverage"));
     }
 
     @FXML
     public void checkBtTagClick(ActionEvent actionEvent) {
-        scrollPaneItems.setContent(itemNodeController.getItempaneCategory("all"));
+        scrollPaneItems.setContent(itemController.getItempaneFavs());
     }
 
     @FXML
@@ -110,13 +101,12 @@ public class ControllerMainPage {
 
     @FXML
     protected void checkBtHomeClick(MouseEvent event) {
-        scrollPaneItems.setContent(itemNodeController.getItempaneCategory("all"));
+        scrollPaneItems.setContent(itemController.getItempaneCategory("all"));
     }
 
     @FXML
     protected void checkExitClick(ActionEvent event) {
         System.exit(0);
     }
-
 
 }

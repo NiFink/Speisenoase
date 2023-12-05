@@ -17,13 +17,17 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import mainpackage.UserManager;
 import mainpackage.itempackage.Item;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class ItemNode {
 
+    private boolean favorite = false;
     private int amountInCart = 0;
     private final StackPane itemNode;
 
@@ -69,8 +73,8 @@ public class ItemNode {
         ImageView imgViewItem = null;
         try {
             imgViewItem = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/images/groceries/" + item.getName() + ".png")).openStream()));
-            imgViewItem.setFitHeight(130);
-            imgViewItem.setFitWidth(130);
+            imgViewItem.setFitHeight(160);
+            imgViewItem.setFitWidth(160);
 
         } catch (IOException ioe) {
             ioe.getMessage();
@@ -101,7 +105,7 @@ public class ItemNode {
         finalImgHeartView.setOnMouseExited(e -> {
             // Change image on exit
             try {
-                if (!item.getFavourite()) {
+                if (!favorite) {
                     finalImgHeartView.setImage(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-umriss.png")).openStream()));
                 } else {
                     finalImgHeartView.setImage(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-silhouette.png")).openStream()));
@@ -113,16 +117,18 @@ public class ItemNode {
 
         finalImgHeartView.setOnMouseClicked(e -> {
             try {
-                if (item.getFavourite()) {
+                if (favorite) {
                     finalImgHeartView.setImage(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-umriss.png")).openStream()));
+                    favorite = false;
+                    System.out.println("Entfavorisiert: " + item.getName());
                 } else {
                     finalImgHeartView.setImage(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-silhouette.png")).openStream()));
+                    favorite = true;
+                    System.out.println("Favorisiert: " + item.getName());
                 }
             } catch (IOException ioe) {
                 ioe.getMessage();
             }
-            item.setFavourite(!item.getFavourite());
-            System.out.println("Fav: " + item.getFavourite());
         });
 
         Spinner<Integer> spinner = new Spinner<Integer>(0, 9, 1);
@@ -151,5 +157,13 @@ public class ItemNode {
         pane.getChildren().addAll(border, innerPane);
 
         return pane;
+    }
+
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public int getAmountInCart() {
+        return amountInCart;
     }
 }

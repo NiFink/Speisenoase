@@ -31,7 +31,7 @@ public class ControllerRegister {
     private PasswordField pbPasswordcheck;
 
     private final UserManager userManager = UserManager.getInstance();
-    private static final Logger log = LogManager.getLogger(ItemManager.class);
+    private static final Logger log = LogManager.getLogger(ControllerRegister.class);
     @FXML
     protected void checkRegisterClick(ActionEvent event) throws IOException, ParseException {
 

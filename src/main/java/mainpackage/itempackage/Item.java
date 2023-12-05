@@ -11,8 +11,6 @@ public interface Item {
     void setCategory(String category);
     long getAvailable();
     void setAvailable(long available);
-    boolean getFavourite();
-    void setFavourite(boolean favourite);
     String getDescription();
     void setDescription(String description);
     String toString();

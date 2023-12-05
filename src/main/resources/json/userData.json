@@ -40,5 +40,11 @@
     "userEmail" : "Bärchi123@web.de",
     "password" : "test",
     "favourites" : [ ]
+  },
+  "aa" : {
+    "userName" : "aa",
+    "userEmail" : "a",
+    "password" : "a",
+    "favourites" : [ ]
   }
 }

@@ -24,7 +24,7 @@ public class ControllerLogin {
     private final UserManager userManager = UserManager.getInstance();
     private final ControllerMainPage controllerMainPage = new ControllerMainPage();
 
-    private static final Logger log = LogManager.getLogger(ItemManager.class);
+    private static final Logger log = LogManager.getLogger(ControllerLogin.class);
     @FXML
     protected void checkbtLoginClick(ActionEvent event) throws IOException {
         //TODO: If abfrage, ob das Passwort mit der Datenbank eintrag überein stimmt

@@ -16,7 +16,6 @@ class Grocery implements Item{
     private double price;
     private String category;
     private long available;
-    private boolean favourite;
     private String description;
 
     private static final Logger log = LogManager.getLogger(Grocery.class);
@@ -75,14 +74,6 @@ class Grocery implements Item{
         this.available = available;
     }
 
-    public boolean getFavourite() {
-        return favourite;
-    }
-
-    public void setFavourite(boolean favourite) {
-        this.favourite = favourite;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -99,7 +90,6 @@ class Grocery implements Item{
                 ",\n price=" + price +
                 ",\n category=" + category +
                 ",\n available=" + available +
-                ",\n favourite=" + favourite +
                 ",\n description='" + description +
                 ",\n}";
     }

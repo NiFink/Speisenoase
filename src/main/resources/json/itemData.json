@@ -4,7 +4,6 @@
   "price" : 0.6,
   "category" : "fruit",
   "available" : 4,
-  "favourite" : false,
   "description" : "Rund 31 kg Äpfel, umgerechnet ungefähr 200 Stück, genießt jeder Verbraucher im Durchschnitt pro Jahr."
 }, {
   "id" : 1,
@@ -12,7 +11,6 @@
   "price" : 0.4,
   "category" : "fruit",
   "available" : 5,
-  "favourite" : false,
   "description" : "Sie werden auf besonderen Bananenschiffen in die Verbraucherländer transportiert."
 }, {
   "id" : 2,
@@ -20,7 +18,6 @@
   "price" : 2.39,
   "category" : "fruit",
   "available" : 5,
-  "favourite" : false,
   "description" : "Tafeltrauben sind für den Frischverzehr angebaute Sorten, die möglichst kernarm sind."
 }, {
   "id" : 3,
@@ -28,7 +25,6 @@
   "price" : 1.39,
   "category" : "vegetable",
   "available" : 5,
-  "favourite" : false,
   "description" : "Die Früchte sind etwa 30-40 cm lang, schlank und an den Enden verjüngt."
 }, {
   "id" : 4,
@@ -36,7 +32,6 @@
   "price" : 1.25,
   "category" : "vegetable",
   "available" : 5,
-  "favourite" : false,
   "description" : "Gemüsepaprika gehören zu den süßen und milden Paprika und sind Nachtschattengewächse."
 }, {
   "id" : 5,
@@ -44,7 +39,6 @@
   "price" : 1.89,
   "category" : "vegetable",
   "available" : 5,
-  "favourite" : false,
   "description" : "Cherry-/Cocktailtomaten sind etwa 2 cm groß und haben ein Gewicht um die 40g."
 }, {
   "id" : 6,
@@ -52,7 +46,6 @@
   "price" : 3.79,
   "category" : "bakery",
   "available" : 5,
-  "favourite" : false,
   "description" : "Ist halt Brot."
 }, {
   "id" : 7,
@@ -60,7 +53,6 @@
   "price" : 0.85,
   "category" : "bakery",
   "available" : 5,
-  "favourite" : false,
   "description" : "Naturland Getreide aus kontrolliert biologischem Anbau."
 }, {
   "id" : 8,
@@ -68,7 +60,6 @@
   "price" : 2.09,
   "category" : "bakery",
   "available" : 5,
-  "favourite" : false,
   "description" : "Ihre Rillen sind ideal, um aus jeder Art Sauce etwas Besonderes zu machen."
 }, {
   "id" : 9,
@@ -76,7 +67,6 @@
   "price" : 2.59,
   "category" : "sweets",
   "available" : 5,
-  "favourite" : false,
   "description" : "Feine Milchcreme umhüllt von zartschmelzender Vollmichschokolade."
 }, {
   "id" : 10,
@@ -84,7 +74,6 @@
   "price" : 2.59,
   "category" : "sweets",
   "available" : 5,
-  "favourite" : false,
   "description" : "Die wahrscheinlich längste Praline der Welt."
 }, {
   "id" : 11,
@@ -92,15 +81,13 @@
   "price" : 2.59,
   "category" : "sweets",
   "available" : 5,
-  "favourite" : false,
   "description" : "Der klassische, würzige Lebkuchen. Steht gefühlt im Sommer schon im Regal."
 }, {
   "id" : 12,
   "name" : "Water",
-  "price" : 3.90,
+  "price" : 3.9,
   "category" : "beverage",
   "available" : 5,
-  "favourite" : false,
   "description" : "Durch Vulkanstein gefiltert (eigentlich nicht aber klingt cool)."
 }, {
   "id" : 13,
@@ -108,7 +95,6 @@
   "price" : 4.99,
   "category" : "beverage",
   "available" : 5,
-  "favourite" : false,
   "description" : "Bitte ein Bit."
 }, {
   "id" : 14,
@@ -116,6 +102,5 @@
   "price" : 1.29,
   "category" : "beverage",
   "available" : 5,
-  "favourite" : false,
   "description" : "Fruchtig frischer Genuss. 100% Fruchtgehalt."
 } ]
