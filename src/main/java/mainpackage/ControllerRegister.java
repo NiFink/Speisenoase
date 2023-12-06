@@ -17,6 +17,8 @@ import org.apache.logging.log4j.Logger;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ControllerRegister {
     @FXML
@@ -38,7 +40,11 @@ public class ControllerRegister {
         if(!tbUsername.getText().isBlank() && !pbPassword.getText().isBlank() && !pbPasswordcheck.getText().isBlank() && !tbEmail.getText().isBlank()) {
             if(!pbPassword.getText().equals(pbPasswordcheck.getText())) {
                 lbRegisterfailed.setText("You have to enter the same Password twice!");
-                log.info("Registration failed");
+                log.warn("Registration failed, unequaled passwords");
+            }
+            else if(!isEmailValid(tbEmail.getText())){
+                lbRegisterfailed.setText("You have to enter a correct format of email");
+                log.warn("Registration failed, false email format");
             }
             else if (userManager.registerNewUser(tbUsername.getText(), tbEmail.getText(), pbPassword.getText())){
                 Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
@@ -48,7 +54,7 @@ public class ControllerRegister {
         }
         else{
             lbRegisterfailed.setText("Please fill in all fields.");
-            log.debug("Registeration failed");
+            log.warn("Registeration failed, not all fields are filled");
         }
     }
 
@@ -64,7 +70,10 @@ public class ControllerRegister {
         System.exit(0);
     }
 
-    private void valideRegister(){
-
+    private boolean isEmailValid(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 }

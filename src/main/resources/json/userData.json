@@ -46,5 +46,11 @@
     "userEmail" : "a",
     "password" : "a",
     "favourites" : [ ]
+  },
+  "Testuser1" : {
+    "userName" : "Testuser1",
+    "userEmail" : "hahah@e.ea",
+    "password" : "asdf",
+    "favourites" : [ ]
   }
 }

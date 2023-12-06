@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 
 public class Sceneswitcher {
+
     private static final Logger log = LogManager.getLogger(Sceneswitcher.class);
 
     private static Sceneswitcher instance;
@@ -38,9 +39,15 @@ public class Sceneswitcher {
 
             stage.setTitle(title);
             stage.setScene(scene);
+
+            log.debug(fxmlFileName + ": loaded successfully");
+
             stage.show();
         } catch (IOException e) {
-            e.printStackTrace(); // Handle the exception appropriately
+
+            log.error(fxmlFileName + ": couldn't be loaded");
+
+            e.printStackTrace();
         }
     }
 }
