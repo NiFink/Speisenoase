@@ -1,45 +1,31 @@
 package mainpackage.itempackage;
 
-import javafx.application.Application;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
-import javafx.stage.Stage;
-import mainpackage.UserManager;
-import mainpackage.itempackage.Item;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Objects;
 
 public class ItemNode {
 
     private boolean favorite = false;
     private int amountInCart = 0;
-    private final StackPane itemNode;
+    private StackPane itemPane;
 
     public ItemNode(Item item) {
-        this.itemNode = createPane(item);
+        createPane(item);
     }
 
-    public StackPane getItemNode() {
-        return itemNode;
-    }
-
-    public StackPane createPane(Item item) {
+    private void createPane(Item item) {
         StackPane pane = new StackPane();
 
         Rectangle border = new Rectangle(183, 235);
@@ -156,13 +142,15 @@ public class ItemNode {
 
         pane.getChildren().addAll(border, innerPane);
 
-        return pane;
+        itemPane = pane;
     }
 
+    public StackPane getItemPane() {
+        return itemPane;
+    }
     public boolean isFavorite() {
         return favorite;
     }
-
     public int getAmountInCart() {
         return amountInCart;
     }

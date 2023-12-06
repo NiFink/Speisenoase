@@ -66,7 +66,7 @@ public class ControllerMainPage{
 
     @FXML
     public void checkBtTagClick(ActionEvent actionEvent) {
-        scrollPaneItems.setContent(itemController.getItempaneFavs());
+        scrollPaneItems.setContent(itemController.getItempaneCategory("favs"));
     }
 
     @FXML
