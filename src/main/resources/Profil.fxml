@@ -34,7 +34,7 @@
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/icons/zuhause_Blau.png" />
+                        <Image url="@images/icons/Pfeil_Links_Blau.png" />
                      </image>
                   </ImageView>
                </graphic>
