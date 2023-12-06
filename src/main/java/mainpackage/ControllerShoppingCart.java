@@ -34,7 +34,7 @@ public class ControllerShoppingCart {
     }
 
     @FXML
-    protected void checkBtBackClick(MouseEvent event) {
+    protected void checkBtBackClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("MainPage.fxml", "MainPage", 860, 550);
     }
