@@ -1,6 +1,7 @@
 package mainpackage;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -17,15 +18,7 @@ public class ControllerMainPage{
     @FXML
     private TextField tbSearch;
     @FXML
-    private Button btVegetables;
-    @FXML
-    private Button btFruit;
-    @FXML
-    private Button btSweeties;
-    @FXML
     private Button btProfil;
-    @FXML
-    private Button btShoppingcart;
     private final ItemManager itemController = new ItemManager();
     private UserManager userManager;
 
@@ -77,31 +70,20 @@ public class ControllerMainPage{
     }
 
     @FXML
-    protected void checkBtProfilClick(ActionEvent event) {
+    protected void checkBtProfilClick(Event event) {
 
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("Profil.fxml", "Profil", 860, 550);
-        /*
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("Profil.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 860, 550);
-            Stage stage = Main.getStage();
-            stage.setTitle("Profil");
-            stage.setResizable(true);
-            stage.setScene(scene);
-            stage.show();
-        }
-        catch (Exception e){
-            e.getMessage();
-        }
-
-         */
-
     }
 
     @FXML
-    protected void checkBtHomeClick(MouseEvent event) {
+    protected void checkBtHomeClick() {
         scrollPaneItems.setContent(itemController.getItempaneCategory("all"));
+    }
+    @FXML
+    protected void checkBtShoppingCartClick() {
+        Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
+        sceneSwitcher.switchTo("ShoppingCart.fxml", "ShoppingCart", 860, 550);
     }
 
     @FXML
