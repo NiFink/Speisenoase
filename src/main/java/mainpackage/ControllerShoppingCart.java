@@ -23,7 +23,7 @@ public class ControllerShoppingCart {
     public void initialize() {
         setUserManager(UserManager.getInstance());
         btProfil.setText(userManager.getActiveUser().getUserName());
-        spItems.setContent(itemController.getItempaneFavs());
+        spItems.setContent(itemController.getItempaneCategory("favs"));
     }
     @FXML
     protected void checkBtProfilClick(ActionEvent event) {
