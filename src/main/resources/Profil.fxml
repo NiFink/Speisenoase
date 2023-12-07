@@ -19,7 +19,7 @@
                   <Image url="@images/other/Logo_ohne_Text.png" />
                </image>
             </ImageView>
-            <Label layoutX="61.0" layoutY="52.0" prefHeight="40.0" prefWidth="479.0" style="-fx-background-color: #022235;" text="Username" textFill="WHITE">
+            <Label layoutX="62.0" layoutY="49.0" prefHeight="40.0" prefWidth="479.0" style="-fx-background-color: #022235;" text="Username" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

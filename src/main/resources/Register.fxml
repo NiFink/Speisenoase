@@ -32,41 +32,41 @@
     <left>
         <AnchorPane prefHeight="454.0" prefWidth="378.0" BorderPane.alignment="CENTER">
             <children>
-                <PasswordField fx:id="pbPassword" layoutX="58.0" layoutY="228.0" prefHeight="17.0" prefWidth="174.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #022235; -fx-border-width: 0px 0px 2px 0px;">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </PasswordField>
-                <Button fx:id="btBack" layoutX="166.0" layoutY="360.0" mnemonicParsing="false" onAction="#checkBackClick" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #01212E;" text="Back" textFill="WHITE">
-                    <font>
-                        <Font size="15.0" />
-                    </font>
-                </Button>
-                <TextField fx:id="tbUsername" layoutX="57.0" layoutY="130.0" prefHeight="27.0" prefWidth="177.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #022235; -fx-border-width: 0px 0px 2px 0px;">
-               <font>
-                  <Font size="14.0" />
-               </font>
-                </TextField>
-                <Button fx:id="btRegister" layoutX="57.0" layoutY="360.0" mnemonicParsing="false" onAction="#checkRegisterClick" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #022235;" text="Register" textFill="WHITE">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </Button>
                 <Label layoutX="67.0" layoutY="41.0" prefHeight="58.0" prefWidth="158.0" text="Register" textFill="#022235">
                     <font>
                         <Font name="Yu Gothic UI Bold" size="40.0" />
                     </font>
                 </Label>
+                <TextField fx:id="tbUsername" layoutX="57.0" layoutY="130.0" prefHeight="27.0" prefWidth="177.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #022235; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+                </TextField>
             <TextField fx:id="tbEmail" layoutX="57.0" layoutY="173.0" prefHeight="27.0" prefWidth="177.0" promptText="Emaill" style="-fx-background-color: transparent; -fx-border-color: #022235; -fx-border-width: 0px 0px 2px 0px;">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
+                <PasswordField fx:id="pbPassword" layoutX="58.0" layoutY="228.0" prefHeight="17.0" prefWidth="174.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #022235; -fx-border-width: 0px 0px 2px 0px;">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </PasswordField>
             <PasswordField fx:id="pbPasswordcheck" layoutX="57.0" layoutY="272.0" prefHeight="17.0" prefWidth="174.0" promptText="Password check" style="-fx-background-color: transparent; -fx-border-color: #022235; -fx-border-width: 0px 0px 2px 0px;">
                <font>
                   <Font size="14.0" />
                </font>
             </PasswordField>
+                <Button fx:id="btRegister" layoutX="57.0" layoutY="360.0" mnemonicParsing="false" onAction="#checkRegisterClick" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #022235;" text="Register" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btBack" layoutX="166.0" layoutY="360.0" mnemonicParsing="false" onAction="#checkBackClick" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #01212E;" text="Back" textFill="WHITE">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
             <Label fx:id="lbRegisterfailed" layoutX="57.0" layoutY="312.0" prefHeight="39.0" prefWidth="174.0" textFill="#01212e" wrapText="true" />
             </children>
         </AnchorPane>
