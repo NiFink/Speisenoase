@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -19,11 +23,162 @@
                   <Image url="@images/other/Logo_ohne_Text.png" />
                </image>
             </ImageView>
-            <Label layoutX="62.0" layoutY="49.0" prefHeight="40.0" prefWidth="479.0" style="-fx-background-color: #022235;" text="Username" textFill="WHITE">
+            <Label fx:id="lbUsername" alignment="BOTTOM_CENTER" layoutX="152.0" layoutY="31.0" prefHeight="58.0" prefWidth="479.0" text="Username" textFill="#022235">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="42.0" />
                </font>
             </Label>
+            <Label fx:id="lbUserEmail" alignment="TOP_CENTER" layoutX="250.0" layoutY="82.0" prefHeight="17.0" prefWidth="284.0" text="user-email" textFill="#022235">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <StackPane layoutX="81.0" layoutY="129.0" prefHeight="288.0" prefWidth="622.0">
+               <children>
+                  <VBox prefHeight="299.0" prefWidth="620.0" spacing="15.0">
+                     <children>
+                        <Label prefHeight="30.0" prefWidth="637.0" style="-fx-background-color: #022235;" text="manage user data:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="267.0" prefWidth="620.0" spacing="4.0">
+                           <children>
+                              <Label text="username:" textFill="#022235">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="620.0" spacing="30.0">
+                                 <children>
+                                    <TextField fx:id="tbUsername" prefHeight="25.0" prefWidth="369.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </TextField>
+                                    <Button fx:id="btnConfirmUsername" mnemonicParsing="false" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #022235;" text="confirm" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <Label fx:id="lbErrorUsername" prefHeight="26.0" prefWidth="487.0" text="error!" textFill="#d02626" visible="false">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="email-address:" textFill="#022235">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="620.0" spacing="30.0">
+                                 <children>
+                                    <TextField fx:id="tbEmail" prefHeight="25.0" prefWidth="369.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </TextField>
+                                    <Button fx:id="btnConfirmEmail" mnemonicParsing="false" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #022235;" text="confirm" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <Label fx:id="lbErrorEmail" prefHeight="26.0" prefWidth="487.0" text="error!" textFill="#d02626" visible="false">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER_LEFT" prefHeight="81.0" prefWidth="620.0" spacing="350.0">
+                                 <children>
+                                    <Button fx:id="btnChangePassword" mnemonicParsing="false" prefHeight="32.0" prefWidth="153.0" style="-fx-background-color: #022235;" text="change password" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btnDeleteAccount" mnemonicParsing="false" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #022235;" text="delete account" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: #ffffff;" visible="false">
+                     <children>
+                        <Label prefHeight="30.0" prefWidth="637.0" style="-fx-background-color: #022235;" text="change password:" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="620.0" spacing="30.0">
+                           <children>
+                              <PasswordField fx:id="pbPassword" prefHeight="36.0" prefWidth="369.0" promptText="please enter password">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </PasswordField>
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="107.0" prefWidth="622.0" spacing="7.0">
+                           <children>
+                              <Label text="new password:" textFill="#022235">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="620.0" spacing="30.0">
+                                 <children>
+                                    <PasswordField fx:id="pbNewPassword" prefHeight="36.0" prefWidth="369.0" promptText="please enter new password">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </PasswordField>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="620.0" spacing="30.0">
+                                 <children>
+                                    <PasswordField fx:id="pbNewPasswordCheck" prefHeight="36.0" prefWidth="369.0" promptText="repeat new password">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </PasswordField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Label fx:id="lbErrorPassword" prefHeight="26.0" prefWidth="487.0" text="error!" textFill="#d02626" visible="false">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                           <children>
+                              <Button fx:id="btnCancelPassword" mnemonicParsing="false" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #022235;" text="cancel" textFill="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnConfirmPassword" mnemonicParsing="false" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #022235;" text="confirm" textFill="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
          </children>
       </AnchorPane>
    </center>
@@ -39,10 +194,13 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label alignment="CENTER" prefHeight="75.0" prefWidth="707.0" text="Profil" textFill="WHITE">
+            <Label prefHeight="75.0" prefWidth="707.0" text="Profil" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="33.0" />
                </font>
+               <HBox.margin>
+                  <Insets left="355.0" />
+               </HBox.margin>
             </Label>
             <Button fx:id="btShoppingcart" mnemonicParsing="false" onAction="#checkBtHomeClick" prefHeight="74.0" prefWidth="75.0" style="-fx-background-color: #022235;">
                <graphic>
