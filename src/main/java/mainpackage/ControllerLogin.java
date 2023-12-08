@@ -27,22 +27,7 @@ public class ControllerLogin {
     private static final Logger log = LogManager.getLogger(ControllerLogin.class);
     @FXML
     protected void checkbtLoginClick(ActionEvent event) throws IOException {
-        //TODO: If abfrage, ob das Passwort mit der Datenbank eintrag überein stimmt
-
-        if(!tbUsername.getText().isBlank() && !pbPassword.getText().isBlank() && userManager.userLoginCheck(tbUsername.getText(), pbPassword.getText())){
-            log.info("User: " + tbUsername.getText() + "has logged in");
-            Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
-            sceneSwitcher.switchTo("MainPage.fxml", "Mainpage", 860, 550);
-
-            log.debug("Logged in successfully");
-
-        }
-        else {
-            log.info("The user is attempting to log in with incorrect information.");
-            lbLoginfailed.setText("Please enter a correct username and password.");
-        }
-
-
+        validateLogin();
     }
     @FXML
     protected void checkbtRegisterClick(ActionEvent event) throws IOException{
@@ -57,8 +42,19 @@ public class ControllerLogin {
     }
 
     @FXML
-    protected void validateLogin(){
-        //TODO: Database connection
+    protected void validateLogin() throws IOException{
+        if(!tbUsername.getText().isBlank() && !pbPassword.getText().isBlank() && userManager.userLoginCheck(tbUsername.getText(), pbPassword.getText())){
+            log.info("User: " + tbUsername.getText() + "has logged in");
+            Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
+            sceneSwitcher.switchTo("MainPage.fxml", "Mainpage", 860, 550);
+
+            log.debug("Logged in successfully");
+
+        }
+        else {
+            log.info("The user is attempting to log in with incorrect information.");
+            lbLoginfailed.setText("Please enter a correct username and password.");
+        }
     }
 
 

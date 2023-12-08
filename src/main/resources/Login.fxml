@@ -37,7 +37,7 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="pbPassword" layoutX="55.0" layoutY="226.0" prefHeight="40.0" prefWidth="176.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #022235; -fx-border-width: 0px 0px 2px 0px;">
+            <PasswordField fx:id="pbPassword" layoutX="55.0" layoutY="226.0" onAction="#validateLogin" prefHeight="40.0" prefWidth="176.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #022235; -fx-border-width: 0px 0px 2px 0px;">
                <font>
                   <Font size="14.0" />
                </font>
