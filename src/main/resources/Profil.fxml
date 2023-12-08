@@ -56,7 +56,7 @@
                                           <Font size="16.0" />
                                        </font>
                                     </TextField>
-                                    <Button fx:id="btnConfirmUsername" mnemonicParsing="false" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #022235;" text="confirm" textFill="WHITE">
+                                    <Button fx:id="btnConfirmUsername" mnemonicParsing="false" onMouseClicked="#checkbtnConfirmUsernameClick" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #022235;" text="confirm" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
@@ -80,7 +80,7 @@
                                           <Font size="16.0" />
                                        </font>
                                     </TextField>
-                                    <Button fx:id="btnConfirmEmail" mnemonicParsing="false" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #022235;" text="confirm" textFill="WHITE">
+                                    <Button fx:id="btnConfirmEmail" mnemonicParsing="false" onMouseClicked="#changeUserPassword" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #022235;" text="confirm" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
@@ -94,12 +94,12 @@
                               </Label>
                               <HBox alignment="CENTER_LEFT" prefHeight="81.0" prefWidth="620.0" spacing="350.0">
                                  <children>
-                                    <Button fx:id="btnChangePassword" mnemonicParsing="false" prefHeight="32.0" prefWidth="153.0" style="-fx-background-color: #022235;" text="change password" textFill="WHITE">
+                                    <Button fx:id="btnChangePassword" mnemonicParsing="false" onMouseClicked="#enablePasswordChange" prefHeight="32.0" prefWidth="153.0" style="-fx-background-color: #022235;" text="change password" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="btnDeleteAccount" mnemonicParsing="false" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #022235;" text="delete account" textFill="WHITE">
+                                    <Button fx:id="btnDeleteAccount" mnemonicParsing="false" onMouseClicked="#enableAccountDeletion" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #022235;" text="delete account" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
@@ -110,7 +110,7 @@
                         </VBox>
                      </children>
                   </VBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: #ffffff;" visible="false">
+                  <VBox fx:id="passwordChange" prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: #ffffff;" visible="false">
                      <children>
                         <Label prefHeight="30.0" prefWidth="637.0" style="-fx-background-color: #022235;" text="change password:" textFill="WHITE">
                            <font>
@@ -160,12 +160,12 @@
                         </Label>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
                            <children>
-                              <Button fx:id="btnCancelPassword" mnemonicParsing="false" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #022235;" text="cancel" textFill="WHITE">
+                              <Button fx:id="btnCancelPassword" mnemonicParsing="false" onMouseClicked="#disablePasswordChange" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #022235;" text="cancel" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="btnConfirmPassword" mnemonicParsing="false" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #022235;" text="confirm" textFill="WHITE">
+                              <Button fx:id="btnConfirmPassword" mnemonicParsing="false" onMouseClicked="#changePassword" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #022235;" text="confirm" textFill="WHITE">
                                  <font>
                                     <Font size="15.0" />
                                  </font>

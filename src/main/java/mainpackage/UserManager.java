@@ -148,7 +148,7 @@ public class UserManager {
 
     }
 
-    private boolean changeUserName(User user, String newUserName) throws IOException {
+    boolean changeUsername(User user, String newUserName) throws IOException {
 
          // TODO: check if new user name is actually new in userpage controller
 

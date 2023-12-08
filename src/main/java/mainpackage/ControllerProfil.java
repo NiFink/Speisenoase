@@ -2,14 +2,11 @@ package mainpackage;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -37,6 +34,8 @@ public class ControllerProfil {
     private PasswordField pbNewPassword;
     @FXML
     private PasswordField pbNewPasswordCheck;
+    @FXML
+    private VBox passwordChange;
 
 
 
@@ -49,6 +48,62 @@ public class ControllerProfil {
     public void setUserManager(UserManager userManager) {
         this.userManager = userManager;
     }
+
+
+
+    public void initialize(){
+        setUserManager(UserManager.getInstance());
+        User user = userManager.getActiveUser();
+        lbUsername.setText(user.getUserName());
+        lbUserEmail.setText(user.getUserEmail());
+        tbUsername.setText(user.getUserName());
+        tbEmail.setText(user.getUserEmail());
+        lbUsername.requestFocus();
+
+    }
+
+    @FXML
+    protected void checkbtnConfirmUsernameClick(MouseEvent event) throws IOException {
+        if(tbUsername.getText().isBlank()){
+            lbErrorUsername.setText("Username can't vanish into thin air!");
+            lbErrorUsername.setVisible(true);
+
+
+        }
+       else if(tbUsername.getText().equals(userManager.getActiveUser().getUserName())){
+            lbErrorUsername.setText("Seems like you wanna keep your old username...");
+            lbErrorUsername.setVisible(true);
+        }
+       else if(userManager.changeUsername(userManager.getActiveUser(), tbUsername.getText())){
+           lbErrorUsername.setVisible(false);
+           initialize();
+
+        }
+       else{
+            lbErrorUsername.setText("Sorry, but that name's already been taken.");
+            lbErrorUsername.setVisible(true);
+
+        }
+
+    }
+
+    @FXML
+    protected void changeUserPassword(){}
+
+    @FXML
+    protected void enablePasswordChange(){}
+
+    @FXML
+    protected void enableAccountDeletion(){}
+
+    @FXML
+    protected void disablePasswordChange(){}
+
+    @FXML
+    protected void changePassword(){}
+
+
+
 
 
 
