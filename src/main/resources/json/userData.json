@@ -1,10 +1,4 @@
 {
-  "Michelle" : {
-    "userName" : "Michelle",
-    "userEmail" : "Michelle@gmail.com",
-    "password" : "1234",
-    "favourites" : [ ]
-  },
   "Jan" : {
     "userName" : "Jan",
     "userEmail" : "Jan@gmail.com",
@@ -51,6 +45,12 @@
     "userName" : "Testuser1",
     "userEmail" : "hahah@e.ea",
     "password" : "asdf",
+    "favourites" : [ ]
+  },
+  "Michelle" : {
+    "userName" : "Michelle",
+    "userEmail" : "mhhCookies@web.de",
+    "password" : "123",
     "favourites" : [ ]
   }
 }

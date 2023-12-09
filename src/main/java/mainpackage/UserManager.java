@@ -129,11 +129,8 @@ public class UserManager {
 
     }
 
-    private boolean changePassword(User user, String oldPassword, String newpassword) throws IOException {
+    void changePassword(User user, String newpassword) throws IOException {
 
-         // TODO: check if old password equals new password in Userpage Controller
-
-         if(userLoginCheck(user.getUserName(), oldPassword)){
 
              User newUser = new User(user);
              newUser.setPassword(newpassword);
@@ -141,16 +138,10 @@ public class UserManager {
              if(updateUserData(user, newUser));
              logger.debug(user.getUserName() + " 's password: " + user.getPassword() + " updated to : " + newUser.getPassword());
              user.setPassword(newpassword);
-             return true;
-
-         }
-         return false;
 
     }
 
     boolean changeUsername(User user, String newUserName) throws IOException {
-
-         // TODO: check if new user name is actually new in userpage controller
 
          User newUser = new User(user);
          newUser.setUserName(newUserName);
@@ -162,7 +153,7 @@ public class UserManager {
          return false;
     }
 
-    private void changeUserEmail(User user, String newEmail) throws IOException {
+    void changeUserEmail(User user, String newEmail) throws IOException {
 
         User newUser = new User(user);
         newUser.setUserEmail(newEmail);

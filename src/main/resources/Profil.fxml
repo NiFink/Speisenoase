@@ -16,7 +16,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="550.0" minWidth="860" prefHeight="550.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerProfil">
    <center>
-      <AnchorPane prefHeight="487.0" prefWidth="579.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="487.0" prefWidth="828.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="477.0" fitWidth="783.0" layoutX="153.0" layoutY="-1.0" opacity="0.27" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="153.0" AnchorPane.rightAnchor="153.0" AnchorPane.topAnchor="-1.0">
                <image>
@@ -33,7 +33,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <StackPane layoutX="81.0" layoutY="129.0" prefHeight="288.0" prefWidth="622.0">
+            <StackPane layoutX="87.0" layoutY="129.0" prefHeight="288.0" prefWidth="622.0">
                <children>
                   <VBox prefHeight="299.0" prefWidth="620.0" spacing="15.0">
                      <children>
@@ -80,7 +80,7 @@
                                           <Font size="16.0" />
                                        </font>
                                     </TextField>
-                                    <Button fx:id="btnConfirmEmail" mnemonicParsing="false" onMouseClicked="#changeUserPassword" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #022235;" text="confirm" textFill="WHITE">
+                                    <Button fx:id="btnConfirmEmail" mnemonicParsing="false" onMouseClicked="#changeUserEmail" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #022235;" text="confirm" textFill="WHITE">
                                        <font>
                                           <Font size="15.0" />
                                        </font>
@@ -105,12 +105,15 @@
                                        </font>
                                     </Button>
                                  </children>
+                                 <padding>
+                                    <Insets left="2.0" />
+                                 </padding>
                               </HBox>
                            </children>
                         </VBox>
                      </children>
                   </VBox>
-                  <VBox fx:id="passwordChange" prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: #ffffff;" visible="false">
+                  <VBox fx:id="passwordChange" prefHeight="313.0" prefWidth="651.0" spacing="20.0" style="-fx-background-color: #ffffff;" visible="false">
                      <children>
                         <Label prefHeight="30.0" prefWidth="637.0" style="-fx-background-color: #022235;" text="change password:" textFill="WHITE">
                            <font>
@@ -177,6 +180,7 @@
                         </HBox>
                      </children>
                   </VBox>
+                  <VBox fx:id="vbAccountDeletion" disable="true" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" visible="false" />
                </children>
             </StackPane>
          </children>
@@ -185,16 +189,16 @@
    <top>
       <HBox prefHeight="75.0" prefWidth="860.0" style="-fx-background-color: #022235;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btHome" mnemonicParsing="false" onAction="#checkBtHomeClick" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: white;">
+            <Button fx:id="btHome" mnemonicParsing="false" onAction="#checkBtHomeClick" prefHeight="75.0" prefWidth="101.0" style="-fx-background-color: white;">
                <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="48.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/icons/Pfeil_Links_Blau.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Label prefHeight="75.0" prefWidth="707.0" text="Profil" textFill="WHITE">
+            <Label prefHeight="75.0" prefWidth="511.0" text="Profil" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="33.0" />
                </font>
@@ -215,9 +219,9 @@
       </HBox>
    </top>
    <left>
-      <VBox prefHeight="478.0" prefWidth="77.0" style="-fx-background-color: #022235;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="475.0" prefWidth="64.0" style="-fx-background-color: #022235;" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" prefHeight="156.0" prefWidth="77.0" style="-fx-background-color: #022235; -fx-border-color: white;">
+            <Button mnemonicParsing="false" prefHeight="156.0" prefWidth="66.0" style="-fx-background-color: #022235; -fx-border-color: white;">
                <graphic>
                   <ImageView fitHeight="43.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
