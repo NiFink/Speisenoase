@@ -1,19 +1,30 @@
 package mainpackage.itempackage;
 
 import javafx.scene.layout.*;
+import mainpackage.UserManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ItemManager {
 
+    private static ItemManager instance;
     private ArrayList<Item> items;
     private ArrayList<ItemNode> itemNodes;
     private ArrayList<StackPane> itemPanes;
+    private ArrayList<ItemNode> itemsShoppingCart;
     private ArrayList<String> favorites = new ArrayList<String>();
     private static final Logger log = LogManager.getLogger(ItemManager.class);
+
+    public static ItemManager getInstance(){
+        if(instance == null){
+            instance = new ItemManager();
+        }
+        return instance;
+    }
 
     public ItemManager(){
         setItems(15);
@@ -84,6 +95,16 @@ public class ItemManager {
         }
         flowPane.setStyle("-fx-background-color:  #022235");
         return flowPane;
+    }
+
+    public ArrayList<ItemNode> getItemsShoppingCart(){
+        List<ItemNode> itemsShoppingCart =
+                itemNodes
+                        .stream()
+                        .filter(x -> x.getAmountInCart()>0)
+                        .toList();
+
+        return new ArrayList<ItemNode>(itemsShoppingCart);
     }
 
     public ArrayList<String> getFavorites() {

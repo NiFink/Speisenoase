@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import mainpackage.itempackage.ItemManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,7 +18,7 @@ public class ControllerMainPage{
     private TextField tbSearch;
     @FXML
     private Button btProfil;
-    private final ItemManager itemController = new ItemManager();
+    private final ItemManager itemManager = ItemManager.getInstance();
     private UserManager userManager;
 
     public void setUserManager(UserManager userManager) {
@@ -29,44 +28,44 @@ public class ControllerMainPage{
     private static final Logger log = LogManager.getLogger(ControllerMainPage.class);
 
     public void initialize() {
-        scrollPaneItems.setContent(itemController.getItempaneCategory("all"));
+        scrollPaneItems.setContent(itemManager.getItempaneCategory("all"));
         setUserManager(UserManager.getInstance());
         btProfil.setText(userManager.getActiveUser().getUserName());
     }
 
     @FXML
     protected void search() {
-        scrollPaneItems.setContent(itemController.getItempaneName(tbSearch.getText().toLowerCase()));
+        scrollPaneItems.setContent(itemManager.getItempaneName(tbSearch.getText().toLowerCase()));
     }
 
     @FXML
     protected void checkBtVegetablesClick(ActionEvent event) {
-        scrollPaneItems.setContent(itemController.getItempaneCategory("vegetable"));
+        scrollPaneItems.setContent(itemManager.getItempaneCategory("vegetable"));
     }
 
     @FXML
     protected void checkBtFruitClick(ActionEvent event) {
-        scrollPaneItems.setContent(itemController.getItempaneCategory("fruit"));
+        scrollPaneItems.setContent(itemManager.getItempaneCategory("fruit"));
     }
 
     @FXML
     protected void checkBtSweetiesClick(ActionEvent event) {
-        scrollPaneItems.setContent(itemController.getItempaneCategory("sweets"));
+        scrollPaneItems.setContent(itemManager.getItempaneCategory("sweets"));
     }
 
     @FXML
     public void checkBtBakeryClick(ActionEvent actionEvent) {
-        scrollPaneItems.setContent(itemController.getItempaneCategory("bakery"));
+        scrollPaneItems.setContent(itemManager.getItempaneCategory("bakery"));
     }
 
     @FXML
     protected void checkBtLiquirClick(ActionEvent event) {
-        scrollPaneItems.setContent(itemController.getItempaneCategory("beverage"));
+        scrollPaneItems.setContent(itemManager.getItempaneCategory("beverage"));
     }
 
     @FXML
     public void checkBtTagClick(ActionEvent actionEvent) {
-        scrollPaneItems.setContent(itemController.getItempaneCategory("favs"));
+        scrollPaneItems.setContent(itemManager.getItempaneCategory("favs"));
     }
 
     @FXML
@@ -78,7 +77,7 @@ public class ControllerMainPage{
 
     @FXML
     protected void checkBtHomeClick() {
-        scrollPaneItems.setContent(itemController.getItempaneCategory("all"));
+        scrollPaneItems.setContent(itemManager.getItempaneCategory("all"));
     }
     @FXML
     protected void checkBtShoppingCartClick() {

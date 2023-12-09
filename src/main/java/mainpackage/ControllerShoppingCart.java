@@ -12,8 +12,11 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import mainpackage.ShoppingCart.Purchase;
+import mainpackage.itempackage.ItemManager;
+import mainpackage.itempackage.ItemNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ControllerShoppingCart {
@@ -27,8 +30,8 @@ public class ControllerShoppingCart {
     private ScrollPane spItems;
 
     private List<Purchase> purchaseList;
-
     private UserManager userManager;
+    private final ItemManager itemManager = ItemManager.getInstance();
 
     public void setUserManager(UserManager userManager) {
         this.userManager = userManager;
@@ -38,10 +41,11 @@ public class ControllerShoppingCart {
         setUserManager(UserManager.getInstance());
         btProfil.setText(userManager.getActiveUser().getUserName());
 
-        purchaseList = new ArrayList<>();
-        purchaseList.add(new Purchase("Apple", "$1.99", 5));
-        purchaseList.add(new Purchase("Banana", "$0.99", 8));
-        purchaseList.add(new Purchase("Cucumber", "$2.49", 3));
+        purchaseList =
+                itemManager.getItemsShoppingCart()
+                        .stream()
+                        .map(x -> new Purchase(x.getName(), x.getPrice(), x.getAmountInCart()))
+                                .toList();
 
         updateVBox();
     }
@@ -95,7 +99,7 @@ public class ControllerShoppingCart {
         nameLabel.setFont(new Font("System Bold", 20.0));
 
         // Erstelle Label für Preis
-        Label priceLabel = new Label("Price: " + purchase.getPrice());
+        Label priceLabel = new Label("Price: " + String.format("%,.2f", purchase.getPrice()) + "€");
         priceLabel.setLayoutX(152.0);
         priceLabel.setLayoutY(92.0);
         priceLabel.setPrefHeight(30.0);

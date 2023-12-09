@@ -2,10 +2,10 @@ package mainpackage.ShoppingCart;
 
 public class Purchase {
     private final String name;
-    private final String price;
+    private final double price;
     private final int amount;
 
-    public Purchase(String name, String price, int amount) {
+    public Purchase(String name, double price, int amount) {
         this.name = name;
         this.price = price;
         this.amount = amount;
@@ -15,7 +15,7 @@ public class Purchase {
         return name;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
