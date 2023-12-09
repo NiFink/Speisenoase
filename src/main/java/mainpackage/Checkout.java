@@ -1,6 +1,6 @@
 package mainpackage;
 
-public class Checkout extends ShoppingCart{
+public class Checkout {
 
     private float shippingCost;
     private float totalCost;

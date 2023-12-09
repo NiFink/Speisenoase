@@ -44,22 +44,6 @@
             </children>
         </AnchorPane>
     </top>
-   <left>
-      <VBox prefHeight="465.0" prefWidth="551.0" style="-fx-border-width: 0px 3px  0px 0px; -fx-border-color: white;" BorderPane.alignment="CENTER">
-         <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="550.0" style="-fx-background-color: #023A50;" text="Purchases" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <ScrollPane fx:id="spItems" prefHeight="443.0" prefWidth="552.0" style="-fx-background-color: white;">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-              </content>
-            </ScrollPane>
-         </children>
-      </VBox>
-   </left>
    <right>
       <VBox prefHeight="413.0" prefWidth="310.0" BorderPane.alignment="CENTER">
          <children>
@@ -77,4 +61,20 @@
          </children>
       </VBox>
    </right>
+   <left>
+      <VBox prefHeight="465.0" prefWidth="551.0" style="-fx-border-width: 0px 3px  0px 0px; -fx-border-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="550.0" style="-fx-background-color: #023A50;" text="Purchases" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <ScrollPane fx:id="spItems" prefHeight="443.0" prefWidth="550.0" style="-fx-background-color: white;">
+               <content>
+                  <VBox fx:id="vboxPurchase" prefHeight="677.0" prefWidth="530.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </left>
 </BorderPane>
