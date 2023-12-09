@@ -8,4 +8,5 @@ module SE2StartupProject {
 
     opens mainpackage;
     opens mainpackage.itempackage;
+    opens mainpackage.ShoppingCart;
 }

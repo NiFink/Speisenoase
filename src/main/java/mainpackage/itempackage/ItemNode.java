@@ -18,10 +18,14 @@ import java.util.Objects;
 public class ItemNode {
 
     private boolean favorite = false;
+    private String name;
+    private double price;
     private int amountInCart = 0;
     private StackPane itemPane;
 
     public ItemNode(Item item) {
+        this.name = item.getName();
+        this.price = item.getPrice();
         createPane(item);
     }
 
@@ -150,6 +154,12 @@ public class ItemNode {
     }
     public boolean isFavorite() {
         return favorite;
+    }
+    public String getName() {
+        return name;
+    }
+    public double getPrice() {
+        return price;
     }
     public int getAmountInCart() {
         return amountInCart;
