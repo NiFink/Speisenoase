@@ -39,6 +39,8 @@ public class ControllerProfil {
     @FXML
     private VBox passwordChange;
 
+    private final int maxCharacters = 20;
+
 
 
 
@@ -70,7 +72,10 @@ public class ControllerProfil {
             lbErrorUsername.setText("Username can't vanish into thin air!");
             lbErrorUsername.setVisible(true);
 
-
+        }
+        else if(tbUsername.getText().length() > maxCharacters){
+            lbErrorUsername.setText("Username can only have up to " + maxCharacters + " characters.");
+            lbErrorUsername.setVisible(true);
         }
        else if(tbUsername.getText().equals(userManager.getActiveUser().getUserName())){
             lbErrorUsername.setText("Seems like you wanna keep your old username...");
@@ -95,7 +100,10 @@ public class ControllerProfil {
             lbErrorEmail.setText("Please enter your email address.");
             lbErrorEmail.setVisible(true);
 
-
+        }
+        else if(tbEmail.getText().length() > maxCharacters) {
+            lbErrorEmail.setText("Email-address can only have up to " + maxCharacters + " characters.");
+            lbErrorEmail.setVisible(true);
         }
         else if(tbEmail.getText().equals(userManager.getActiveUser().getUserEmail())){
             lbErrorEmail.setText("That's your current address.");
@@ -135,9 +143,11 @@ public class ControllerProfil {
         if(pbPassword.getText().isBlank() || pbNewPassword.getText().isBlank()){
             lbErrorPassword.setText("please fill in all fields!");
             lbErrorPassword.setVisible(true);
-
         }
-
+        else if(pbNewPassword.getText().length() > maxCharacters) {
+            lbErrorPassword.setText("Password can only have up to " + maxCharacters + " characters.");
+            lbErrorPassword.setVisible(true);
+        }
         else if(!pbPassword.getText().equals(userManager.getActiveUser().getPassword())){
             lbErrorPassword.setText("please enter the right password!");
             lbErrorPassword.setVisible(true);

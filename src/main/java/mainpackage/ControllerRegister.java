@@ -32,6 +32,8 @@ public class ControllerRegister {
     @FXML
     private PasswordField pbPasswordcheck;
 
+    private final int maxCharacters = 20;
+
     private final UserManager userManager = UserManager.getInstance();
     private static final Logger log = LogManager.getLogger(ControllerRegister.class);
     @FXML
@@ -41,6 +43,10 @@ public class ControllerRegister {
             if(!pbPassword.getText().equals(pbPasswordcheck.getText())) {
                 lbRegisterfailed.setText("You have to enter the same Password twice!");
                 log.warn("Registration failed, unequaled passwords");
+            }
+            else if(tbUsername.getText().length() > maxCharacters || pbPassword.getText().length() > maxCharacters || tbUsername.getText().length() > maxCharacters){
+                lbRegisterfailed.setText("To many character(max. " + maxCharacters + ")");
+                log.warn("Registration failed, too many characters");
             }
             else if(!isEmailValid(tbEmail.getText())){
                 lbRegisterfailed.setText("You have to enter a correct format of email");
