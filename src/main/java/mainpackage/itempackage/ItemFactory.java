@@ -15,8 +15,9 @@ public class ItemFactory {
      */
     public static Item createItem(ItemType type, int id){
         if(type == ItemType.GROCERY){
+            Grocery grocery = new Grocery().createGrocery(id);
             log.debug("Item with id: " + id + " of type: " + type + " is being created");
-            return new Grocery().createGrocery(id);
+            return grocery;
         }
         return null;
     }

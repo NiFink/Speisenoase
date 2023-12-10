@@ -11,6 +11,8 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -23,11 +25,13 @@ public class ItemNode {
     private final double price;
     private int amountInCart = 0;
     private StackPane itemPane;
+    private static final Logger log = LogManager.getLogger(ItemNode.class);
 
     public ItemNode(Item item) {
         this.name = item.getName();
         this.price = item.getPrice();
         createPane(item);
+        log.debug("ItemNode of '" + item.getName() + "' is created");
     }
 
     private void createPane(Item item) {

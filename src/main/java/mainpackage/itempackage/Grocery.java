@@ -16,8 +16,6 @@ class Grocery implements Item{
     private String name;
     private double price;
     private String category;
-    private long available;
-    private String description;
 
     private static final Logger log = LogManager.getLogger(Grocery.class);
     ObjectMapper objectMapper = new ObjectMapper();
@@ -28,8 +26,9 @@ class Grocery implements Item{
      * @return Grocery
      */
     Grocery createGrocery(int id) {
+        Grocery grocery = getItemlist().get(id);
         log.debug("Grocery with id: " + id + " is returned from temporary List");
-        return getItemlist().get(id);
+        return grocery;
     }
 
     /**
@@ -38,8 +37,9 @@ class Grocery implements Item{
      */
     private List<Grocery> getItemlist(){
         try{
+            List<Grocery> groceryList = objectMapper.readValue(new File("src/main/resources/json/itemData.json"), new TypeReference<List<Grocery>>() {});
             log.debug("ObjectMapper read itemData.json file and creates temporary List");
-            return  objectMapper.readValue(new File("src/main/resources/json/itemData.json"), new TypeReference<List<Grocery>>() {});
+            return groceryList;
         } catch (IOException e) {
             log.error("Json file could not be read. " + e);
         }
@@ -48,10 +48,6 @@ class Grocery implements Item{
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -66,32 +62,8 @@ class Grocery implements Item{
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     public String getCategory(){
         return category;
-    }
-
-    public void setCategory(String category){
-        this.category = category;
-    }
-
-    public long getAvailable() {
-        return available;
-    }
-
-    public void setAvailable(long available) {
-        this.available = available;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     @Override
@@ -101,8 +73,6 @@ class Grocery implements Item{
                 ",\n name='" + name +
                 ",\n price=" + price +
                 ",\n category=" + category +
-                ",\n available=" + available +
-                ",\n description='" + description +
                 ",\n}";
     }
 }

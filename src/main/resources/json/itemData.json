@@ -2,105 +2,75 @@
   "id" : 0,
   "name" : "Apple",
   "price" : 0.6,
-  "category" : "fruit",
-  "available" : 4,
-  "description" : "Rund 31 kg Äpfel, umgerechnet ungefähr 200 Stück, genießt jeder Verbraucher im Durchschnitt pro Jahr."
+  "category" : "fruit"
 }, {
   "id" : 1,
   "name" : "Banana",
   "price" : 0.4,
-  "category" : "fruit",
-  "available" : 5,
-  "description" : "Sie werden auf besonderen Bananenschiffen in die Verbraucherländer transportiert."
+  "category" : "fruit"
 }, {
   "id" : 2,
   "name" : "Grapes",
   "price" : 2.39,
-  "category" : "fruit",
-  "available" : 5,
-  "description" : "Tafeltrauben sind für den Frischverzehr angebaute Sorten, die möglichst kernarm sind."
+  "category" : "fruit"
 }, {
   "id" : 3,
   "name" : "Cucumber",
   "price" : 1.39,
-  "category" : "vegetable",
-  "available" : 5,
-  "description" : "Die Früchte sind etwa 30-40 cm lang, schlank und an den Enden verjüngt."
+  "category" : "vegetable"
 }, {
   "id" : 4,
   "name" : "Bell-pepper",
   "price" : 1.25,
-  "category" : "vegetable",
-  "available" : 5,
-  "description" : "Gemüsepaprika gehören zu den süßen und milden Paprika und sind Nachtschattengewächse."
+  "category" : "vegetable"
 }, {
   "id" : 5,
   "name" : "Tomatoes",
   "price" : 1.89,
-  "category" : "vegetable",
-  "available" : 5,
-  "description" : "Cherry-/Cocktailtomaten sind etwa 2 cm groß und haben ein Gewicht um die 40g."
+  "category" : "vegetable"
 }, {
   "id" : 6,
   "name" : "Bread",
   "price" : 3.79,
-  "category" : "bakery",
-  "available" : 5,
-  "description" : "Ist halt Brot."
+  "category" : "bakery"
 }, {
   "id" : 7,
   "name" : "Flour",
   "price" : 0.85,
-  "category" : "bakery",
-  "available" : 5,
-  "description" : "Naturland Getreide aus kontrolliert biologischem Anbau."
+  "category" : "bakery"
 }, {
   "id" : 8,
   "name" : "Noodles",
   "price" : 2.09,
-  "category" : "bakery",
-  "available" : 5,
-  "description" : "Ihre Rillen sind ideal, um aus jeder Art Sauce etwas Besonderes zu machen."
+  "category" : "bakery"
 }, {
   "id" : 9,
   "name" : "KinderRiegel",
   "price" : 2.59,
-  "category" : "sweets",
-  "available" : 5,
-  "description" : "Feine Milchcreme umhüllt von zartschmelzender Vollmichschokolade."
+  "category" : "sweets"
 }, {
   "id" : 10,
   "name" : "Duplo",
   "price" : 2.59,
-  "category" : "sweets",
-  "available" : 5,
-  "description" : "Die wahrscheinlich längste Praline der Welt."
+  "category" : "sweets"
 }, {
   "id" : 11,
   "name" : "Gingerbread",
   "price" : 2.59,
-  "category" : "sweets",
-  "available" : 5,
-  "description" : "Der klassische, würzige Lebkuchen. Steht gefühlt im Sommer schon im Regal."
+  "category" : "sweets"
 }, {
   "id" : 12,
   "name" : "Water",
   "price" : 3.9,
-  "category" : "beverage",
-  "available" : 5,
-  "description" : "Durch Vulkanstein gefiltert (eigentlich nicht aber klingt cool)."
+  "category" : "beverage"
 }, {
   "id" : 13,
   "name" : "Beer",
   "price" : 4.99,
-  "category" : "beverage",
-  "available" : 5,
-  "description" : "Bitte ein Bit."
+  "category" : "beverage"
 }, {
   "id" : 14,
   "name" : "Apple-juice",
   "price" : 1.29,
-  "category" : "beverage",
-  "available" : 5,
-  "description" : "Fruchtig frischer Genuss. 100% Fruchtgehalt."
+  "category" : "beverage"
 } ]

@@ -81,18 +81,6 @@ public class ItemManager {
         this.itemPanes = itemPanes;
     }
 
-    public ArrayList<Item> getItems() {
-        return items;
-    }
-
-    public ArrayList<ItemNode> getItemNodes() {
-        return itemNodes;
-    }
-
-    public ArrayList<StackPane> getItemPanes() {
-        return itemPanes;
-    }
-
     /**
      * Creates and returns a flowpane with Itempanes that are in a given category or are favorites (category = 'favs')
      * @param category of itemNodes that will be in flowpane
@@ -147,15 +135,22 @@ public class ItemManager {
     }
 
     /**
-     * Sets and returns list of current favorites
-     * @return list of current favorites
+     * Sets list of current favorites
      */
-    public ArrayList<String> getFavorites() {
+    private void setFavorites(){
         for(int i = 0; i < items.size(); i++){
             if(itemNodes.get(i).isFavorite()){
                 favorites.add(items.get(i).getName());
             }
         }
+    }
+
+    /**
+     * Gets list of current favorites
+     * @return list of current favorites
+     */
+    public ArrayList<String> getFavorites() {
+        setFavorites();
         log.info("List of favorites is gathered and returned");
         return favorites;
     }
