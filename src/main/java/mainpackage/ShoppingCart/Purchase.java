@@ -3,7 +3,7 @@ package mainpackage.ShoppingCart;
 public class Purchase {
     private final String name;
     private final double price;
-    private final int amount;
+    private int amount;
 
     public Purchase(String name, double price, int amount) {
         this.name = name;
@@ -21,5 +21,8 @@ public class Purchase {
 
     public int getAmount() {
         return amount;
+    }
+    public void setAmount(int newAmount) {
+        this.amount = newAmount;
     }
 }
