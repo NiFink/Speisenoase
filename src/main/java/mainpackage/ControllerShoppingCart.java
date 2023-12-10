@@ -49,7 +49,6 @@ public class ControllerShoppingCart {
                         .stream()
                         .map(x -> new Purchase(x.getName(), x.getPrice(), x.getAmountInCart()))
                                 .toList();
-
         updateVBox();
     }
 
@@ -61,11 +60,15 @@ public class ControllerShoppingCart {
         sceneSwitcher.switchTo("Profil.fxml", "Profil", 860, 550);
 
     }
-
     @FXML
     protected void checkBtBackClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("MainPage.fxml", "MainPage", 860, 550);
+    }
+    @FXML
+    protected void checkBtCheckoutClick() {
+        Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
+        sceneSwitcher.switchTo("Checkout.fxml", "Checkout", 860, 550);
     }
 
 
@@ -84,8 +87,10 @@ public class ControllerShoppingCart {
                 vboxCosts.getChildren().add(createCostAPane(purchase));
             }
         }
-        lbTotal.setText("Total: " + purchaseTotal);
+        lbTotal.setText("Total: " + String.format("%.2f", purchaseTotal) + "€");
+
     }
+
 
     private AnchorPane createPurchaseAPane(Purchase purchase) {
         ImageView imageView = new ImageView(new Image(getClass().getResource("/images/groceries/" + purchase.getName() + ".png").toExternalForm()));
@@ -111,6 +116,7 @@ public class ControllerShoppingCart {
         priceLabel.setFont(new Font("System Bold", 18.0));
 
         purchaseTotal += (purchase.getPrice() * purchase.getAmount());
+        purchase.setTotal(purchaseTotal);
 
         Label amountLabel = new Label("Amount: ");
         amountLabel.setLayoutX(300.0);
@@ -148,10 +154,11 @@ public class ControllerShoppingCart {
     }
     private void updateAmount(Purchase purchase, Integer newAmount) {
         if (purchase.getAmount() != newAmount) {
-            purchaseTotal = 0;
+            purchase.setTotal(0);
             purchase.setAmount(newAmount);
             updateVBox();
         }
+
     }
 
     private AnchorPane createCostAPane(Purchase purchase) {

@@ -58,18 +58,4 @@ JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance i
 JavaFX Application Thread INFO  itempackage.ItemManager - List of items in shopping cart is gathered and returned
 JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - ShoppingCart.fxml: loaded successfully
 JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
-JavaFX Application Thread INFO  itempackage.ItemManager - FlowPane with ItemNodes, that are in the category 'all', is created with a size of '15'
-JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - MainPage.fxml: loaded successfully
-JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
 JavaFX Application Thread INFO  itempackage.ItemManager - List of items in shopping cart is gathered and returned
-JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - ShoppingCart.fxml: loaded successfully
-JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
-JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - Profil.fxml: loaded successfully
-JavaFX Application Thread DEBUG mainpackage.UserManager - updated userdata successfully
-JavaFX Application Thread DEBUG mainpackage.UserManager - asdf 's email: asdf updated to : asdf@asdf.asdf
-JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
-JavaFX Application Thread INFO  itempackage.ItemManager - FlowPane with ItemNodes, that are in the category 'all', is created with a size of '15'
-JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - MainPage.fxml: loaded successfully
-JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
-JavaFX Application Thread INFO  itempackage.ItemManager - List of items in shopping cart is gathered and returned
-JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - ShoppingCart.fxml: loaded successfully

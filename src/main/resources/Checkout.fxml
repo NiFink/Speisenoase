@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="550.0" minWidth="860.0" prefHeight="550.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerCheckout">
+    <top>
+        <AnchorPane prefHeight="71.0" prefWidth="860.0" style="-fx-background-color: #022235;" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="btProfil" layoutX="640.0" layoutY="8.0" mnemonicParsing="false" onAction="#checkBtProfilClick" prefHeight="55.0" prefWidth="206.0" style="-fx-background-color: #022235;" text="Username" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/icons/benutzerform.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btBack" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#checkBtBackClick" prefHeight="51.0" prefWidth="55.0" style="-fx-background-color: #022235;">
+                    <graphic>
+                        <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/icons/Pfeil_Links_Weiß.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Label layoutX="373.0" layoutY="17.0" text="Checkout" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Label>
+
+            </children>
+        </AnchorPane>
+    </top>
+    <right>
+        <VBox prefHeight="413.0" prefWidth="310.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="310.0" style="-fx-background-color: #023A50;" text="Costs" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <ScrollPane prefHeight="358.0" prefWidth="302.0" style="-fx-background-color: white;">
+                    <content>
+                        <VBox fx:id="vboxCosts" prefHeight="356.0" prefWidth="291.0" />
+                    </content></ScrollPane>
+            <Label fx:id="lbTotal" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="310.0" style="-fx-background-color: #023A50;" text="Costs" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+                <Button fx:id="btBuy" mnemonicParsing="false" prefHeight="40.0" prefWidth="310.0" style="-fx-background-color: #022235;" text="Buy" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </VBox>
+    </right>
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="550.0" style="-fx-background-color: #023A50;" text="Payment informations" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+            <TextField fx:id="tfAdress" layoutX="81.0" layoutY="151.0" prefHeight="25.0" prefWidth="388.0" promptText="Adress" />
+            <Label layoutX="53.0" layoutY="74.0" prefHeight="30.0" prefWidth="168.0" text="Delivery Adress" textFill="#022235">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="53.0" layoutY="240.0" prefHeight="30.0" prefWidth="145.0" text="Payment" textFill="#022235">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfFirstName" layoutX="81.0" layoutY="120.0" prefHeight="25.0" prefWidth="188.0" promptText="first name" />
+            <TextField fx:id="tfLastName" layoutX="281.0" layoutY="120.0" prefHeight="25.0" prefWidth="188.0" promptText="last name" />
+            <TextField fx:id="tfCity" layoutX="81.0" layoutY="185.0" prefHeight="25.0" prefWidth="388.0" promptText="County and City" />
+            <RadioButton layoutX="81.0" layoutY="282.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="294.0" text="PayPal" textFill="#023a50">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="tgPayment" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton layoutX="81.0" layoutY="359.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="294.0" text="Mastercard" textFill="#023a50" toggleGroup="$tgPayment">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </RadioButton>
+            <RadioButton layoutX="81.0" layoutY="319.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="294.0" text="VISA" textFill="#023a50" toggleGroup="$tgPayment">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
