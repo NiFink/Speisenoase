@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 class Grocery implements Item{
+    //TODO: Clean Code
 
     private int id;
     private String name;
@@ -21,11 +22,20 @@ class Grocery implements Item{
     private static final Logger log = LogManager.getLogger(Grocery.class);
     ObjectMapper objectMapper = new ObjectMapper();
 
+    /**
+     * Gets grocery from an itemlist on the basis of a given id.
+     * @param id of the wanted Item
+     * @return Grocery
+     */
     Grocery createGrocery(int id) {
         log.debug("Grocery with id: " + id + " is returned from temporary List");
         return getItemlist().get(id);
     }
 
+    /**
+     * Reads Json File which contains data of items and creates list of groceries with read data
+     * @return list of groceries
+     */
     private List<Grocery> getItemlist(){
         try{
             log.debug("ObjectMapper read itemData.json file and creates temporary List");

@@ -16,10 +16,11 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class ItemNode {
+    //TODO: Logging and Exceptions, Clean Code, Doku
 
     private boolean favorite = false;
-    private String name;
-    private double price;
+    private final String name;
+    private final double price;
     private int amountInCart = 0;
     private StackPane itemPane;
 
@@ -30,8 +31,9 @@ public class ItemNode {
     }
 
     private void createPane(Item item) {
-        StackPane pane = new StackPane();
+        StackPane stackPane = new StackPane();
 
+        //Border around Pane
         Rectangle border = new Rectangle(183, 235);
         border.setArcWidth(5);
         border.setArcHeight(5);
@@ -41,41 +43,31 @@ public class ItemNode {
         border.setTranslateX(3);
         border.setTranslateY(3);
 
-        BorderPane innerPane = new BorderPane();
-        innerPane.setPrefWidth(188);
-        innerPane.setPrefHeight(240);
-
-        AnchorPane topAnchorPane = new AnchorPane();
+        //Label for name
         Label labelName = new Label(item.getName());
         labelName.setFont(Font.font("Yu Gothic UI", FontWeight.BOLD, FontPosture.REGULAR, 20));
         labelName.setTranslateY(10);
 
+        //Label for price
         Label labelPrice = new Label(String.format("%,.2f", item.getPrice()) + "€");
         labelPrice.setFont(Font.font("Yu Gothic UI", FontWeight.MEDIUM, FontPosture.REGULAR, 15));
         labelPrice.setTranslateY(15);
 
+        //Layout that contains name and price
+        AnchorPane topAnchorPane = new AnchorPane();
         topAnchorPane.getChildren().addAll(labelName, labelPrice);
         AnchorPane.setLeftAnchor(labelName, 20.00);
         AnchorPane.setRightAnchor(labelPrice, 15.00);
 
-        innerPane.setTop(topAnchorPane);
-
+        //sets grocery image and heart image on creation
         ImageView imgViewItem = null;
-        try {
-            imgViewItem = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/images/groceries/" + item.getName() + ".png")).openStream()));
-            imgViewItem.setFitHeight(160);
-            imgViewItem.setFitWidth(160);
-
-        } catch (IOException ioe) {
-            ioe.getMessage();
-        }
-        innerPane.setCenter(imgViewItem);
-
-        AnchorPane bottomAnchorPane = new AnchorPane();
-
         ImageView imgHeartView = null;
         try {
+            imgViewItem = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/images/groceries/" + item.getName() + ".png")).openStream()));
             imgHeartView = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-umriss.png")).openStream()));
+
+            imgViewItem.setFitHeight(160);
+            imgViewItem.setFitWidth(160);
             imgHeartView.setFitHeight(30);
             imgHeartView.setFitWidth(30);
             imgHeartView.setLayoutX(16);
@@ -83,6 +75,7 @@ public class ItemNode {
             ioe.getMessage();
         }
 
+        //changes heartimage when hovered over
         ImageView finalImgHeartView = imgHeartView;
         finalImgHeartView.setOnMouseEntered(e -> {
             try {
@@ -92,8 +85,8 @@ public class ItemNode {
             }
         });
 
+        //changes heartimage when not hovered over
         finalImgHeartView.setOnMouseExited(e -> {
-            // Change image on exit
             try {
                 if (!favorite) {
                     finalImgHeartView.setImage(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-umriss.png")).openStream()));
@@ -105,6 +98,7 @@ public class ItemNode {
             }
         });
 
+        //changes heartimage when clicked on
         finalImgHeartView.setOnMouseClicked(e -> {
             try {
                 if (favorite) {
@@ -121,11 +115,19 @@ public class ItemNode {
             }
         });
 
-        Spinner<Integer> spinner = new Spinner<Integer>(0, 9, 1);
-        //spinner.setStyle("-fx-base: #022235");
+        //Layout that contains all information
+        BorderPane innerPane = new BorderPane();
+        innerPane.setPrefWidth(188);
+        innerPane.setPrefHeight(240);
+        innerPane.setTop(topAnchorPane);
+        innerPane.setCenter(imgViewItem);
+
+        //Spinner to select amount of items
+        Spinner<Integer> spinner = new Spinner<>(0, 9, 1);
         spinner.setPrefHeight(30);
         spinner.setPrefWidth(50);
 
+        //Button to add item to shopping cart with amount from Spinner
         Button button = new Button("Buy");
         button.setFont(Font.font("Yu Gothic UI", FontWeight.BOLD, FontPosture.REGULAR, 12));;
         button.setStyle("-fx-background-color: #022235; -fx-text-fill: white;");
@@ -136,17 +138,19 @@ public class ItemNode {
             System.out.println(amountInCart + " " + item.getName() + " currently in shopping cart!");
         });
 
+        //Layout that contains spinner and buy button
         HBox hbox = new HBox(spinner, button);
         AnchorPane.setRightAnchor(hbox, 10.0);
 
+        //Layout that contains favor 'button' and hbox
+        AnchorPane bottomAnchorPane = new AnchorPane();
         bottomAnchorPane.getChildren().addAll(finalImgHeartView, hbox);
         bottomAnchorPane.setTranslateY(-10.0);
 
         innerPane.setBottom(bottomAnchorPane);
+        stackPane.getChildren().addAll(border, innerPane);
 
-        pane.getChildren().addAll(border, innerPane);
-
-        itemPane = pane;
+        itemPane = stackPane;
     }
 
     public StackPane getItemPane() {
