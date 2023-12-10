@@ -52,7 +52,15 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <ScrollPane prefHeight="400.0" prefWidth="309.0" style="-fx-background-color: white;" />
+            <ScrollPane prefHeight="358.0" prefWidth="306.0" style="-fx-background-color: white;">
+               <content>
+                  <VBox fx:id="vboxCosts" prefHeight="394.0" prefWidth="292.0" />
+               </content></ScrollPane>
+            <Label fx:id="lbTotal" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="310.0" style="-fx-background-color: #023A50;" text="Costs" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
             <Button fx:id="btCheckout" mnemonicParsing="false" prefHeight="40.0" prefWidth="310.0" style="-fx-background-color: #022235;" text="to the checkout" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
@@ -71,7 +79,7 @@
             </Label>
             <ScrollPane fx:id="spItems" prefHeight="443.0" prefWidth="550.0" style="-fx-background-color: white;">
                <content>
-                  <VBox fx:id="vboxPurchase" prefHeight="677.0" prefWidth="530.0" />
+                  <VBox fx:id="vboxPurchase" prefHeight="437.0" prefWidth="533.0" />
                </content>
             </ScrollPane>
          </children>
