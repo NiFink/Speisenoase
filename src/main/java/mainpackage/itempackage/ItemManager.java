@@ -97,7 +97,7 @@ public class ItemManager {
                 }
             }
         }
-        flowPane.setStyle("-fx-background-color:  #022235");
+        //flowPane.setStyle("-fx-background-color:  #022235");
         log.info("FlowPane with ItemNodes, that are in the category '" + category + "', is created with a size of '" + flowPane.getChildren().size() +  "'");
         return flowPane;
     }
@@ -114,7 +114,7 @@ public class ItemManager {
                 flowPane.getChildren().add(itemPanes.get(i));
             }
         }
-        flowPane.setStyle("-fx-background-color:  #022235");
+        //flowPane.setStyle("-fx-background-color:  #022235");
         log.info("FlowPane with ItemNodes, that contain '" + name + "', is created with a size of '" + flowPane.getChildren().size() +  "'");
         return flowPane;
     }

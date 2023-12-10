@@ -27,6 +27,10 @@ public class ItemNode {
     private StackPane itemPane;
     private static final Logger log = LogManager.getLogger(ItemNode.class);
 
+    /**
+     * Constructor of ItemNode
+     * @param item that holds information for itemNode
+     */
     public ItemNode(Item item) {
         this.name = item.getName();
         this.price = item.getPrice();
@@ -34,6 +38,10 @@ public class ItemNode {
         log.debug("ItemNode of '" + item.getName() + "' is created");
     }
 
+    /**
+     * Creates Stackpane of an Item
+     * @param item that holds information for itemNode
+     */
     private void createPane(Item item) {
         StackPane stackPane = new StackPane();
 
@@ -51,11 +59,13 @@ public class ItemNode {
         Label labelName = new Label(item.getName());
         labelName.setFont(Font.font("Yu Gothic UI", FontWeight.BOLD, FontPosture.REGULAR, 20));
         labelName.setTranslateY(10);
+        labelName.setTextFill(Color.web("#022235"));
 
         //Label for price
         Label labelPrice = new Label(String.format("%,.2f", item.getPrice()) + "€");
         labelPrice.setFont(Font.font("Yu Gothic UI", FontWeight.MEDIUM, FontPosture.REGULAR, 15));
         labelPrice.setTranslateY(15);
+        labelPrice.setTextFill(Color.web("#022235"));
 
         //Layout that contains name and price
         AnchorPane topAnchorPane = new AnchorPane();
@@ -108,11 +118,11 @@ public class ItemNode {
                 if (favorite) {
                     finalImgHeartView.setImage(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-umriss.png")).openStream()));
                     favorite = false;
-                    System.out.println("Entfavorisiert: " + item.getName());
+                    log.info(item.getName() + " unfavored");
                 } else {
                     finalImgHeartView.setImage(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-silhouette.png")).openStream()));
                     favorite = true;
-                    System.out.println("Favorisiert: " + item.getName());
+                    log.info(item.getName() + " favored");
                 }
             } catch (IOException ioe) {
                 ioe.getMessage();
@@ -130,6 +140,7 @@ public class ItemNode {
         Spinner<Integer> spinner = new Spinner<>(0, 9, 1);
         spinner.setPrefHeight(30);
         spinner.setPrefWidth(50);
+        spinner.setTranslateX(-5);
 
         //Button to add item to shopping cart with amount from Spinner
         Button button = new Button("Buy");
@@ -139,7 +150,7 @@ public class ItemNode {
         button.setPrefWidth(40);
         button.setOnAction(actionEvent -> {
             amountInCart += spinner.getValue();
-            System.out.println(amountInCart + " " + item.getName() + " currently in shopping cart!");
+            log.info("Added " + spinner.getValue() + " " + item.getName() + " to the shopping cart");
         });
 
         //Layout that contains spinner and buy button

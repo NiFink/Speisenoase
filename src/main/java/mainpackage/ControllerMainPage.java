@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
 import mainpackage.itempackage.ItemManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
