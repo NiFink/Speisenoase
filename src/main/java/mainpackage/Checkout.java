@@ -13,7 +13,5 @@ public class Checkout {
     private void toShoppingCart(){
 
     }
-    private void exit(){
 
-    }
 }
