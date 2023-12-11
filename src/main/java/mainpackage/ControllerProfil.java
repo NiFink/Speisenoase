@@ -38,6 +38,10 @@ public class ControllerProfil {
     private PasswordField pbNewPasswordCheck;
     @FXML
     private VBox passwordChange;
+    @FXML
+    private VBox vbAccountDeletion;
+    @FXML
+    private VBox vbDefault;
 
     private final int maxCharacters = 20;
 
@@ -120,21 +124,42 @@ public class ControllerProfil {
         }
     }
 
-    @FXML
-    protected void enablePasswordChange(){
-        passwordChange.setDisable(false);
-        passwordChange.setVisible(true);
-    }
 
     @FXML
     protected void enableAccountDeletion(){
-        lbUsername.setText("Nooooo!(wip)");
+        vbDefault.setVisible(false);
+        vbDefault.setDisable(true);
+        vbAccountDeletion.setDisable(false);
+        vbAccountDeletion.setVisible(true);
+    }
+    @FXML
+    protected void disableAccountDeletion(){
+        vbAccountDeletion.setDisable(true);
+        vbAccountDeletion.setVisible(false);
+        vbDefault.setVisible(true);
+        vbDefault.setDisable(false);
+
+    }
+    @FXML
+    protected  void deleteAccount() throws IOException {
+        userManager.deleteUser(userManager.getActiveUser());
+        Sceneswitcher sceneswitcher = Sceneswitcher.getInstance();
+        sceneswitcher.switchTo("Login.fxml", "Login", 860, 550);
+    }
+    @FXML
+    protected void enablePasswordChange(){
+        vbDefault.setVisible(false);
+        vbDefault.setDisable(true);
+        passwordChange.setDisable(false);
+        passwordChange.setVisible(true);
     }
 
     @FXML
     protected void disablePasswordChange(){
         passwordChange.setDisable(true);
         passwordChange.setVisible(false);
+        vbDefault.setVisible(true);
+        vbDefault.setDisable(false);
     }
 
     @FXML
@@ -162,10 +187,6 @@ public class ControllerProfil {
             passwordChange.setVisible(false);
         }
     }
-
-
-
-
 
 
     @FXML

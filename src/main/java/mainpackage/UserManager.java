@@ -174,7 +174,7 @@ public class UserManager {
 
     }
 
-    private void deleteUser(User user) throws IOException {
+    void deleteUser(User user) throws IOException {
 
          ObjectMapper objectMapper = new ObjectMapper();
          ObjectNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/json/userData.json"));

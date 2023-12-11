@@ -25,7 +25,7 @@
   },
   "asdf" : {
     "userName" : "asdf",
-    "userEmail" : "asdf@asdf.asdf",
+    "userEmail" : "test@test.test",
     "password" : "asdf",
     "favourites" : [ ]
   },
