@@ -25,7 +25,9 @@ public class ControllerCheckout {
     double total = 0.0;
     private List<Purchase> purchaseList;
     private UserManager userManager;
+
     private final ItemManager itemManager = ItemManager.getInstance();
+    private final ControllerShoppingCart shoppingCart = ControllerShoppingCart.getInstance();
 
     public void setUserManager(UserManager userManager) {
         this.userManager = userManager;
@@ -51,11 +53,10 @@ public class ControllerCheckout {
         for (Purchase purchase : purchaseList) {
             if(purchase.getAmount() > 0){
                 vboxCosts.getChildren().add(createCostAPane(purchase));
-                total += purchase.getTotal();
             }
 
         }
-        lbTotal.setText("Total: " + String.format("%.2f", total));
+        lbTotal.setText("Total: " + String.format("%.2f", shoppingCart.getPurchaseTotal()));
     }
 
     @FXML

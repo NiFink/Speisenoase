@@ -12,12 +12,15 @@ import javafx.scene.text.Font;
 import mainpackage.ShoppingCart.Purchase;
 import mainpackage.itempackage.ItemManager;
 import mainpackage.itempackage.ItemNode;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class ControllerShoppingCart {
+    private static ControllerShoppingCart instance;
 
     @FXML
     private VBox vboxPurchase;
@@ -30,11 +33,19 @@ public class ControllerShoppingCart {
     @FXML
     private Label lbTotal;
 
-    private float purchaseTotal;
+    private float purchaseTotal = 0;
 
     private List<Purchase> purchaseList;
     private UserManager userManager;
     private final ItemManager itemManager = ItemManager.getInstance();
+    private static final Logger log = LogManager.getLogger(ItemManager.class);
+    public static ControllerShoppingCart getInstance(){
+        if(instance == null){
+            instance = new ControllerShoppingCart();
+        }
+        log.debug("ControllerShoppingCart instance is being returned");
+        return instance;
+    }
 
     public void setUserManager(UserManager userManager) {
         this.userManager = userManager;
@@ -192,5 +203,9 @@ public class ControllerShoppingCart {
         anchorPane.getChildren().addAll(nameLabel, priceLabel, amountLabel);
 
         return anchorPane;
+    }
+
+    public float getPurchaseTotal(){
+        return this.purchaseTotal;
     }
 }
