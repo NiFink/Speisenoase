@@ -11,16 +11,18 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
+import mainpackage.User;
+import mainpackage.UserManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class ItemNode {
-    //TODO: Logging and Exceptions, Clean Code, Doku
 
-    private boolean favorite = false;
+    private boolean favorite;
     private final String name;
     private final double price;
     private int amountInCart = 0;
@@ -34,15 +36,30 @@ public class ItemNode {
     public ItemNode(Item item) {
         this.name = item.getName();
         this.price = item.getPrice();
-        createPane(item);
+        this.favorite = checkFavorite(UserManager.getInstance().getActiveUser(), this.name);
+        try {
+            createPane(item);
+        }  catch (IOException ioe) {
+            log.error("Caught IOException: " + ioe.getMessage());
+        }
         log.debug("ItemNode of '" + item.getName() + "' is created");
+    }
+
+    /**
+     * Checks if activeUser has this item favored
+     * @param user that is activeUser
+     * @param name of this item
+     * @return true if favored, false if not favored
+     */
+    private boolean checkFavorite(User user, String name){
+        return Arrays.asList(user.getFavourites()).contains(name);
     }
 
     /**
      * Creates Stackpane of an Item
      * @param item that holds information for itemNode
      */
-    private void createPane(Item item) {
+    private void createPane(Item item) throws IOException{
         StackPane stackPane = new StackPane();
 
         //Border around Pane
@@ -78,7 +95,12 @@ public class ItemNode {
         ImageView imgHeartView = null;
         try {
             imgViewItem = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/images/groceries/" + item.getName() + ".png")).openStream()));
-            imgHeartView = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-umriss.png")).openStream()));
+
+            if (!favorite) {
+                imgHeartView = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-umriss.png")).openStream()));
+            } else {
+                imgHeartView = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-silhouette.png")).openStream()));
+            }
 
             imgViewItem.setFitHeight(160);
             imgViewItem.setFitWidth(160);
@@ -86,7 +108,7 @@ public class ItemNode {
             imgHeartView.setFitWidth(30);
             imgHeartView.setLayoutX(16);
         } catch (IOException ioe) {
-            ioe.getMessage();
+            log.error("Caught IOException: " + ioe.getMessage());
         }
 
         //changes heartimage when hovered over
@@ -95,7 +117,7 @@ public class ItemNode {
             try {
                 finalImgHeartView.setImage(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-silhouette.png")).openStream()));
             } catch (IOException ioe) {
-                ioe.getMessage();
+                log.error("Caught IOException: " + ioe.getMessage());
             }
         });
 
@@ -108,7 +130,7 @@ public class ItemNode {
                     finalImgHeartView.setImage(new Image(Objects.requireNonNull(getClass().getResource("/images/icons/herzform-silhouette.png")).openStream()));
                 }
             } catch (IOException ioe) {
-                ioe.getMessage();
+                log.error("Caught IOException: " + ioe.getMessage());
             }
         });
 
@@ -125,7 +147,7 @@ public class ItemNode {
                     log.info(item.getName() + " favored");
                 }
             } catch (IOException ioe) {
-                ioe.getMessage();
+                log.error("Caught IOException: " + ioe.getMessage());
             }
         });
 

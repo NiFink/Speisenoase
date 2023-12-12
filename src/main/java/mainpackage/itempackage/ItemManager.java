@@ -1,23 +1,27 @@
 package mainpackage.itempackage;
 
+import javafx.scene.control.Label;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import mainpackage.UserManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class ItemManager {
-    //TODO: Clean Code
 
     private static ItemManager instance;
     private ArrayList<Item> items;
     private ArrayList<ItemNode> itemNodes;
     private ArrayList<StackPane> itemPanes;
     private ArrayList<ItemNode> itemsShoppingCart;
-    private final ArrayList<String> favorites = new ArrayList<>();
+    private ArrayList<String> favorites;
     private static final Logger log = LogManager.getLogger(ItemManager.class);
 
     /**
@@ -39,6 +43,7 @@ public class ItemManager {
         setItems(15);
         setItemNodes(this.items);
         setItemPanes(this.itemNodes);
+        setFavorites(UserManager.getInstance().getActiveUser().getFavourites());
         log.debug("New ItemManager is created");
     }
 
@@ -115,7 +120,16 @@ public class ItemManager {
             }
         }
         //flowPane.setStyle("-fx-background-color:  #022235");
-        log.info("FlowPane with ItemNodes, that contain '" + name + "', is created with a size of '" + flowPane.getChildren().size() +  "'");
+        if(flowPane.getChildren().size() > 0) {
+            log.info("FlowPane with ItemNodes, that contain '" + name + "', is created with a size of '" + flowPane.getChildren().size() +  "'");
+        } else {
+            Label label = new Label("No items found that contain '" + name + "'.");
+            label.setFont(Font.font("Yu Gothic UI", FontWeight.MEDIUM, FontPosture.REGULAR, 40));
+            label.setTranslateY(20);
+            label.setTranslateX(20);
+            flowPane.getChildren().add(label);
+            log.info("No items were found that contain '" + name + "'");
+        }
         return flowPane;
     }
 
@@ -135,14 +149,10 @@ public class ItemManager {
     }
 
     /**
-     * Sets list of current favorites
+     * Sets list of current favorites to favorites of activeUser
      */
-    private void setFavorites(){
-        for(int i = 0; i < items.size(); i++){
-            if(itemNodes.get(i).isFavorite()){
-                favorites.add(items.get(i).getName());
-            }
-        }
+    private void setFavorites(String[] favorites){
+        this.favorites = new ArrayList<>(Arrays.stream(favorites).toList());
     }
 
     /**
@@ -150,7 +160,12 @@ public class ItemManager {
      * @return list of current favorites
      */
     public ArrayList<String> getFavorites() {
-        setFavorites();
+        ArrayList<String> favorites = new ArrayList<>();
+        for(int i = 0; i < items.size(); i++){
+            if(itemNodes.get(i).isFavorite()){
+                favorites.add(items.get(i).getName());
+            }
+        }
         log.info("List of favorites is gathered and returned");
         return favorites;
     }

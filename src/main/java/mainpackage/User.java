@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Objects;
 
 
 public class User {
@@ -90,7 +91,7 @@ public class User {
     }
 
     public String[] getFavourites() {
-        return favourites;
+        return Objects.requireNonNullElseGet(favourites, () -> new String[0]);
     }
 
     public void setFavourites(String[] favourites) {

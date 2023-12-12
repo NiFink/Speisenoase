@@ -23,12 +23,6 @@
     "password" : "sicheresPasswort",
     "favourites" : [ ]
   },
-  "asdf" : {
-    "userName" : "asdf",
-    "userEmail" : "test@test.test",
-    "password" : "asdf",
-    "favourites" : [ ]
-  },
   "Jana" : {
     "userName" : "Jana",
     "userEmail" : "Bärchi123@web.de",
@@ -52,5 +46,11 @@
     "userEmail" : "mhhCookies@web.de",
     "password" : "123",
     "favourites" : [ ]
+  },
+  "asdf" : {
+    "userName" : "asdf",
+    "userEmail" : "test@test.test",
+    "password" : "asdf",
+    "favourites" : [ "Apple", "Grapes", "Cucumber", "Gingerbread" ]
   }
 }

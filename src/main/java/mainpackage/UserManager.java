@@ -97,7 +97,7 @@ public class UserManager {
 
     }
 
-    private boolean updateUserData(User oldUser, User newUser) throws IOException {
+    public boolean updateUserData(User oldUser, User newUser) throws IOException {
 
          ObjectMapper objectMapper = new ObjectMapper();
 

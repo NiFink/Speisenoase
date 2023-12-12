@@ -19,18 +19,22 @@ public class ControllerMainPage{
     private TextField tbSearch;
     @FXML
     private Button btProfil;
-    private final ItemManager itemManager = ItemManager.getInstance();
+    private ItemManager itemManager;
     private UserManager userManager;
 
     public void setUserManager(UserManager userManager) {
         this.userManager = userManager;
     }
+    public void setItemManager(ItemManager itemManager) {
+        this.itemManager = itemManager;
+    }
 
     private static final Logger log = LogManager.getLogger(ControllerMainPage.class);
 
     public void initialize() {
-        scrollPaneItems.setContent(itemManager.getItempaneCategory("all"));
         setUserManager(UserManager.getInstance());
+        setItemManager(ItemManager.getInstance());
+        scrollPaneItems.setContent(itemManager.getItempaneCategory("all"));
         btProfil.setText(userManager.getActiveUser().getUserName());
     }
 
@@ -71,7 +75,6 @@ public class ControllerMainPage{
 
     @FXML
     protected void checkBtProfilClick(Event event) {
-
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("Profil.fxml", "Profil", 860, 550);
     }
