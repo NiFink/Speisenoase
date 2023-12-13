@@ -58,6 +58,7 @@ public class ControllerShoppingCart {
         purchaseList =
                 itemManager.getItemsShoppingCart()
                         .stream()
+                        .parallel()
                         .map(x -> new Purchase(x.getName(), x.getPrice(), x.getAmountInCart()))
                                 .toList();
         updateVBox();

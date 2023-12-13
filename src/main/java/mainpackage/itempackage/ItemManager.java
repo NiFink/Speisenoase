@@ -142,6 +142,7 @@ public class ItemManager {
         List<ItemNode> itemsShoppingCart =
                 itemNodes
                         .stream()
+                        .parallel()
                         .filter(x -> x.getAmountInCart()>0)
                         .toList();
 
