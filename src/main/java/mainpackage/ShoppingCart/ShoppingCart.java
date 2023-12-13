@@ -8,36 +8,41 @@ import java.util.*;
 
 public class ShoppingCart {
 
-    private ArrayList<Purchase> purchaseList;
+    private ArrayList<Purchase> purchaseList = new ArrayList<>();
     private static ShoppingCart instance;
     private static final Logger log = LogManager.getLogger(ItemManager.class);
-    public static ShoppingCart getInstance(){
-        if(instance == null){
+
+    public static ShoppingCart getInstance() {
+        if (instance == null) {
             instance = new ShoppingCart();
         }
         log.debug("ShoppingCart instance is being returned");
         return instance;
     }
 
-    public void addPurchase(Purchase purchase){
+    public void addPurchase(Purchase purchase) {
         purchaseList.add(purchase);
     }
 
-    public void updateAmount(String purchaseStr, int amountToAdd){
-        for(Purchase purchase : purchaseList){
-            if(purchase.getName().equals(purchaseStr)){
-                purchase.setAmount(purchase.getAmount() + amountToAdd);
+    public void updateAmount(String purchaseStr, double price,  int amountToAdd) {
+        if(!purchaseList.isEmpty()){
+            for (Purchase purchase : purchaseList) {
+                if (purchase.getName().equals(purchaseStr)) {
+                    purchase.setAmount(purchase.getAmount() + amountToAdd);
+                }
             }
+        } else {
+            purchaseList.add(new Purchase(purchaseStr, price, amountToAdd));
         }
     }
 
-    public List<Purchase> getPurchaseList(){
+    public List<Purchase> getPurchaseList() {
         return new ArrayList<>(purchaseList);
     }
 
-    public double getTotal(){
+    public double getTotal() {
         double total = 0;
-        for(Purchase purchase : purchaseList){
+        for (Purchase purchase : purchaseList) {
             total += purchase.getPrice();
         }
         log.debug("Total of purchases is: " + total);

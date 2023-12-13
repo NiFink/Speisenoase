@@ -177,7 +177,7 @@ public class ItemNode {
         button.setPrefHeight(30);
         button.setPrefWidth(40);
         button.setOnAction(actionEvent -> {
-            shoppingCart.updateAmount(item.getName(), spinner.getValue());
+            shoppingCart.updateAmount(item.getName(), item.getPrice(), spinner.getValue());
             log.info("Added " + spinner.getValue() + " " + item.getName() + " to the shopping cart");
         });
 
