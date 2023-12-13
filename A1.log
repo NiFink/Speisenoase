@@ -68,6 +68,20 @@ JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance i
 JavaFX Application Thread INFO  itempackage.ItemManager - FlowPane with ItemNodes, that are in the category 'all', is created with a size of '15'
 JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - MainPage.fxml: loaded successfully
 JavaFX Application Thread DEBUG mainpackage.ControllerLogin - Logged in successfully
+JavaFX Application Thread INFO  itempackage.ItemNode - Added 1 Cucumber to the shopping cart
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread INFO  itempackage.ItemManager - List of items in shopping cart is gathered and returned
+JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - ShoppingCart.fxml: loaded successfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemManager - ControllerShoppingCart instance is being returned
+JavaFX Application Thread INFO  itempackage.ItemManager - List of items in shopping cart is gathered and returned
+JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - Checkout.fxml: loaded successfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread INFO  itempackage.ItemManager - List of items in shopping cart is gathered and returned
+JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - ShoppingCart.fxml: loaded successfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread INFO  itempackage.ItemManager - FlowPane with ItemNodes, that are in the category 'all', is created with a size of '15'
+JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - MainPage.fxml: loaded successfully
 JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
 JavaFX Application Thread INFO  itempackage.ItemManager - List of favorites is gathered and returned
 JavaFX Application Thread DEBUG mainpackage.UserManager - updated userdata successfully

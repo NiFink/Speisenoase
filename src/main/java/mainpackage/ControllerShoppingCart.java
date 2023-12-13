@@ -33,18 +33,18 @@ public class ControllerShoppingCart {
     @FXML
     private Label lbTotal;
 
-    private float purchaseTotal = 0;
+    private float purchaseTotal;
 
     private List<Purchase> purchaseList;
     private UserManager userManager;
     private final ItemManager itemManager = ItemManager.getInstance();
     private static final Logger log = LogManager.getLogger(ItemManager.class);
     public static ControllerShoppingCart getInstance(){
-        if(instance == null){
-            instance = new ControllerShoppingCart();
-        }
         log.debug("ControllerShoppingCart instance is being returned");
         return instance;
+    }
+    public ControllerShoppingCart(){
+        instance = this;
     }
 
     public void setUserManager(UserManager userManager) {
@@ -99,7 +99,6 @@ public class ControllerShoppingCart {
             }
         }
         lbTotal.setText("Total: " + String.format("%.2f", purchaseTotal) + "€");
-
     }
 
 
@@ -127,7 +126,7 @@ public class ControllerShoppingCart {
         priceLabel.setFont(new Font("System Bold", 18.0));
 
         purchaseTotal += (purchase.getPrice() * purchase.getAmount());
-        purchase.setTotal(purchaseTotal);
+
 
         Label amountLabel = new Label("Amount: ");
         amountLabel.setLayoutX(300.0);
@@ -165,7 +164,6 @@ public class ControllerShoppingCart {
     }
     private void updateAmount(Purchase purchase, Integer newAmount) {
         if (purchase.getAmount() != newAmount) {
-            purchase.setTotal(0);
             purchase.setAmount(newAmount);
             updateVBox();
         }

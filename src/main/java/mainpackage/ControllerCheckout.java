@@ -56,7 +56,7 @@ public class ControllerCheckout {
             }
 
         }
-        lbTotal.setText("Total: " + String.format("%.2f", shoppingCart.getPurchaseTotal()));
+        lbTotal.setText("Total: " + String.format("%.2f", shoppingCart.getPurchaseTotal())+ "€");
     }
 
     @FXML

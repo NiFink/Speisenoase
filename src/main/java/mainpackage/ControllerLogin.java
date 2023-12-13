@@ -22,7 +22,6 @@ public class ControllerLogin {
     private PasswordField pbPassword;
 
     private final UserManager userManager = UserManager.getInstance();
-    private final ControllerMainPage controllerMainPage = new ControllerMainPage();
 
     private static final Logger log = LogManager.getLogger(ControllerLogin.class);
     @FXML
