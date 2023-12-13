@@ -42,7 +42,7 @@
                   <Font size="14.0" />
                </font>
                 </TextField>
-            <TextField fx:id="tbEmail" layoutX="57.0" layoutY="173.0" prefHeight="27.0" prefWidth="177.0" promptText="Emaill" style="-fx-background-color: transparent; -fx-border-color: #022235; -fx-border-width: 0px 0px 2px 0px;">
+            <TextField fx:id="tbEmail" layoutX="57.0" layoutY="173.0" prefHeight="27.0" prefWidth="177.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #022235; -fx-border-width: 0px 0px 2px 0px;">
                <font>
                   <Font size="14.0" />
                </font>

@@ -7,7 +7,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -118,14 +117,14 @@
                   </ImageView>
                </graphic>
                   </Button>
-            <Button fx:id="btTag" mnemonicParsing="false" onAction="#checkBtTagClick" prefHeight="100.0" prefWidth="135.0" style="-fx-background-color: #03334F; -fx-border-color: #ffffff; -fx-border-radius: 15px; -fx-background-radius: 15px;" textFill="WHITE">
+            <Button fx:id="btTag" mnemonicParsing="false" onAction="#checkBtTagClick" prefHeight="100.0" prefWidth="135.0" style="-fx-background-color: #03334F; -fx-border-color: #ffffff;" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/icons/tag-schwarze-form.png" />
+                        <Image url="@images/icons/herzform-silhouette.png" />
                      </image>
                   </ImageView>
                </graphic>
