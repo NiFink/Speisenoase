@@ -15,13 +15,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ItemManager {
+    //TODO: ist public Flowpane Clean Code?
 
     private static ItemManager instance;
-    private ArrayList<Item> items;
-    private ArrayList<ItemNode> itemNodes;
-    private ArrayList<StackPane> itemPanes;
-    private ArrayList<ItemNode> itemsShoppingCart;
-    private ArrayList<String> favorites;
+    private List<Item> items;
+    private List<ItemNode> itemNodes;
+    private List<StackPane> itemPanes;
+    private List<ItemNode> itemsShoppingCart;
+    private List<String> favorites;
     private static final Logger log = LogManager.getLogger(ItemManager.class);
 
     /**
@@ -77,7 +78,7 @@ public class ItemManager {
      * Creates ItemPanes from a list of ItemNodes and sets list of ItemPanes
      * @param itemNodes that ItemPanes are created from
      */
-    private void setItemPanes(ArrayList<ItemNode> itemNodes) {
+    private void setItemPanes(List<ItemNode> itemNodes) {
         ArrayList<StackPane> itemPanes = new ArrayList<>();
         for (int i = 0; i < items.size(); i++) {
             itemPanes.add(itemNodes.get(i).getItemPane());
@@ -119,7 +120,7 @@ public class ItemManager {
                 flowPane.getChildren().add(itemPanes.get(i));
             }
         }
-        //flowPane.setStyle("-fx-background-color:  #022235");
+
         if(flowPane.getChildren().size() > 0) {
             log.info("FlowPane with ItemNodes, that contain '" + name + "', is created with a size of '" + flowPane.getChildren().size() +  "'");
         } else {
@@ -137,7 +138,7 @@ public class ItemManager {
      * Creates and returns list of itemNodes which amount in the shopping cart is greater than 0
      * @return list of ItemNodes with shopping cart amount > 0
      */
-    public ArrayList<ItemNode> getItemsShoppingCart(){
+    public List<ItemNode> getItemsShoppingCart(){
         List<ItemNode> itemsShoppingCart =
                 itemNodes
                         .stream()
@@ -145,7 +146,7 @@ public class ItemManager {
                         .toList();
 
         log.info("List of items in shopping cart is gathered and returned");
-        return new ArrayList<ItemNode>(itemsShoppingCart);
+        return new ArrayList<>(itemsShoppingCart);
     }
 
     /**
@@ -159,8 +160,8 @@ public class ItemManager {
      * Gets list of current favorites
      * @return list of current favorites
      */
-    public ArrayList<String> getFavorites() {
-        ArrayList<String> favorites = new ArrayList<>();
+    public List<String> getFavorites() {
+        List<String> favorites = new ArrayList<>();
         for(int i = 0; i < items.size(); i++){
             if(itemNodes.get(i).isFavorite()){
                 favorites.add(items.get(i).getName());

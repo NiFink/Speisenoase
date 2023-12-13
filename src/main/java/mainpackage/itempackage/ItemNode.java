@@ -31,35 +31,34 @@ public class ItemNode {
 
     /**
      * Constructor of ItemNode
+     *
      * @param item that holds information for itemNode
      */
     public ItemNode(Item item) {
         this.name = item.getName();
         this.price = item.getPrice();
         this.favorite = checkFavorite(UserManager.getInstance().getActiveUser(), this.name);
-        try {
-            createPane(item);
-        }  catch (IOException ioe) {
-            log.error("Caught IOException: " + ioe.getMessage());
-        }
+        createPane(item);
         log.debug("ItemNode of '" + item.getName() + "' is created");
     }
 
     /**
      * Checks if activeUser has this item favored
+     *
      * @param user that is activeUser
      * @param name of this item
      * @return true if favored, false if not favored
      */
-    private boolean checkFavorite(User user, String name){
+    private boolean checkFavorite(User user, String name) {
         return Arrays.asList(user.getFavourites()).contains(name);
     }
 
     /**
      * Creates Stackpane of an Item
+     *
      * @param item that holds information for itemNode
      */
-    private void createPane(Item item) throws IOException{
+    private void createPane(Item item) {
         StackPane stackPane = new StackPane();
 
         //Border around Pane
@@ -166,7 +165,8 @@ public class ItemNode {
 
         //Button to add item to shopping cart with amount from Spinner
         Button button = new Button("Buy");
-        button.setFont(Font.font("Yu Gothic UI", FontWeight.BOLD, FontPosture.REGULAR, 12));;
+        button.setFont(Font.font("Yu Gothic UI", FontWeight.BOLD, FontPosture.REGULAR, 12));
+        ;
         button.setStyle("-fx-background-color: #022235; -fx-text-fill: white;");
         button.setPrefHeight(30);
         button.setPrefWidth(40);
@@ -191,17 +191,21 @@ public class ItemNode {
     }
 
     public StackPane getItemPane() {
-        return itemPane;
+        return new StackPane(itemPane);
     }
+
     public boolean isFavorite() {
         return favorite;
     }
+
     public String getName() {
         return name;
     }
+
     public double getPrice() {
         return price;
     }
+
     public int getAmountInCart() {
         return amountInCart;
     }
