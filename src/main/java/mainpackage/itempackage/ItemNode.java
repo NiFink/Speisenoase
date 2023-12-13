@@ -11,6 +11,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
+import mainpackage.ShoppingCart.ShoppingCart;
 import mainpackage.User;
 import mainpackage.UserManager;
 import org.apache.logging.log4j.LogManager;
@@ -28,6 +29,7 @@ public class ItemNode {
     private int amountInCart = 0;
     private StackPane itemPane;
     private static final Logger log = LogManager.getLogger(ItemNode.class);
+    private ShoppingCart shoppingCart;
 
     /**
      * Constructor of ItemNode
@@ -35,11 +37,16 @@ public class ItemNode {
      * @param item that holds information for itemNode
      */
     public ItemNode(Item item) {
+        setShoppingCart(ShoppingCart.getInstance());
         this.name = item.getName();
         this.price = item.getPrice();
         this.favorite = checkFavorite(UserManager.getInstance().getActiveUser(), this.name);
         createPane(item);
         log.debug("ItemNode of '" + item.getName() + "' is created");
+    }
+
+    public void setShoppingCart(ShoppingCart shoppingCart) {
+        this.shoppingCart = shoppingCart;
     }
 
     /**
@@ -166,12 +173,11 @@ public class ItemNode {
         //Button to add item to shopping cart with amount from Spinner
         Button button = new Button("Buy");
         button.setFont(Font.font("Yu Gothic UI", FontWeight.BOLD, FontPosture.REGULAR, 12));
-        ;
         button.setStyle("-fx-background-color: #022235; -fx-text-fill: white;");
         button.setPrefHeight(30);
         button.setPrefWidth(40);
         button.setOnAction(actionEvent -> {
-            amountInCart += spinner.getValue();
+            shoppingCart.updateAmount(item.getName(), spinner.getValue());
             log.info("Added " + spinner.getValue() + " " + item.getName() + " to the shopping cart");
         });
 

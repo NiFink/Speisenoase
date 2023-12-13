@@ -5,6 +5,8 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
+import mainpackage.ShoppingCart.Purchase;
+import mainpackage.ShoppingCart.ShoppingCart;
 import mainpackage.UserManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,6 +26,7 @@ public class ItemManager {
     private List<ItemNode> itemsShoppingCart;
     private List<String> favorites;
     private static final Logger log = LogManager.getLogger(ItemManager.class);
+    private ShoppingCart shoppingCart;
 
     /**
      * If an instance of ItemManager exists, returns this instance, else it returns a new instance
@@ -41,11 +44,16 @@ public class ItemManager {
      * Constructor of ItemManager
      */
     public ItemManager(){
+        setShoppingCart(ShoppingCart.getInstance());
         setItems(15);
         setItemNodes(this.items);
         setItemPanes(this.itemNodes);
         setFavorites(UserManager.getInstance().getActiveUser().getFavourites());
         log.debug("New ItemManager is created");
+    }
+
+    public void setShoppingCart(ShoppingCart shoppingCart) {
+        this.shoppingCart = shoppingCart;
     }
 
     /**
@@ -148,6 +156,15 @@ public class ItemManager {
 
         log.info("List of items in shopping cart is gathered and returned");
         return new ArrayList<>(itemsShoppingCart);
+    }
+
+    public void updateShoppingCart(){
+        for(ItemNode itemNode : itemNodes){
+            if(itemNode.getAmountInCart() != 0) {
+                shoppingCart.addPurchase(new Purchase(itemNode.getName(), itemNode.getPrice(), itemNode.getAmountInCart()));
+            }
+        }
+        log.info("List of items in shopping cart is updated");
     }
 
     /**

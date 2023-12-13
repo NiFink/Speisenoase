@@ -23,6 +23,14 @@ public class ShoppingCart {
         purchaseList.add(purchase);
     }
 
+    public void updateAmount(String purchaseStr, int amountToAdd){
+        for(Purchase purchase : purchaseList){
+            if(purchase.getName().equals(purchaseStr)){
+                purchase.setAmount(purchase.getAmount() + amountToAdd);
+            }
+        }
+    }
+
     public List<Purchase> getPurchaseList(){
         return new ArrayList<>(purchaseList);
     }
@@ -32,6 +40,7 @@ public class ShoppingCart {
         for(Purchase purchase : purchaseList){
             total += purchase.getPrice();
         }
+        log.debug("Total of purchases is: " + total);
         return total;
     }
 }

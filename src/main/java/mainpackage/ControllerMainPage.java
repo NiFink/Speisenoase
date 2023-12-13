@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
+import mainpackage.ShoppingCart.ShoppingCart;
 import mainpackage.itempackage.ItemManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -87,6 +88,7 @@ public class ControllerMainPage{
     protected void checkBtShoppingCartClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("ShoppingCart.fxml", "ShoppingCart", 860, 550);
+        itemManager.updateShoppingCart();
     }
 
     @FXML
