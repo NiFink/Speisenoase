@@ -51,6 +51,6 @@
     "userName" : "asdf",
     "userEmail" : "test@test.test",
     "password" : "asdf",
-    "favourites" : [ "Apple", "Grapes", "Cucumber", "Gingerbread" ]
+    "favourites" : [ "Apple", "Duplo", "Gingerbread" ]
   }
 }

@@ -11,6 +11,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
+import mainpackage.ShoppingCart.Purchase;
 import mainpackage.ShoppingCart.ShoppingCart;
 import mainpackage.User;
 import mainpackage.UserManager;
@@ -26,10 +27,9 @@ public class ItemNode {
     private boolean favorite;
     private final String name;
     private final double price;
-    private int amountInCart = 0;
     private StackPane itemPane;
     private static final Logger log = LogManager.getLogger(ItemNode.class);
-    private ShoppingCart shoppingCart;
+    private final ShoppingCart shoppingCart = ShoppingCart.getInstance();
 
     /**
      * Constructor of ItemNode
@@ -37,16 +37,11 @@ public class ItemNode {
      * @param item that holds information for itemNode
      */
     public ItemNode(Item item) {
-        setShoppingCart(ShoppingCart.getInstance());
         this.name = item.getName();
         this.price = item.getPrice();
         this.favorite = checkFavorite(UserManager.getInstance().getActiveUser(), this.name);
         createPane(item);
         log.debug("ItemNode of '" + item.getName() + "' is created");
-    }
-
-    public void setShoppingCart(ShoppingCart shoppingCart) {
-        this.shoppingCart = shoppingCart;
     }
 
     /**
@@ -177,8 +172,11 @@ public class ItemNode {
         button.setPrefHeight(30);
         button.setPrefWidth(40);
         button.setOnAction(actionEvent -> {
-            shoppingCart.updateAmount(item.getName(), item.getPrice(), spinner.getValue());
-            log.info("Added " + spinner.getValue() + " " + item.getName() + " to the shopping cart");
+            if(shoppingCart.hasPurchase(item.getName())){
+                shoppingCart.updateAmount(item.getName(), item.getPrice(), spinner.getValue());
+            } else {
+                shoppingCart.addPurchase(new Purchase(item.getName(), item.getPrice(), spinner.getValue()));
+            }
         });
 
         //Layout that contains spinner and buy button
@@ -210,9 +208,5 @@ public class ItemNode {
 
     public double getPrice() {
         return price;
-    }
-
-    public int getAmountInCart() {
-        return amountInCart;
     }
 }

@@ -143,31 +143,6 @@ public class ItemManager {
     }
 
     /**
-     * Creates and returns list of itemNodes which amount in the shopping cart is greater than 0
-     * @return list of ItemNodes with shopping cart amount > 0
-     */
-    public List<ItemNode> getItemsShoppingCart(){
-        List<ItemNode> itemsShoppingCart =
-                itemNodes
-                        .stream()
-                        .parallel()
-                        .filter(x -> x.getAmountInCart()>0)
-                        .toList();
-
-        log.info("List of items in shopping cart is gathered and returned");
-        return new ArrayList<>(itemsShoppingCart);
-    }
-
-    public void updateShoppingCart(){
-        for(ItemNode itemNode : itemNodes){
-            if(itemNode.getAmountInCart() != 0) {
-                shoppingCart.addPurchase(new Purchase(itemNode.getName(), itemNode.getPrice(), itemNode.getAmountInCart()));
-            }
-        }
-        log.info("List of items in shopping cart is updated");
-    }
-
-    /**
      * Sets list of current favorites to favorites of activeUser
      */
     private void setFavorites(String[] favorites){

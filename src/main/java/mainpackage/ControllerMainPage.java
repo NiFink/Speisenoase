@@ -88,7 +88,6 @@ public class ControllerMainPage{
     protected void checkBtShoppingCartClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("ShoppingCart.fxml", "ShoppingCart", 860, 550);
-        itemManager.updateShoppingCart();
     }
 
     @FXML

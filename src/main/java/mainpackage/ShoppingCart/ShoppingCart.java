@@ -8,7 +8,7 @@ import java.util.*;
 
 public class ShoppingCart {
 
-    private ArrayList<Purchase> purchaseList = new ArrayList<>();
+    private List<Purchase> purchaseList = new ArrayList<>();
     private static ShoppingCart instance;
     private static final Logger log = LogManager.getLogger(ItemManager.class);
 
@@ -22,6 +22,7 @@ public class ShoppingCart {
 
     public void addPurchase(Purchase purchase) {
         purchaseList.add(purchase);
+        log.info("Added " + purchase.getAmount() + " " + purchase.getName() + " to the shopping cart");
     }
 
     public void updateAmount(String purchaseStr, double price,  int amountToAdd) {
@@ -34,6 +35,16 @@ public class ShoppingCart {
         } else {
             purchaseList.add(new Purchase(purchaseStr, price, amountToAdd));
         }
+        log.info("Updated amount of " + purchaseStr + " in the shopping cart");
+    }
+
+    public boolean hasPurchase(String name){
+        for(Purchase purchase : purchaseList){
+            if(purchase.getName().equals(name)){
+                return true;
+            }
+        }
+        return false;
     }
 
     public List<Purchase> getPurchaseList() {
@@ -43,7 +54,7 @@ public class ShoppingCart {
     public double getTotal() {
         double total = 0;
         for (Purchase purchase : purchaseList) {
-            total += purchase.getPrice();
+            total += purchase.getPrice() * purchase.getAmount();
         }
         log.debug("Total of purchases is: " + total);
         return total;

@@ -8,6 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import mainpackage.ShoppingCart.Purchase;
+import mainpackage.ShoppingCart.ShoppingCart;
 import mainpackage.itempackage.ItemManager;
 
 import java.util.List;
@@ -15,56 +16,36 @@ import java.util.List;
 public class ControllerCheckout {
     @FXML
     private VBox vboxCosts;
-
     @FXML
     private Button btProfil;
-
     @FXML
     private Label lbTotal;
 
-    double total = 0.0;
-    private List<Purchase> purchaseList;
-    private UserManager userManager;
-
+    private final UserManager userManager = UserManager.getInstance();
+    private final ShoppingCart shoppingCart = ShoppingCart.getInstance();
     private final ItemManager itemManager = ItemManager.getInstance();
-    private final ControllerShoppingCart shoppingCart = ControllerShoppingCart.getInstance();
-
-    public void setUserManager(UserManager userManager) {
-        this.userManager = userManager;
-    }
-
 
     public void initialize() {
-        setUserManager(UserManager.getInstance());
         btProfil.setText(userManager.getActiveUser().getUserName());
-
-        purchaseList =
-                itemManager.getItemsShoppingCart()
-                        .stream()
-                        .map(x -> new Purchase(x.getName(), x.getPrice(), x.getAmountInCart()))
-                        .toList();
-
         updateVBox();
     }
 
     private void updateVBox() {
         vboxCosts.getChildren().clear();
 
-        for (Purchase purchase : purchaseList) {
-            if(purchase.getAmount() > 0){
+        for (Purchase purchase : shoppingCart.getPurchaseList()) {
+            if (purchase.getAmount() > 0) {
                 vboxCosts.getChildren().add(createCostAPane(purchase));
             }
-
         }
-        lbTotal.setText("Total: " + String.format("%.2f", shoppingCart.getPurchaseTotal())+ "€");
+
+        lbTotal.setText("Total: " + String.format("%.2f", shoppingCart.getTotal()) + "€");
     }
 
     @FXML
     protected void checkBtProfilClick() {
-
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("Profil.fxml", "Profil", 860, 550);
-
     }
 
     @FXML
@@ -82,7 +63,7 @@ public class ControllerCheckout {
         nameLabel.setTextFill(Color.web("#022235"));
         nameLabel.setFont(new Font("System Bold", 16.0));
 
-        Label amountLabel = new Label(String.format("%d",purchase.getAmount()) + "x");
+        Label amountLabel = new Label(String.format("%d", purchase.getAmount()) + "x");
         amountLabel.setLayoutX(163.0);
         amountLabel.setLayoutY(9.0);
         amountLabel.setPrefHeight(25.0);
@@ -97,8 +78,6 @@ public class ControllerCheckout {
         priceLabel.setPrefWidth(63.0);
         priceLabel.setTextFill(Color.web("#022235"));
         priceLabel.setFont(new Font("System Bold", 16.0));
-
-
 
         AnchorPane anchorPane = new AnchorPane();
         anchorPane.getChildren().addAll(nameLabel, priceLabel, amountLabel);

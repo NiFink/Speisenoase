@@ -10,6 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import mainpackage.ShoppingCart.Purchase;
+import mainpackage.ShoppingCart.ShoppingCart;
 import mainpackage.itempackage.ItemManager;
 import mainpackage.itempackage.ItemNode;
 import org.apache.logging.log4j.LogManager;
@@ -20,88 +21,55 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ControllerShoppingCart {
-    private static ControllerShoppingCart instance;
-
     @FXML
     private VBox vboxPurchase;
     @FXML
     private VBox vboxCosts;
-
     @FXML
     private Button btProfil;
-
     @FXML
     private Label lbTotal;
 
-    private float purchaseTotal;
-
-    private List<Purchase> purchaseList;
-    private UserManager userManager;
-    private final ItemManager itemManager = ItemManager.getInstance();
+    private final UserManager userManager = UserManager.getInstance();
+    private final ShoppingCart shoppingCart = ShoppingCart.getInstance();
     private static final Logger log = LogManager.getLogger(ItemManager.class);
-    public static ControllerShoppingCart getInstance(){
-        log.debug("ControllerShoppingCart instance is being returned");
-        return instance;
-    }
-    public ControllerShoppingCart(){
-        instance = this;
-    }
-
-    public void setUserManager(UserManager userManager) {
-        this.userManager = userManager;
-    }
 
     public void initialize() {
-        setUserManager(UserManager.getInstance());
         btProfil.setText(userManager.getActiveUser().getUserName());
-
-        purchaseList =
-                itemManager.getItemsShoppingCart()
-                        .stream()
-                        .parallel()
-                        .map(x -> new Purchase(x.getName(), x.getPrice(), x.getAmountInCart()))
-                                .toList();
         updateVBox();
     }
 
-
     @FXML
     protected void checkBtProfilClick() {
-
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("Profil.fxml", "Profil", 860, 550);
-
     }
+
     @FXML
     protected void checkBtBackClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("MainPage.fxml", "MainPage", 860, 550);
     }
+
     @FXML
     protected void checkBtCheckoutClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("Checkout.fxml", "Checkout", 860, 550);
     }
 
-
-    public void setPurchaseList(List<Purchase> purchaseList) {
-        this.purchaseList = purchaseList;
-        updateVBox();
-    }
-
     private void updateVBox() {
         vboxPurchase.getChildren().clear();
         vboxCosts.getChildren().clear();
 
-        for (Purchase purchase : purchaseList) {
-            if(purchase.getAmount() > 0){
+        for (Purchase purchase : shoppingCart.getPurchaseList()) {
+            if (purchase.getAmount() > 0) {
                 vboxPurchase.getChildren().add(createPurchaseAPane(purchase));
                 vboxCosts.getChildren().add(createCostAPane(purchase));
             }
         }
-        lbTotal.setText("Total: " + String.format("%.2f", purchaseTotal) + "€");
-    }
 
+        lbTotal.setText("Total: " + String.format("%.2f", shoppingCart.getTotal()) + "€");
+    }
 
     private AnchorPane createPurchaseAPane(Purchase purchase) {
         ImageView imageView = new ImageView(new Image(getClass().getResource("/images/groceries/" + purchase.getName() + ".png").toExternalForm()));
@@ -126,9 +94,6 @@ public class ControllerShoppingCart {
         priceLabel.setTextFill(Color.web("#022235"));
         priceLabel.setFont(new Font("System Bold", 18.0));
 
-        purchaseTotal += (purchase.getPrice() * purchase.getAmount());
-
-
         Label amountLabel = new Label("Amount: ");
         amountLabel.setLayoutX(300.0);
         amountLabel.setLayoutY(92.0);
@@ -146,7 +111,6 @@ public class ControllerShoppingCart {
             updateAmount(purchase, newValue);
         });
 
-
         Button deleteButton = new Button("Delete");
         deleteButton.setLayoutX(460.0);
         deleteButton.setLayoutY(92.0);
@@ -163,12 +127,12 @@ public class ControllerShoppingCart {
 
         return anchorPane;
     }
+
     private void updateAmount(Purchase purchase, Integer newAmount) {
         if (purchase.getAmount() != newAmount) {
             purchase.setAmount(newAmount);
             updateVBox();
         }
-
     }
 
     private AnchorPane createCostAPane(Purchase purchase) {
@@ -180,7 +144,7 @@ public class ControllerShoppingCart {
         nameLabel.setTextFill(Color.web("#022235"));
         nameLabel.setFont(new Font("System Bold", 16.0));
 
-        Label amountLabel = new Label(String.format("%d",purchase.getAmount()) + "x");
+        Label amountLabel = new Label(String.format("%d", purchase.getAmount()) + "x");
         amountLabel.setLayoutX(163.0);
         amountLabel.setLayoutY(9.0);
         amountLabel.setPrefHeight(25.0);
@@ -196,15 +160,9 @@ public class ControllerShoppingCart {
         priceLabel.setTextFill(Color.web("#022235"));
         priceLabel.setFont(new Font("System Bold", 16.0));
 
-
-
         AnchorPane anchorPane = new AnchorPane();
         anchorPane.getChildren().addAll(nameLabel, priceLabel, amountLabel);
 
         return anchorPane;
-    }
-
-    public float getPurchaseTotal(){
-        return this.purchaseTotal;
     }
 }
