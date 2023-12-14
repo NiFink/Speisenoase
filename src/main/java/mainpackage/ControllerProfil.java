@@ -67,11 +67,12 @@ public class ControllerProfil {
         tbUsername.setText(user.getUserName());
         tbEmail.setText(user.getUserEmail());
         tbUsername.setFocusTraversable(false);
+        //pbPassword.setFocusTraversable(false);
 
     }
 
     @FXML
-    protected void checkbtnConfirmUsernameClick(MouseEvent event) throws IOException {
+    protected void confirmUsername(MouseEvent event) throws IOException {
         if(tbUsername.getText().isBlank()){
             lbErrorUsername.setText("Username can't vanish into thin air!");
             lbErrorUsername.setVisible(true);
@@ -186,6 +187,12 @@ public class ControllerProfil {
             passwordChange.setDisable(true);
             passwordChange.setVisible(false);
         }
+    }
+
+    @FXML
+    protected void logOut(){
+        Sceneswitcher sceneswitcher = Sceneswitcher.getInstance();
+        sceneswitcher.switchTo("Login.fxml", "Login", 860, 550);
     }
 
 

@@ -106,7 +106,7 @@ public class UserManager {
         ObjectNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/json/userData.json"));
 
 
-            if(newUser.getUserName() == oldUser.getUserName() || userData.get(newUser.getUserName()) == null) {
+            if(newUser.getUserName().equals(oldUser.getUserName()) || userData.get(newUser.getUserName()) == null) {
 
                 userData.set(newUser.getUserName(), objectMapper.valueToTree(newUser));
 
@@ -120,6 +120,7 @@ public class UserManager {
                 //writing new data node to json file:
                 PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
                 objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
+                this.activeUser = newUser;
                 logger.debug("updated userdata successfully");
                 return true;
             }
@@ -189,29 +190,11 @@ public class UserManager {
 
 
     public User getActiveUser() {
-        return activeUser;
+        return new User(activeUser);
     }
 
     public void setActiveUser(User activeUser) {
         this.activeUser = activeUser;
-    }
-
-    public static void main(String[] args) throws IOException, ParseException {
-
-        UserManager userManager = new UserManager();
-
-        System.out.println(userManager.userLoginCheck("Nils", "derBeste?"));
-        String[] favoriten = {"Tofu", "Seitan", "Soja"};
-        userManager.updateFavorites(userManager.getActiveUser(), favoriten);
-
-        //userManager.userLoginCheck("jan", "test123");
-        //userManager.deleteUser(userManager.getActiveUser());
-
-
-
-
-
-
     }
 
 

@@ -45,12 +45,12 @@
     "userName" : "Michelle",
     "userEmail" : "mhhCookies@web.de",
     "password" : "123",
-    "favourites" : [ ]
+    "favourites" : [ "Apple-juice" ]
   },
   "asdf" : {
     "userName" : "asdf",
     "userEmail" : "test@test.test",
     "password" : "asdf",
-    "favourites" : [ "Apple", "Duplo", "Gingerbread" ]
+    "favourites" : [ "Apple", "Grapes", "Tomatoes", "Duplo", "Gingerbread", "Beer" ]
   }
 }
