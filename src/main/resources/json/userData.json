@@ -29,12 +29,6 @@
     "password" : "test",
     "favourites" : [ ]
   },
-  "aa" : {
-    "userName" : "aa",
-    "userEmail" : "a",
-    "password" : "a",
-    "favourites" : [ ]
-  },
   "Testuser1" : {
     "userName" : "Testuser1",
     "userEmail" : "hahah@e.ea",
@@ -51,6 +45,10 @@
     "userName" : "asdf",
     "userEmail" : "test@test.test",
     "password" : "asdf",
-    "favourites" : [ "Apple", "Grapes", "Tomatoes", "Duplo", "Gingerbread", "Beer" ]
+    "favourites" : [ "Apple", "Grapes", "Tomatoes", "Duplo", "Gingerbread", "Beer" ],
+    "firstName" : "test",
+    "lastName" : "test",
+    "address" : "test",
+    "city" : "test"
   }
 }

@@ -144,6 +144,7 @@ public class ControllerProfil {
     @FXML
     protected  void deleteAccount() throws IOException {
         userManager.deleteUser(userManager.getActiveUser());
+        //userManager.setActiveUser(null);
         Sceneswitcher sceneswitcher = Sceneswitcher.getInstance();
         sceneswitcher.switchTo("Login.fxml", "Login", 860, 550);
     }
@@ -191,6 +192,7 @@ public class ControllerProfil {
 
     @FXML
     protected void logOut(){
+        //userManager.setActiveUser(null);
         Sceneswitcher sceneswitcher = Sceneswitcher.getInstance();
         sceneswitcher.switchTo("Login.fxml", "Login", 860, 550);
     }

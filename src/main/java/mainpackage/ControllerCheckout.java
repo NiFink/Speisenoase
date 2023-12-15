@@ -3,6 +3,7 @@ package mainpackage;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -20,6 +21,16 @@ public class ControllerCheckout {
     private Button btProfil;
     @FXML
     private Label lbTotal;
+
+    @FXML
+    private TextField tfFirstName;
+    @FXML
+    private TextField tfLastName;
+    @FXML
+    private TextField tfAdress;
+    @FXML
+    private TextField tfCity;
+
 
     private final UserManager userManager = UserManager.getInstance();
     private final ShoppingCart shoppingCart = ShoppingCart.getInstance();
