@@ -77,7 +77,7 @@ public class ControllerMainPage{
     @FXML
     protected void checkBtProfilClick(Event event) {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
-        sceneSwitcher.switchTo("Profil.fxml", "Profil", 860, 550);
+        sceneSwitcher.switchTo("Profil.fxml", "Profil");
     }
 
     @FXML
@@ -87,7 +87,7 @@ public class ControllerMainPage{
     @FXML
     protected void checkBtShoppingCartClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
-        sceneSwitcher.switchTo("ShoppingCart.fxml", "ShoppingCart", 860, 550);
+        sceneSwitcher.switchTo("ShoppingCart.fxml", "ShoppingCart");
     }
 
     @FXML

@@ -42,19 +42,19 @@ public class ControllerShoppingCart {
     @FXML
     protected void checkBtProfilClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
-        sceneSwitcher.switchTo("Profil.fxml", "Profil", 860, 550);
+        sceneSwitcher.switchTo("Profil.fxml", "Profil");
     }
 
     @FXML
     protected void checkBtBackClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
-        sceneSwitcher.switchTo("MainPage.fxml", "MainPage", 860, 550);
+        sceneSwitcher.switchTo("MainPage.fxml", "MainPage");
     }
 
     @FXML
     protected void checkBtCheckoutClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
-        sceneSwitcher.switchTo("Checkout.fxml", "Checkout", 860, 550);
+        sceneSwitcher.switchTo("Checkout.fxml", "Checkout");
     }
 
     private void updateVBox() {

@@ -46,9 +46,9 @@
     "userEmail" : "test@test.test",
     "password" : "asdf",
     "favourites" : [ "Apple", "Grapes", "Tomatoes", "Duplo", "Gingerbread", "Beer" ],
-    "firstName" : "test",
-    "lastName" : "test",
-    "address" : "test",
-    "city" : "test"
+    "firstName" : null,
+    "lastName" : null,
+    "address" : null,
+    "city" : null
   }
 }

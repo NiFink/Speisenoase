@@ -56,13 +56,18 @@ public class ControllerCheckout {
     @FXML
     protected void checkBtProfilClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
-        sceneSwitcher.switchTo("Profil.fxml", "Profil", 860, 550);
+        sceneSwitcher.switchTo("Profil.fxml", "Profil");
     }
 
     @FXML
     protected void checkBtBackClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
-        sceneSwitcher.switchTo("ShoppingCart.fxml", "ShoppingCart", 860, 550);
+        sceneSwitcher.switchTo("ShoppingCart.fxml", "ShoppingCart");
+    }
+    @FXML
+    protected void checkBtBuyClick() {
+        Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
+        sceneSwitcher.switchTo("LastPage.fxml", "LastPage");
     }
 
     private AnchorPane createCostAPane(Purchase purchase) {
@@ -94,5 +99,13 @@ public class ControllerCheckout {
         anchorPane.getChildren().addAll(nameLabel, priceLabel, amountLabel);
 
         return anchorPane;
+    }
+
+    private void setUserAdress(){
+    //TODO: Update user
+        //userManager.setActiveUser() = tfFirstName.getText();
+        //userManager.setActiveUser() = tfLastName.getText();
+        //userManager.setActiveUser() = tfAdress.getText();
+        //userManager.setActiveUser() = tfCity.getText();
     }
 }

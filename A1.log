@@ -14,10 +14,7 @@ Thread-2 DEBUG itempackage.ItemManager - ItemManager instance is being returned
 Thread-2 DEBUG itempackage.ItemManager - ItemManager instance is being returned
 Thread-2 DEBUG itempackage.ItemManager - ItemManager instance is being returned
 Thread-2 DEBUG itempackage.ItemManager - ItemManager instance is being returned
-Thread-2 DEBUG itempackage.ItemManager - ObjectMapper read itemData.json file and creates Item List
-JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - Register.fxml: loaded successfully
-JavaFX Application Thread DEBUG mainpackage.ControllerLogin - Register scene has been loaded
-JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - Login.fxml: loaded successfully
+Thread-2 DEBUG itempackage.ItemManager - ObjectMapper read itemData.json file and created Item List
 JavaFX Application Thread DEBUG mainpackage.UserManager - successfully logged in as asdf
 JavaFX Application Thread INFO  mainpackage.ControllerLogin - User: asdfhas logged in
 JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
@@ -104,43 +101,28 @@ JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance i
 JavaFX Application Thread INFO  itempackage.ItemManager - FlowPane with ItemNodes, that are in the category 'all', is created with a size of '15'
 JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - MainPage.fxml: loaded successfully
 JavaFX Application Thread DEBUG mainpackage.ControllerLogin - Logged in successfully
-JavaFX Application Thread INFO  itempackage.ItemManager - Added 1 Apple to the shopping cart
-JavaFX Application Thread INFO  itempackage.ItemManager - Updated amount of Apple in the shopping cart
-JavaFX Application Thread INFO  itempackage.ItemManager - Updated amount of Apple in the shopping cart
+JavaFX Application Thread INFO  itempackage.ItemManager - Added 1 Bell-pepper to the shopping cart
 JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
-JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 1.7999999999999998
-JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - ShoppingCart.fxml: loaded successfully
-JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 2.4
-JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 3.0
-JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
-JavaFX Application Thread INFO  itempackage.ItemManager - FlowPane with ItemNodes, that are in the category 'all', is created with a size of '15'
-JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - MainPage.fxml: loaded successfully
-JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
-JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 3.0
-JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - ShoppingCart.fxml: loaded successfully
-JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - Profil.fxml: loaded successfully
-JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
-JavaFX Application Thread INFO  itempackage.ItemManager - FlowPane with ItemNodes, that are in the category 'all', is created with a size of '15'
-JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - MainPage.fxml: loaded successfully
-JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
-JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 3.0
-JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - ShoppingCart.fxml: loaded successfully
-JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 3.5999999999999996
-JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 4.2
-JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 4.8
-JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 5.3999999999999995
-JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 0.0
-JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
-JavaFX Application Thread INFO  itempackage.ItemManager - FlowPane with ItemNodes, that are in the category 'all', is created with a size of '15'
-JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - MainPage.fxml: loaded successfully
-JavaFX Application Thread INFO  itempackage.ItemManager - Updated amount of Apple in the shopping cart
-JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
-JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 0.6
+JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 1.25
 JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - ShoppingCart.fxml: loaded successfully
 JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
 JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
-JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 0.6
+JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 1.25
 JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - Checkout.fxml: loaded successfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemManager - Purchases are loaded in vboxPurchase
+JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - LastPage.fxml: loaded successfully
 JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
-JavaFX Application Thread INFO  itempackage.ItemManager - List of favorites is gathered and returned
-JavaFX Application Thread DEBUG mainpackage.UserManager - updated userdata successfully
+JavaFX Application Thread INFO  itempackage.ItemManager - FlowPane with ItemNodes, that are in the category 'all', is created with a size of '15'
+JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - MainPage.fxml: loaded successfully
+JavaFX Application Thread INFO  itempackage.ItemManager - Added 1 Cucumber to the shopping cart
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 2.6399999999999997
+JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - ShoppingCart.fxml: loaded successfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 2.6399999999999997
+JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - Checkout.fxml: loaded successfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemManager - Purchases are loaded in vboxPurchase
+JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - LastPage.fxml: loaded successfully

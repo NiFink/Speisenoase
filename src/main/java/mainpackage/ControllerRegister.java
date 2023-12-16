@@ -54,7 +54,7 @@ public class ControllerRegister {
             }
             else if (userManager.registerNewUser(tbUsername.getText(), tbEmail.getText(), pbPassword.getText())){
                 Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
-                sceneSwitcher.switchTo("MainPage.fxml", "Mainpage", 860, 550);
+                sceneSwitcher.switchTo("MainPage.fxml", "Mainpage");
                 log.debug("Registered successfully");
             }
         }
@@ -68,7 +68,7 @@ public class ControllerRegister {
     @FXML
     protected void checkBackClick(ActionEvent event) {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
-        sceneSwitcher.switchTo("Login.fxml", "Login", 860, 550);
+        sceneSwitcher.switchTo("Login.fxml", "Login");
 
     }
     @FXML

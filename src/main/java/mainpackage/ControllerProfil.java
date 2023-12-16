@@ -146,7 +146,7 @@ public class ControllerProfil {
         userManager.deleteUser(userManager.getActiveUser());
         //userManager.setActiveUser(null);
         Sceneswitcher sceneswitcher = Sceneswitcher.getInstance();
-        sceneswitcher.switchTo("Login.fxml", "Login", 860, 550);
+        sceneswitcher.switchTo("Login.fxml", "Login");
     }
     @FXML
     protected void enablePasswordChange(){
@@ -194,7 +194,7 @@ public class ControllerProfil {
     protected void logOut(){
         //userManager.setActiveUser(null);
         Sceneswitcher sceneswitcher = Sceneswitcher.getInstance();
-        sceneswitcher.switchTo("Login.fxml", "Login", 860, 550);
+        sceneswitcher.switchTo("Login.fxml", "Login");
     }
 
 
@@ -202,7 +202,7 @@ public class ControllerProfil {
     protected void checkBtHomeClick(ActionEvent event) throws IOException {
 
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
-        sceneSwitcher.switchTo("MainPage.fxml", "Mainpage", 860, 550);
+        sceneSwitcher.switchTo("MainPage.fxml", "Mainpage");
 
     }
 

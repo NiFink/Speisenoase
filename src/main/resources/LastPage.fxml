@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="550.0" minWidth="860.0" prefHeight="550.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerCheckout">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="550.0" minWidth="860.0" prefHeight="550.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerLastPage">
    <top>
       <HBox prefHeight="72.0" prefWidth="200.0" style="-fx-background-color: #022235;" BorderPane.alignment="CENTER">
          <children>
                 <Button fx:id="btBack" mnemonicParsing="false" onAction="#checkBtBackClick" prefHeight="71.0" prefWidth="85.0" style="-fx-background-color: #022235;">
                     <graphic>
-                        <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="btBackImage" fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@images/icons/Pfeil_Links_Weiß.png" />
                             </image>
                         </ImageView>
                     </graphic>
                 </Button>
-                <Label alignment="CENTER" prefHeight="75.0" prefWidth="607.0" text="Purchase successful" textFill="WHITE">
+            <Label prefHeight="71.0" prefWidth="96.0" />
+                <Label alignment="CENTER" prefHeight="72.0" prefWidth="499.0" text="Purchase successful" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="26.0" />
                     </font>
@@ -41,4 +45,56 @@
          </children>
       </HBox>
    </top>
+   <center>
+      <AnchorPane prefHeight="480.0" prefWidth="1287.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="481.0" fitWidth="860.0" layoutX="190.0" layoutY="-1.0" opacity="0.17" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/other/Logo_ohne_Text.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="121.0" layoutY="14.0" prefHeight="100.0" prefWidth="618.0" text="Thank you for shopping with us! " textFill="#022235">
+               <font>
+                  <Font name="System Bold" size="39.0" />
+               </font>
+            </Label>
+            <VBox fx:id="vboxPurchase" layoutX="510.0" layoutY="124.0" prefHeight="312.0" prefWidth="350.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="54.0" prefWidth="350.0" style="-fx-background-color: #022235;" text="Purchase" textFill="WHITE" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Button fx:id="btPurchase" layoutX="454.0" layoutY="124.0" mnemonicParsing="false" onAction="#checkBtPurchasesClick" prefHeight="52.5" prefWidth="56.0" style="-fx-background-color: #022235; -fx-background-radius: 5;">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons/einkaufswagen-schwarze-form.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="lbAddressData" alignment="TOP_CENTER" layoutX="60.0" layoutY="206.0" prefHeight="230.0" prefWidth="322.0" textAlignment="CENTER" textFill="#022235">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbAddress" alignment="CENTER" layoutX="46.0" layoutY="124.0" prefHeight="54.0" prefWidth="350.0" style="-fx-background-color: #022235; -fx-background-radius: 10;" text="Your Address" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="btHome" layoutX="327.0" layoutY="436.0" mnemonicParsing="false" onAction="#checkBtHomeClick" onMouseEntered="#hoverbtHome" prefHeight="38.0" prefWidth="206.0" style="-fx-background-color: #022235; -fx-background-radius: 10;" text="Home" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>

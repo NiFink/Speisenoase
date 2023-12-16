@@ -29,13 +29,13 @@ public class Sceneswitcher {
         this.stage = stage;
     }
 
-    public void switchTo(String fxmlFileName, String title, double width, double height) {
+    public void switchTo(String fxmlFileName, String title) {
         try {
             URL fxmlFileUrl = getClass().getClassLoader().getResource(fxmlFileName);
             FXMLLoader fxmlLoader = new FXMLLoader(fxmlFileUrl);
             Parent root = fxmlLoader.load();
 
-            Scene scene = new Scene(root, width, height);
+            Scene scene = new Scene(root, 860, 550);
 
             stage.setTitle(title);
             stage.setScene(scene);

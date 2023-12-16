@@ -32,7 +32,7 @@ public class ControllerLogin {
     protected void checkbtRegisterClick(ActionEvent event) throws IOException{
 
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
-        sceneSwitcher.switchTo("Register.fxml", "Register", 860, 550);
+        sceneSwitcher.switchTo("Register.fxml", "Register");
         log.debug("Register scene has been loaded");
     }
     @FXML
@@ -45,7 +45,7 @@ public class ControllerLogin {
         if(!tbUsername.getText().isBlank() && !pbPassword.getText().isBlank() && userManager.userLoginCheck(tbUsername.getText(), pbPassword.getText())){
             log.info("User: " + tbUsername.getText() + "has logged in");
             Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
-            sceneSwitcher.switchTo("MainPage.fxml", "Mainpage", 860, 550);
+            sceneSwitcher.switchTo("MainPage.fxml", "Mainpage");
 
             log.debug("Logged in successfully");
 
