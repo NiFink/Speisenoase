@@ -175,7 +175,7 @@ public class UserManager {
 
     }
 
-    private void updateDeliverInfo(User user, String firstName, String lastName, String address, String city) throws IOException {
+    void updateDeliveryInfo(User user, String firstName, String lastName, String address, String city) throws IOException {
         User newUser = new User(user, firstName, lastName, address, city);
         if(updateUserData(user, newUser)) {
             logger.debug((user.getUserName() + " 's delivery data has been updated to: " + firstName + " " + lastName + ", address: " + address + ", " + city + "."));

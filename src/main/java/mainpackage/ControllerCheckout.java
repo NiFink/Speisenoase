@@ -12,6 +12,7 @@ import mainpackage.ShoppingCart.Purchase;
 import mainpackage.ShoppingCart.ShoppingCart;
 import mainpackage.itempackage.ItemManager;
 
+import java.io.IOException;
 import java.util.List;
 
 public class ControllerCheckout {
@@ -101,11 +102,9 @@ public class ControllerCheckout {
         return anchorPane;
     }
 
-    private void setUserAdress(){
-    //TODO: Update user
-        //userManager.setActiveUser() = tfFirstName.getText();
-        //userManager.setActiveUser() = tfLastName.getText();
-        //userManager.setActiveUser() = tfAdress.getText();
-        //userManager.setActiveUser() = tfCity.getText();
+    private void setUserAddress() throws IOException {
+
+        userManager.updateDeliveryInfo(userManager.getActiveUser(), tfFirstName.getText(), tfLastName.getText(), tfAdress.getText(), tfCity.getText());
+
     }
 }
