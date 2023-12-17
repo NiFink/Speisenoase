@@ -19,7 +19,7 @@
                         <Font size="18.0" />
                     </font>
                 </TextField>
-            <ImageView fitHeight="111.0" fitWidth="81.0" onMouseClicked="#checkBtHomeClick" pickOnBounds="true" preserveRatio="true" style="-fx-fit-width: 100%; -fx-fit-height: 100%;">
+            <ImageView fitHeight="94.0" fitWidth="86.0" onMouseClicked="#checkBtHomeClick" pickOnBounds="true" preserveRatio="true" style="-fx-fit-width: 100%; -fx-fit-height: 100%;">
                <image>
                   <Image url="@images/other/SpeisenOase-Logo.jpg" />
                </image>

@@ -15,8 +15,6 @@ import org.apache.logging.log4j.Logger;
 import java.net.URL;
 import java.util.Objects;
 
-import java.io.InputStream;
-
 public class Main extends Application {
 
     private static final Logger log = LogManager.getLogger(Main.class);
@@ -32,15 +30,6 @@ public class Main extends Application {
         URL fxmlFileUrl = getClass().getClassLoader().getResource("Login.fxml");
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(fxmlFileUrl));
-
-        InputStream imageStream = this.getClass().getResourceAsStream("/java/resources/images/other/Logo_ohne_Text.png");
-        System.out.println("Image Stream: " + imageStream);
-
-        if (imageStream != null) {
-            primaryStage.getIcons().add(new Image(imageStream));
-        } else {
-            System.err.println("Image stream is null. Check the file path.");
-        }
 
         primaryStage.setTitle("Speisenoase");
         primaryStage.setScene(new Scene(root, 860, 550));

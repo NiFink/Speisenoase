@@ -14,6 +14,7 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 
 public class ControllerLogin {
+
     @FXML
     private Label lbLoginfailed;
     @FXML
@@ -21,27 +22,30 @@ public class ControllerLogin {
     @FXML
     private PasswordField pbPassword;
 
-    private final UserManager userManager = UserManager.getInstance();
 
+
+    private final UserManager userManager = UserManager.getInstance();
     private static final Logger log = LogManager.getLogger(ControllerLogin.class);
+
+
+
     @FXML
-    protected void checkbtLoginClick(ActionEvent event) throws IOException {
+    private void checkbtLoginClick(ActionEvent event) throws IOException {
         validateLogin();
     }
     @FXML
-    protected void checkbtRegisterClick(ActionEvent event) throws IOException{
+    private void checkbtRegisterClick(ActionEvent event) throws IOException{
 
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("Register.fxml", "Register");
         log.debug("Register scene has been loaded");
     }
     @FXML
-    protected void checkbtExitClick(ActionEvent event) {
+    private void checkbtExitClick(ActionEvent event) {
         System.exit(0);
     }
-
     @FXML
-    protected void validateLogin() throws IOException{
+    private void validateLogin() throws IOException{
         if(!tbUsername.getText().isBlank() && !pbPassword.getText().isBlank() && userManager.userLoginCheck(tbUsername.getText(), pbPassword.getText())){
             log.info("User: " + tbUsername.getText() + "has logged in");
             Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();

@@ -72,7 +72,7 @@ public class ControllerProfil {
     }
 
     @FXML
-    protected void confirmUsername(MouseEvent event) throws IOException {
+    private void confirmUsername(MouseEvent event) throws IOException {
         if(tbUsername.getText().isBlank()){
             lbErrorUsername.setText("Username can't vanish into thin air!");
             lbErrorUsername.setVisible(true);
@@ -100,7 +100,7 @@ public class ControllerProfil {
     }
 
     @FXML
-    protected void changeUserEmail() throws IOException {
+    private void changeUserEmail() throws IOException {
         if(tbEmail.getText().isBlank()){
             lbErrorEmail.setText("Please enter your email address.");
             lbErrorEmail.setVisible(true);
@@ -127,14 +127,14 @@ public class ControllerProfil {
 
 
     @FXML
-    protected void enableAccountDeletion(){
+    private void enableAccountDeletion(){
         vbDefault.setVisible(false);
         vbDefault.setDisable(true);
         vbAccountDeletion.setDisable(false);
         vbAccountDeletion.setVisible(true);
     }
     @FXML
-    protected void disableAccountDeletion(){
+    private void disableAccountDeletion(){
         vbAccountDeletion.setDisable(true);
         vbAccountDeletion.setVisible(false);
         vbDefault.setVisible(true);
@@ -142,14 +142,14 @@ public class ControllerProfil {
 
     }
     @FXML
-    protected  void deleteAccount() throws IOException {
+    private  void deleteAccount() throws IOException {
         userManager.deleteUser(userManager.getActiveUser());
         //userManager.setActiveUser(null);
         Sceneswitcher sceneswitcher = Sceneswitcher.getInstance();
         sceneswitcher.switchTo("Login.fxml", "Login");
     }
     @FXML
-    protected void enablePasswordChange(){
+    private void enablePasswordChange(){
         vbDefault.setVisible(false);
         vbDefault.setDisable(true);
         passwordChange.setDisable(false);
@@ -157,7 +157,7 @@ public class ControllerProfil {
     }
 
     @FXML
-    protected void disablePasswordChange(){
+    private void disablePasswordChange(){
         passwordChange.setDisable(true);
         passwordChange.setVisible(false);
         vbDefault.setVisible(true);
@@ -165,7 +165,7 @@ public class ControllerProfil {
     }
 
     @FXML
-    protected void changePassword() throws IOException {
+    private void changePassword() throws IOException {
 
         if(pbPassword.getText().isBlank() || pbNewPassword.getText().isBlank()){
             lbErrorPassword.setText("please fill in all fields!");
@@ -191,7 +191,7 @@ public class ControllerProfil {
     }
 
     @FXML
-    protected void logOut(){
+    private void logOut(){
         //userManager.setActiveUser(null);
         Sceneswitcher sceneswitcher = Sceneswitcher.getInstance();
         sceneswitcher.switchTo("Login.fxml", "Login");
@@ -199,7 +199,7 @@ public class ControllerProfil {
 
 
     @FXML
-    protected void checkBtHomeClick(ActionEvent event) throws IOException {
+    private void checkBtHomeClick(ActionEvent event) throws IOException {
 
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("MainPage.fxml", "Mainpage");

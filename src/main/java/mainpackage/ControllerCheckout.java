@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -13,13 +14,14 @@ import mainpackage.ShoppingCart.ShoppingCart;
 import mainpackage.itempackage.ItemManager;
 
 import java.io.IOException;
-import java.util.List;
 
 public class ControllerCheckout {
     @FXML
     private VBox vboxCosts;
     @FXML
     private Button btProfil;
+    @FXML
+    private Button btBuy;
     @FXML
     private Label lbTotal;
 
@@ -28,19 +30,25 @@ public class ControllerCheckout {
     @FXML
     private TextField tfLastName;
     @FXML
-    private TextField tfAdress;
+    private TextField tfAddress;
     @FXML
     private TextField tfCity;
+
 
 
     private final UserManager userManager = UserManager.getInstance();
     private final ShoppingCart shoppingCart = ShoppingCart.getInstance();
     private final ItemManager itemManager = ItemManager.getInstance();
 
+
+
     public void initialize() {
         btProfil.setText(userManager.getActiveUser().getUserName());
+        getUserAddress();
         updateVBox();
     }
+
+
 
     private void updateVBox() {
         vboxCosts.getChildren().clear();
@@ -54,22 +62,40 @@ public class ControllerCheckout {
         lbTotal.setText("Total: " + String.format("%.2f", shoppingCart.getTotal()) + "€");
     }
 
+
+
     @FXML
-    protected void checkBtProfilClick() {
+    private void checkBtProfilClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("Profil.fxml", "Profil");
     }
-
     @FXML
-    protected void checkBtBackClick() {
+    private void checkBtBackClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("ShoppingCart.fxml", "ShoppingCart");
     }
     @FXML
-    protected void checkBtBuyClick() {
+    private void checkBtBuyClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("LastPage.fxml", "LastPage");
     }
+    @FXML
+    private void btBuyhover(MouseEvent event) {
+        invertColorsOnHover(btBuy);
+    }
+    private void invertColorsOnHover(Button button) {
+        button.setOnMouseEntered(e -> {
+            button.setTextFill(Color.web("#022235"));
+            button.setStyle("-fx-background-color: white;");
+        });
+
+        button.setOnMouseExited(e -> {
+            button.setTextFill(Color.web("#ffffff"));
+            button.setStyle("-fx-background-color: #022235;");
+        });
+    }
+
+
 
     private AnchorPane createCostAPane(Purchase purchase) {
         Label nameLabel = new Label(purchase.getName());
@@ -102,9 +128,19 @@ public class ControllerCheckout {
         return anchorPane;
     }
 
+
+
+    private void getUserAddress(){
+        if(userManager.getActiveUser().getFirstName() != null){
+            tfFirstName.setText(userManager.getActiveUser().getFirstName());
+            tfLastName.setText(userManager.getActiveUser().getLastName());
+            tfAddress.setText(userManager.getActiveUser().getAddress());
+            tfCity.setText(userManager.getActiveUser().getCity());
+        }
+    }
     private void setUserAddress() throws IOException {
 
-        userManager.updateDeliveryInfo(userManager.getActiveUser(), tfFirstName.getText(), tfLastName.getText(), tfAdress.getText(), tfCity.getText());
+        userManager.updateDeliveryInfo(userManager.getActiveUser(), tfFirstName.getText(), tfLastName.getText(), tfAddress.getText(), tfCity.getText());
 
     }
 }

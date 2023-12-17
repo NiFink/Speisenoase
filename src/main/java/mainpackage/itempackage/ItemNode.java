@@ -171,6 +171,15 @@ public class ItemNode {
         button.setStyle("-fx-background-color: #022235; -fx-text-fill: white;");
         button.setPrefHeight(30);
         button.setPrefWidth(40);
+        button.setOnMouseEntered(e -> {
+            button.setTextFill(Color.web("#022235"));
+            button.setStyle("-fx-background-color: white;");
+        });
+
+        button.setOnMouseExited(e -> {
+            button.setTextFill(Color.web("#ffffff"));
+            button.setStyle("-fx-background-color: #022235;");
+        });
         button.setOnAction(actionEvent -> {
             if(shoppingCart.hasPurchase(item.getName())){
                 shoppingCart.updateAmount(item.getName(), item.getPrice(), spinner.getValue());

@@ -28,6 +28,8 @@ public class ControllerLastPage{
     @FXML
     private VBox vboxPurchase;
     @FXML
+    private VBox vboxPurchaseIntern;
+    @FXML
     private Button btHome;
     @FXML
     private Button btBack;
@@ -43,13 +45,15 @@ public class ControllerLastPage{
     private Label lbAddressData;
 
 
-    private Paint originalTextFill;
-    private Paint originalBackgroundColor;
+    private Paint originalTextFill = Color.web("#ffffff");
+    private Paint originalBackgroundColor  = Color.web("#022235");
 
 
     private final UserManager userManager = UserManager.getInstance();
     private final ShoppingCart shoppingCart = ShoppingCart.getInstance();
     private static final Logger log = LogManager.getLogger(ItemManager.class);
+
+
 
     public void initialize() {
         btProfil.setText(userManager.getActiveUser().getUserName());
@@ -64,7 +68,7 @@ public class ControllerLastPage{
 
         for (Purchase purchase : shoppingCart.getPurchaseList()) {
             if (purchase.getAmount() > 0) {
-                vboxPurchase.getChildren().add(createCostAPane(purchase));
+                vboxPurchaseIntern.getChildren().add(createCostAPane(purchase));
             }
         }
         log.debug("Purchases are loaded in vboxPurchase");
@@ -126,26 +130,22 @@ public class ControllerLastPage{
 
     @FXML
     private void hoverbtHome(MouseEvent event) {
-        //invertColorsOnHover(btHome);
+        invertColorsOnHover(btHome);
     }
-    /*
+
     private void invertColorsOnHover(Button button) {
         button.setOnMouseEntered(e -> {
-            button.setTextFill(originalBackgroundColor);
-            button.setStyle("-fx-background-color: " + colorToHex(originalTextFill) + ";");
+            button.setTextFill(Color.web("#022235"));
+            button.setStyle("-fx-background-color: white;");
         });
 
         button.setOnMouseExited(e -> {
-            button.setTextFill(originalTextFill);
-            button.setStyle("-fx-background-color: " + colorToHex(originalBackgroundColor) + ";");
+            button.setTextFill(Color.web("#ffffff"));
+            button.setStyle("-fx-background-color: #022235;");
         });
     }
-    private String colorToHex(Paint color) {
-        return "#" + Integer.toHexString(color.hashCode()).substring(0, 6).toUpperCase();
-    }
 
 
-*/
 
     private AnchorPane createCostAPane(Purchase purchase) {
         Label nameLabel = new Label(purchase.getName());

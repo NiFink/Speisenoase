@@ -30,32 +30,40 @@ public class ControllerShoppingCart {
     @FXML
     private Label lbTotal;
 
+
+
     private final UserManager userManager = UserManager.getInstance();
     private final ShoppingCart shoppingCart = ShoppingCart.getInstance();
     private static final Logger log = LogManager.getLogger(ItemManager.class);
 
+
+
     public void initialize() {
         btProfil.setText(userManager.getActiveUser().getUserName());
         updateVBox();
+
+        log.debug("Shoppingcart loaded succesfully, with selected purchases");
     }
 
+
+
     @FXML
-    protected void checkBtProfilClick() {
+    private void checkBtProfilClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("Profil.fxml", "Profil");
     }
-
     @FXML
-    protected void checkBtBackClick() {
+    private void checkBtBackClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("MainPage.fxml", "MainPage");
     }
-
     @FXML
-    protected void checkBtCheckoutClick() {
+    private void checkBtCheckoutClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("Checkout.fxml", "Checkout");
     }
+
+
 
     private void updateVBox() {
         vboxPurchase.getChildren().clear();
@@ -69,8 +77,9 @@ public class ControllerShoppingCart {
         }
 
         lbTotal.setText("Total: " + String.format("%.2f", shoppingCart.getTotal()) + "€");
-    }
 
+        log.debug("PurchasesAPane and CostAPane updated, because User change something");
+    }
     private AnchorPane createPurchaseAPane(Purchase purchase) {
         ImageView imageView = new ImageView(new Image(getClass().getResource("/images/groceries/" + purchase.getName() + ".png").toExternalForm()));
         imageView.setFitHeight(124.0);
@@ -125,16 +134,17 @@ public class ControllerShoppingCart {
         AnchorPane anchorPane = new AnchorPane();
         anchorPane.getChildren().addAll(imageView, nameLabel, priceLabel, amountLabel, amountSpinner, deleteButton);
 
-        return anchorPane;
-    }
+        log.debug("PurchaseAPane element loaded succesfully");
 
+        return anchorPane;
+
+    }
     private void updateAmount(Purchase purchase, Integer newAmount) {
         if (purchase.getAmount() != newAmount) {
             purchase.setAmount(newAmount);
             updateVBox();
         }
     }
-
     private AnchorPane createCostAPane(Purchase purchase) {
         Label nameLabel = new Label(purchase.getName());
         nameLabel.setLayoutX(14.0);
@@ -162,6 +172,8 @@ public class ControllerShoppingCart {
 
         AnchorPane anchorPane = new AnchorPane();
         anchorPane.getChildren().addAll(nameLabel, priceLabel, amountLabel);
+
+        log.debug("CostAPane element loaded succesfully");
 
         return anchorPane;
     }

@@ -3,43 +3,71 @@
     "userName" : "Jan",
     "userEmail" : "Jan@gmail.com",
     "password" : "password",
-    "favourites" : [ ]
+    "favourites" : [ ],
+    "firstName" : null,
+    "lastName" : null,
+    "address" : null,
+    "city" : null
   },
   "Nils" : {
     "userName" : "Nils",
     "userEmail" : "Nils@gmail.com",
     "password" : "derBeste?",
-    "favourites" : [ ]
+    "favourites" : [ ],
+    "firstName" : null,
+    "lastName" : null,
+    "address" : null,
+    "city" : null
   },
   "Tim" : {
     "userName" : "Tim",
     "userEmail" : "TimUndStruppi99@gmail.com",
     "password" : "TimUndStruppi99",
-    "favourites" : [ ]
+    "favourites" : [ ],
+    "firstName" : null,
+    "lastName" : null,
+    "address" : null,
+    "city" : null
   },
   "Lorenz" : {
     "userName" : "Lorenz",
     "userEmail" : "NilsStan99@gmail.com",
     "password" : "sicheresPasswort",
-    "favourites" : [ ]
+    "favourites" : [ ],
+    "firstName" : null,
+    "lastName" : null,
+    "address" : null,
+    "city" : null
   },
   "Jana" : {
     "userName" : "Jana",
     "userEmail" : "Bärchi123@web.de",
     "password" : "test",
-    "favourites" : [ ]
+    "favourites" : [ ],
+    "firstName" : null,
+    "lastName" : null,
+    "address" : null,
+    "city" : null
   },
   "Testuser1" : {
     "userName" : "Testuser1",
     "userEmail" : "hahah@e.ea",
     "password" : "asdf",
-    "favourites" : [ ]
+    "favourites" : [ ],
+    "firstName" : null,
+    "lastName" : null,
+    "address" : null,
+    "city" : null
   },
   "Michelle" : {
     "userName" : "Michelle",
     "userEmail" : "mhhCookies@web.de",
     "password" : "123",
-    "favourites" : [ "Apple-juice" ]
+    "favourites" : [ "Apple-juice" ],
+    "firstName" : null,
+    "lastName" : null,
+    "address" : null,
+    "city" : null
   },
   "asdf" : {
     "userName" : "asdf",
