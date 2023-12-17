@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import mainpackage.itempackage.ItemManager;
@@ -13,6 +14,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.net.URL;
 import java.util.Objects;
+
+import java.io.InputStream;
 
 public class Main extends Application {
 
@@ -25,9 +28,20 @@ public class Main extends Application {
 
         Main.stage  = primaryStage;
 
+
         URL fxmlFileUrl = getClass().getClassLoader().getResource("Login.fxml");
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(fxmlFileUrl));
+
+        InputStream imageStream = this.getClass().getResourceAsStream("/java/resources/images/other/Logo_ohne_Text.png");
+        System.out.println("Image Stream: " + imageStream);
+
+        if (imageStream != null) {
+            primaryStage.getIcons().add(new Image(imageStream));
+        } else {
+            System.err.println("Image stream is null. Check the file path.");
+        }
+
         primaryStage.setTitle("Speisenoase");
         primaryStage.setScene(new Scene(root, 860, 550));
         primaryStage.setResizable(false);

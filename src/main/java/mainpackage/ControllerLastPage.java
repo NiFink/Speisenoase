@@ -52,8 +52,6 @@ public class ControllerLastPage{
     private static final Logger log = LogManager.getLogger(ItemManager.class);
 
     public void initialize() {
-        //originalTextFill = btHome.getTextFill();
-        //originalBackgroundColor = (Paint) btHome.getBackground().getFills().get(0).getFill();
         btProfil.setText(userManager.getActiveUser().getUserName());
 
         setLbAddressData();
@@ -61,7 +59,8 @@ public class ControllerLastPage{
         vboxPurchase.setTranslateX(350);
         vboxPurchase.setVisible(false);
         btPurchase.setTranslateX(350);
-
+        lbAddressData.setTranslateX(209);
+        lbAddress.setTranslateX(209);
 
         for (Purchase purchase : shoppingCart.getPurchaseList()) {
             if (purchase.getAmount() > 0) {
@@ -90,26 +89,38 @@ public class ControllerLastPage{
     @FXML
     private void checkBtPurchasesClick() {
 
-        TranslateTransition translate = new TranslateTransition();
-        TranslateTransition translate2 = new TranslateTransition();
-        translate.setNode(vboxPurchase);
-        translate2.setNode(btPurchase);
-        translate.setDuration(Duration.millis(1000));
-        translate2.setDuration(Duration.millis(1000));
+        TranslateTransition t1 = new TranslateTransition();
+        TranslateTransition t2 = new TranslateTransition();
+        TranslateTransition t3 = new TranslateTransition();
+        TranslateTransition t4 = new TranslateTransition();
+        t1.setNode(vboxPurchase);
+        t2.setNode(btPurchase);
+        t3.setNode(lbAddress);
+        t4.setNode(lbAddressData);
+        t1.setDuration(Duration.millis(1000));
+        t2.setDuration(Duration.millis(1000));
+        t3.setDuration(Duration.millis(1000));
+        t4.setDuration(Duration.millis(1000));
         if(selectPurchase == false){
             selectPurchase = true;
             vboxPurchase.setVisible(true);
-            translate.setByX(-350);
-            translate2.setByX(-350);
+            t1.setByX(-350);
+            t2.setByX(-350);
+            t3.setByX(-209);
+            t4.setByX(-209);
 
         }
         else {
             selectPurchase = false;
-            translate.setByX(350);
-            translate2.setByX(350);
+            t1.setByX(350);
+            t2.setByX(350);
+            t3.setByX(209);
+            t4.setByX(209);
         }
-        translate.play();
-        translate2.play();
+        t1.play();
+        t2.play();
+        t3.play();
+        t4.play();
     }
 
 
