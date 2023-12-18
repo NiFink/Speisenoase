@@ -75,7 +75,8 @@ public class ControllerCheckout {
         sceneSwitcher.switchTo("ShoppingCart.fxml", "ShoppingCart");
     }
     @FXML
-    private void checkBtBuyClick() {
+    private void checkBtBuyClick() throws IOException {
+        setUserAddress();
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("LastPage.fxml", "LastPage");
     }
@@ -140,7 +141,10 @@ public class ControllerCheckout {
     }
     private void setUserAddress() throws IOException {
 
+        if(!tfFirstName.getText().isBlank() || !tfLastName.getText().isBlank() || !tfAddress.getText().isBlank() || !tfCity.getText().isBlank()){
         userManager.updateDeliveryInfo(userManager.getActiveUser(), tfFirstName.getText(), tfLastName.getText(), tfAddress.getText(), tfCity.getText());
+        }
+        //TODO: error label
 
     }
 }
