@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
@@ -15,6 +16,9 @@ import org.apache.logging.log4j.Logger;
 public class ControllerMainPage{
 
     @FXML
+    private Label lbCartAmount;
+    public static Label lbCartAmount_static;
+    @FXML
     private ScrollPane scrollPaneItems;
     @FXML
     private TextField tbSearch;
@@ -22,8 +26,6 @@ public class ControllerMainPage{
     private Button btProfil;
     private ItemManager itemManager;
     private UserManager userManager;
-
-
 
     public void setUserManager(UserManager userManager) {
         this.userManager = userManager;
@@ -34,10 +36,13 @@ public class ControllerMainPage{
     private static final Logger log = LogManager.getLogger(ControllerMainPage.class);
 
 
-
     public void initialize() {
         setUserManager(UserManager.getInstance());
         setItemManager(ItemManager.getInstance());
+
+        lbCartAmount_static = lbCartAmount;
+        lbCartAmount_static.setText("" + ShoppingCart.getInstance().getTotalAmount());
+
         itemManager.loadNodes();
         scrollPaneItems.setContent(itemManager.getItempaneCategory("all"));
         btProfil.setText(userManager.getActiveUser().getUserName());
@@ -90,4 +95,8 @@ public class ControllerMainPage{
         sceneSwitcher.switchTo("ShoppingCart.fxml", "ShoppingCart");
     }
 
+    @FXML
+    public void updateCartAmountLabel(int amount){
+        lbCartAmount_static.setText("" + amount);
+    }
 }

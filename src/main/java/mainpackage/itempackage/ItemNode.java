@@ -160,9 +160,9 @@ public class ItemNode {
         innerPane.setCenter(imgViewItem);
 
         //Spinner to select amount of items
-        Spinner<Integer> spinner = new Spinner<>(0, 9, 1);
+        Spinner<Integer> spinner = new Spinner<>(0, 99, 1);
         spinner.setPrefHeight(30);
-        spinner.setPrefWidth(50);
+        spinner.setPrefWidth(55);
         spinner.setTranslateX(-5);
 
         //Button to add item to shopping cart with amount from Spinner

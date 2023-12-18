@@ -111,11 +111,11 @@ public class ControllerShoppingCart {
         amountLabel.setTextFill(Color.web("#022235"));
         amountLabel.setFont(new Font("System Bold", 18.0));
 
-        Spinner<Integer> amountSpinner = new Spinner<Integer>(0, 9, purchase.getAmount());
+        Spinner<Integer> amountSpinner = new Spinner<Integer>(0, 99, purchase.getAmount());
         amountSpinner.setLayoutX(400.0);
         amountSpinner.setLayoutY(92.0);
         amountSpinner.setPrefHeight(30.0);
-        amountSpinner.setPrefWidth(50.0);
+        amountSpinner.setPrefWidth(55.0);
         amountSpinner.valueProperty().addListener((observable, oldValue, newValue) -> {
             updateAmount(purchase, newValue);
         });

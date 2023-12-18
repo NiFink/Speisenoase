@@ -87,6 +87,7 @@ public class ControllerLastPage{
     }
     @FXML
     private void checkBtHomeClick() {
+        ShoppingCart.getInstance().clearShoppingCart();
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("MainPage.fxml", "MainPage");
     }

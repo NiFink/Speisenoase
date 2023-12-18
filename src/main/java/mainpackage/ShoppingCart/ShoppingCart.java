@@ -1,5 +1,6 @@
 package mainpackage.ShoppingCart;
 
+import mainpackage.ControllerMainPage;
 import mainpackage.itempackage.ItemManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,6 +23,7 @@ public class ShoppingCart {
 
     public void addPurchase(Purchase purchase) {
         purchaseList.add(purchase);
+        new ControllerMainPage().updateCartAmountLabel(getTotalAmount());
         log.info("Added " + purchase.getAmount() + " " + purchase.getName() + " to the shopping cart");
     }
 
@@ -35,7 +37,16 @@ public class ShoppingCart {
         } else {
             purchaseList.add(new Purchase(purchaseStr, price, amountToAdd));
         }
+        new ControllerMainPage().updateCartAmountLabel(getTotalAmount());
         log.info("Updated amount of " + purchaseStr + " in the shopping cart");
+    }
+
+    public int getTotalAmount(){
+        int total = 0;
+        for(Purchase purchase : purchaseList){
+            total += purchase.getAmount();
+        }
+        return total;
     }
 
     public boolean hasPurchase(String name){
@@ -58,5 +69,9 @@ public class ShoppingCart {
         }
         log.debug("Total of purchases is: " + total);
         return total;
+    }
+
+    public void clearShoppingCart(){
+        purchaseList = new ArrayList<>();
     }
 }

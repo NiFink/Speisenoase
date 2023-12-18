@@ -7,6 +7,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import mainpackage.ShoppingCart.ShoppingCart;
 import mainpackage.itempackage.Item;
 import mainpackage.itempackage.ItemManager;
 import org.apache.logging.log4j.LogManager;
@@ -197,6 +198,7 @@ public class ControllerProfil {
     private void logOut() throws IOException {
         //userManager.setActiveUser(null);
         userManager.updateFavorites(userManager.getActiveUser(), ItemManager.getInstance().getFavorites().toArray(new String[0]));
+        ShoppingCart.getInstance().clearShoppingCart();
         Sceneswitcher sceneswitcher = Sceneswitcher.getInstance();
         sceneswitcher.switchTo("Login.fxml", "Login");
     }
