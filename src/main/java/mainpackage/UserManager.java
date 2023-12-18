@@ -164,7 +164,7 @@ public class UserManager {
         }
     }
 
-    private void updateFavorites(User user, String[] favourites) throws IOException {
+    public void updateFavorites(User user, String[] favourites) throws IOException {
 
          User newUser = new User(user);
          newUser.setFavourites(favourites);

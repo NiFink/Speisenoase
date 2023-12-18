@@ -7,6 +7,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import mainpackage.itempackage.Item;
+import mainpackage.itempackage.ItemManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -52,6 +54,7 @@ public class ControllerProfil {
     private final ControllerMainPage controllerMainPage = new ControllerMainPage();
     private static final Logger log = LogManager.getLogger(ControllerProfil.class);
     private UserManager userManager;
+    private ItemManager itemManager = ItemManager.getInstance();
 
     public void setUserManager(UserManager userManager) {
         this.userManager = userManager;
@@ -191,8 +194,9 @@ public class ControllerProfil {
     }
 
     @FXML
-    private void logOut(){
+    private void logOut() throws IOException {
         //userManager.setActiveUser(null);
+        userManager.updateFavorites(userManager.getActiveUser(), ItemManager.getInstance().getFavorites().toArray(new String[0]));
         Sceneswitcher sceneswitcher = Sceneswitcher.getInstance();
         sceneswitcher.switchTo("Login.fxml", "Login");
     }

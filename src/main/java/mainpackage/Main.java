@@ -43,9 +43,7 @@ public class Main extends Application {
     @Override
     public void stop() throws Exception {
         //FIXME: NullPointerException wenn man sich noch nicht eingeloggt hat und das Fenster geschlossen wird, weil kein ActiveUser existiert
-        User activeUser = userManager.getActiveUser();
-        User newUser = new User(activeUser.getUserEmail(), activeUser.getUserName(), activeUser.getPassword(), ItemManager.getInstance().getFavorites().toArray(new String[0]));
-        userManager.updateUserData(activeUser, newUser);
+        userManager.updateFavorites(userManager.getActiveUser(), ItemManager.getInstance().getFavorites().toArray(new String[0]));
         super.stop();
     }
 

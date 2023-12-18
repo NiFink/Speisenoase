@@ -23,10 +23,7 @@ public class ItemManager {
     private List<Item> items;
     private List<ItemNode> itemNodes;
     private List<StackPane> itemPanes;
-    private List<ItemNode> itemsShoppingCart;
-    private List<String> favorites;
     private static final Logger log = LogManager.getLogger(ItemManager.class);
-    private ShoppingCart shoppingCart;
 
     /**
      * If an instance of ItemManager exists, returns this instance, else it returns a new instance
@@ -44,16 +41,14 @@ public class ItemManager {
      * Constructor of ItemManager
      */
     public ItemManager(){
-        setShoppingCart(ShoppingCart.getInstance());
+
+    }
+
+    public void loadNodes(){
         setItems(15);
         setItemNodes(this.items);
         setItemPanes(this.itemNodes);
-        setFavorites(UserManager.getInstance().getActiveUser().getFavourites());
-        log.debug("New ItemManager is created");
-    }
-
-    public void setShoppingCart(ShoppingCart shoppingCart) {
-        this.shoppingCart = shoppingCart;
+        log.debug("Item Nodes are loaded");
     }
 
     /**
@@ -140,13 +135,6 @@ public class ItemManager {
             log.info("No items were found that contain '" + name + "'");
         }
         return flowPane;
-    }
-
-    /**
-     * Sets list of current favorites to favorites of activeUser
-     */
-    private void setFavorites(String[] favorites){
-        this.favorites = new ArrayList<>(Arrays.stream(favorites).toList());
     }
 
     /**

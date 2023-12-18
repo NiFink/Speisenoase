@@ -38,6 +38,7 @@ public class ControllerMainPage{
     public void initialize() {
         setUserManager(UserManager.getInstance());
         setItemManager(ItemManager.getInstance());
+        itemManager.loadNodes();
         scrollPaneItems.setContent(itemManager.getItempaneCategory("all"));
         btProfil.setText(userManager.getActiveUser().getUserName());
         log.debug("All Items loaded succesfully in MainPage");
