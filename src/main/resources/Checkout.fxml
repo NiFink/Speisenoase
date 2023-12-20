@@ -85,20 +85,20 @@
                         <Font name="System Bold" size="20.0" />
                     </font>
                 </Label>
-            <TextField fx:id="tfAddress" layoutX="81.0" layoutY="151.0" prefHeight="25.0" prefWidth="388.0" promptText="Address" />
             <Label layoutX="53.0" layoutY="74.0" prefHeight="30.0" prefWidth="168.0" text="Delivery Address" textFill="#022235">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <Label layoutX="53.0" layoutY="240.0" prefHeight="30.0" prefWidth="145.0" text="Payment" textFill="#022235">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
             <TextField fx:id="tfFirstName" layoutX="81.0" layoutY="120.0" prefHeight="25.0" prefWidth="188.0" promptText="first name" />
             <TextField fx:id="tfLastName" layoutX="281.0" layoutY="120.0" prefHeight="25.0" prefWidth="188.0" promptText="last name" />
+            <TextField fx:id="tfAddress" layoutX="81.0" layoutY="151.0" prefHeight="25.0" prefWidth="388.0" promptText="Address" />
             <TextField fx:id="tfCity" layoutX="81.0" layoutY="185.0" prefHeight="25.0" prefWidth="388.0" promptText="City" />
+            <Label layoutX="53.0" layoutY="240.0" prefHeight="30.0" prefWidth="145.0" text="Payment" textFill="#022235">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
             <RadioButton layoutX="81.0" layoutY="282.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="294.0" text="PayPal" textFill="#023a50">
                <font>
                   <Font name="System Bold" size="16.0" />

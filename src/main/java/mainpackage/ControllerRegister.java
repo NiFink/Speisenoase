@@ -45,7 +45,7 @@ public class ControllerRegister {
                 log.warn("Registration failed, unequaled passwords");
             }
             else if(tbUsername.getText().length() > maxCharacters || pbPassword.getText().length() > maxCharacters || tbUsername.getText().length() > maxCharacters){
-                lbRegisterfailed.setText("To many character(max. " + maxCharacters + ")");
+                lbRegisterfailed.setText("Your username is to long(max. " + maxCharacters + ")");
                 log.warn("Registration failed, too many characters");
             }
             else if(!isEmailValid(tbEmail.getText())){

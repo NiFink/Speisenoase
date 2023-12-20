@@ -74,4 +74,8 @@ public class ShoppingCart {
     public void clearShoppingCart(){
         purchaseList = new ArrayList<>();
     }
+
+    public  void deleteShoppingcartElemnent(Purchase purchase){
+        purchaseList.remove(purchase);
+    }
 }

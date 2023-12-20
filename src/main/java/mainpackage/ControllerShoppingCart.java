@@ -29,6 +29,8 @@ public class ControllerShoppingCart {
     private Button btProfil;
     @FXML
     private Label lbTotal;
+    @FXML
+    private Label lbEmptyCart;
 
 
 
@@ -41,7 +43,7 @@ public class ControllerShoppingCart {
     public void initialize() {
         btProfil.setText(userManager.getActiveUser().getUserName());
         updateVBox();
-
+        lbEmptyCart.setDisable(true);
         log.debug("Shoppingcart loaded succesfully, with selected purchases");
     }
 
@@ -59,8 +61,17 @@ public class ControllerShoppingCart {
     }
     @FXML
     private void checkBtCheckoutClick() {
-        Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
-        sceneSwitcher.switchTo("Checkout.fxml", "Checkout");
+        if(!shoppingCart.getPurchaseList().isEmpty()){
+            for (Purchase element : shoppingCart.getPurchaseList()) {
+                System.out.println(element.getName());
+            }
+            Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
+            sceneSwitcher.switchTo("Checkout.fxml", "Checkout");
+        }
+        else {
+            lbEmptyCart.setDisable(false);
+        }
+
     }
 
 
@@ -140,10 +151,15 @@ public class ControllerShoppingCart {
 
     }
     private void updateAmount(Purchase purchase, Integer newAmount) {
-        if (purchase.getAmount() != newAmount) {
-            purchase.setAmount(newAmount);
-            updateVBox();
+        if(newAmount == 0){
+            shoppingCart.deleteShoppingcartElemnent(purchase);
         }
+        else if (purchase.getAmount() != newAmount) {
+            purchase.setAmount(newAmount);
+
+        }
+
+        updateVBox();
     }
     private AnchorPane createCostAPane(Purchase purchase) {
         Label nameLabel = new Label(purchase.getName());

@@ -79,7 +79,21 @@
             </Label>
             <ScrollPane fx:id="spItems" prefHeight="443.0" prefWidth="550.0" style="-fx-background-color: white;">
                <content>
-                  <VBox fx:id="vboxPurchase" prefHeight="437.0" prefWidth="533.0" />
+                  <VBox fx:id="vboxPurchase" prefHeight="437.0" prefWidth="533.0">
+                     <children>
+                        <Label fx:id="lbEmptyCart" alignment="CENTER" disable="true" prefHeight="431.0" prefWidth="533.0" text="You have to enter something to me!">
+                           <graphic>
+                              <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/icons/Sad-Emoji.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children></VBox>
                </content>
             </ScrollPane>
          </children>

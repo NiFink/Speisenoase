@@ -17,6 +17,7 @@ Thread-2 DEBUG itempackage.ItemManager - ItemManager instance is being returned
 Thread-2 DEBUG itempackage.ItemManager - ObjectMapper read itemData.json file and created Item List
 JavaFX Application Thread DEBUG mainpackage.UserManager - successfully logged in as asdf
 JavaFX Application Thread INFO  mainpackage.ControllerLogin - User: asdfhas logged in
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
 JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
 JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
 JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 0 is returned from Json List
@@ -96,18 +97,125 @@ JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance 
 JavaFX Application Thread DEBUG itempackage.ItemNode - ItemNode of 'Apple-juice' is created
 JavaFX Application Thread DEBUG itempackage.ItemManager - List with 15 Stackpanes of Items is created
 JavaFX Application Thread DEBUG itempackage.ItemManager - List with 15 Stackpanes of Items is created
-JavaFX Application Thread DEBUG itempackage.ItemManager - New ItemManager is created
-JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemManager - Item Nodes are loaded
 JavaFX Application Thread INFO  itempackage.ItemManager - FlowPane with ItemNodes, that are in the category 'all', is created with a size of '15'
+JavaFX Application Thread DEBUG mainpackage.ControllerMainPage - All Items loaded succesfully in MainPage
 JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - MainPage.fxml: loaded successfully
 JavaFX Application Thread DEBUG mainpackage.ControllerLogin - Logged in successfully
-JavaFX Application Thread INFO  itempackage.ItemManager - Added 1 Apple to the shopping cart
-JavaFX Application Thread INFO  itempackage.ItemManager - Updated amount of Apple in the shopping cart
-JavaFX Application Thread INFO  itempackage.ItemManager - Updated amount of Apple in the shopping cart
-JavaFX Application Thread INFO  itempackage.ItemManager - Updated amount of Apple in the shopping cart
+JavaFX Application Thread INFO  itempackage.ItemManager - Added 1 Grapes to the shopping cart
+JavaFX Application Thread INFO  itempackage.ItemManager - Added 1 Cucumber to the shopping cart
 JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
-JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 2.4
+JavaFX Application Thread DEBUG itempackage.ItemManager - PurchaseAPane element loaded succesfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - CostAPane element loaded succesfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - PurchaseAPane element loaded succesfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - CostAPane element loaded succesfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 3.7800000000000002
+JavaFX Application Thread DEBUG itempackage.ItemManager - PurchasesAPane and CostAPane updated, because User change something
+JavaFX Application Thread DEBUG itempackage.ItemManager - Shoppingcart loaded succesfully, with selected purchases
 JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - ShoppingCart.fxml: loaded successfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - PurchaseAPane element loaded succesfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - CostAPane element loaded succesfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 1.39
+JavaFX Application Thread DEBUG itempackage.ItemManager - PurchasesAPane and CostAPane updated, because User change something
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 1.39
+JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - Checkout.fxml: loaded successfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemManager - PurchaseAPane element loaded succesfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - CostAPane element loaded succesfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 1.39
+JavaFX Application Thread DEBUG itempackage.ItemManager - PurchasesAPane and CostAPane updated, because User change something
+JavaFX Application Thread DEBUG itempackage.ItemManager - Shoppingcart loaded succesfully, with selected purchases
+JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - ShoppingCart.fxml: loaded successfully
+JavaFX Application Thread DEBUG itempackage.ItemManager - Total of purchases is: 0.0
+JavaFX Application Thread DEBUG itempackage.ItemManager - PurchasesAPane and CostAPane updated, because User change something
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 0 is returned from Json List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 0 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 1 is returned from Json List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 1 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 2 is returned from Json List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 2 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 3 is returned from Json List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 3 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 4 is returned from Json List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 4 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 5 is returned from Json List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 5 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 6 is returned from Json List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 6 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 7 is returned from Json List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 7 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 8 is returned from Json List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 8 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 9 is returned from Json List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 9 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 10 is returned from Json List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 10 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 11 is returned from Json List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 11 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 12 is returned from Json List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 12 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 13 is returned from Json List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 13 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
+JavaFX Application Thread DEBUG itempackage.Grocery - Grocery with id: 14 is returned from Json List
+JavaFX Application Thread DEBUG itempackage.ItemFactory - Item with id: 14 of type: GROCERY is being created
+JavaFX Application Thread DEBUG itempackage.ItemManager - List with 15 items is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemNode - ItemNode of 'Apple' is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemNode - ItemNode of 'Banana' is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemNode - ItemNode of 'Grapes' is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemNode - ItemNode of 'Cucumber' is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemNode - ItemNode of 'Bell-pepper' is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemNode - ItemNode of 'Tomatoes' is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemNode - ItemNode of 'Bread' is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemNode - ItemNode of 'Flour' is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemNode - ItemNode of 'Noodles' is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemNode - ItemNode of 'KinderRiegel' is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemNode - ItemNode of 'Duplo' is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemNode - ItemNode of 'Gingerbread' is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemNode - ItemNode of 'Water' is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemNode - ItemNode of 'Beer' is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - ShoppingCart instance is being returned
+JavaFX Application Thread DEBUG itempackage.ItemNode - ItemNode of 'Apple-juice' is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - List with 15 Stackpanes of Items is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - List with 15 Stackpanes of Items is created
+JavaFX Application Thread DEBUG itempackage.ItemManager - Item Nodes are loaded
+JavaFX Application Thread INFO  itempackage.ItemManager - FlowPane with ItemNodes, that are in the category 'all', is created with a size of '15'
+JavaFX Application Thread DEBUG mainpackage.ControllerMainPage - All Items loaded succesfully in MainPage
+JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - MainPage.fxml: loaded successfully
+JavaFX Application Thread INFO  itempackage.ItemManager - FlowPane with ItemNodes, that are in the category 'all', is created with a size of '15'
 JavaFX Application Thread DEBUG itempackage.ItemManager - ItemManager instance is being returned
 JavaFX Application Thread INFO  itempackage.ItemManager - List of favorites is gathered and returned
 JavaFX Application Thread DEBUG mainpackage.UserManager - updated userdata successfully
+JavaFX Application Thread DEBUG mainpackage.UserManager - asdf 's favourites: [Apple, Banana, Cucumber] updated to : [Apple, Banana, Cucumber]
