@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ItemManager {
-    //TODO: ist public Flowpane Clean Code?
 
     private static ItemManager instance;
     private List<Item> items;
@@ -37,18 +36,11 @@ public class ItemManager {
         return instance;
     }
 
-    /**
-     * Constructor of ItemManager
-     */
-    public ItemManager(){
-
-    }
-
-    public void loadNodes(){
-        setItems(15);
+    public void loadNodes(int amount){
+        setItems(amount);
         setItemNodes(this.items);
         setItemPanes(this.itemNodes);
-        log.debug("Item Nodes are loaded");
+        log.debug(amount + " item Nodes are loaded");
     }
 
     /**
@@ -106,7 +98,6 @@ public class ItemManager {
                 }
             }
         }
-        //flowPane.setStyle("-fx-background-color:  #022235");
         log.info("FlowPane with ItemNodes, that are in the category '" + category + "', is created with a size of '" + flowPane.getChildren().size() +  "'");
         return flowPane;
     }

@@ -52,12 +52,14 @@ public class ItemNode {
      * @return true if favored, false if not favored
      */
     private boolean checkFavorite(User user, String name) {
-        return Arrays.asList(user.getFavourites()).contains(name);
+        boolean favored = Arrays.asList(user.getFavourites()).contains(name);
+        if(favored) log.debug(user.getUserName() + " has " + name + " favored");
+        else log.debug(user.getUserName() + " has " + name + " not favored");
+        return favored;
     }
 
     /**
      * Creates Stackpane of an Item
-     *
      * @param item that holds information for itemNode
      */
     private void createPane(Item item) {

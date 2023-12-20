@@ -4,10 +4,10 @@
     "userEmail" : "Jan@gmail.com",
     "password" : "password",
     "favourites" : [ "Banana", "Grapes" ],
-    "firstName" : null,
-    "lastName" : null,
-    "address" : null,
-    "city" : null
+    "firstName" : "Jan",
+    "lastName" : "Sander",
+    "address" : "Blabla",
+    "city" : "Bla"
   },
   "Nils" : {
     "userName" : "Nils",

@@ -172,7 +172,7 @@ public class ControllerProfil {
     private void changePassword() throws IOException {
 
         if(pbPassword.getText().isBlank() || pbNewPassword.getText().isBlank()){
-            lbErrorPassword.setText("please fill in all fields!");
+            lbErrorPassword.setText("Please fill in all fields!");
             lbErrorPassword.setVisible(true);
         }
         else if(pbNewPassword.getText().length() > maxCharacters) {
@@ -180,11 +180,11 @@ public class ControllerProfil {
             lbErrorPassword.setVisible(true);
         }
         else if(!pbPassword.getText().equals(userManager.getActiveUser().getPassword())){
-            lbErrorPassword.setText("please enter the right password!");
+            lbErrorPassword.setText("Please enter the right password!");
             lbErrorPassword.setVisible(true);
         }
         else if(!pbNewPassword.getText().equals(pbNewPasswordCheck.getText())){
-            lbErrorPassword.setText("please enter the same password twice!");
+            lbErrorPassword.setText("Please enter the same password twice!");
             lbErrorPassword.setVisible(true);
         }
         else{

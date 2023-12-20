@@ -13,13 +13,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class JsonReader extends Thread {
     private List<Grocery> itemList;
     private final ObjectMapper objectMapper = new ObjectMapper();
-    private static final Logger log = LogManager.getLogger(ItemManager.class);
+    private static final Logger log = LogManager.getLogger(JsonReader.class);
     public static JsonReader instance;
     public static JsonReader getInstance(){
         if(instance == null){
             instance = new JsonReader();
         }
-        log.debug("ItemManager instance is being returned");
+        log.debug("JsonReader instance is being returned");
         return instance;
     }
 

@@ -16,7 +16,7 @@
     <top>
         <AnchorPane prefHeight="85.0" prefWidth="860.0" style="-fx-background-color: #022235;" BorderPane.alignment="CENTER">
             <children>
-                <TextField fx:id="tbSearch" alignment="CENTER" layoutX="407.0" layoutY="22.0" onAction="#search" prefHeight="37.0" prefWidth="350.0" promptText="Search" style="-fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px; -fx-background-color: #022235; -fx-text-fill: #ffffff">
+                <TextField fx:id="tbSearch" alignment="CENTER" layoutX="288.0" layoutY="24.0" onAction="#search" prefHeight="37.0" prefWidth="350.0" promptText="Search" style="-fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px; -fx-background-color: #022235; -fx-text-fill: #ffffff">
                     <font>
                         <Font size="18.0" />
                     </font>
@@ -26,7 +26,7 @@
                   <Image url="@images/other/SpeisenOase-Logo.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="btProfil" layoutX="122.0" layoutY="19.0" mnemonicParsing="false" onAction="#checkBtProfilClick" prefHeight="51.0" prefWidth="207.0" style="-fx-background-color: #022235;" text="Username" textFill="WHITE">
+            <Button fx:id="btProfil" layoutX="86.0" layoutY="19.0" mnemonicParsing="false" onAction="#checkBtProfilClick" prefHeight="51.0" prefWidth="196.0" style="-fx-background-color: #022235;" text="Username" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="27.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -63,7 +63,7 @@
       </ScrollPane>
    </center>
    <left>
-          <VBox prefHeight="469.0" prefWidth="84.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+          <VBox prefHeight="469.0" prefWidth="85.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
               <children>
                   <Button fx:id="btVegetable1" mnemonicParsing="false" onAction="#checkBtVegetablesClick" prefHeight="100.0" prefWidth="135.0" style="-fx-background-color: #648E12; -fx-border-color: #ffffff; " textFill="WHITE">
                       <font>

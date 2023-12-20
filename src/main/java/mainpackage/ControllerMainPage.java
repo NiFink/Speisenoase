@@ -43,7 +43,7 @@ public class ControllerMainPage{
         lbCartAmount_static = lbCartAmount;
         lbCartAmount_static.setText("" + ShoppingCart.getInstance().getTotalAmount());
 
-        itemManager.loadNodes();
+        itemManager.loadNodes(15);
         scrollPaneItems.setContent(itemManager.getItempaneCategory("all"));
         btProfil.setText(userManager.getActiveUser().getUserName());
         log.debug("All Items loaded succesfully in MainPage");
