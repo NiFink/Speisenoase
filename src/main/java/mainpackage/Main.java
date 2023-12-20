@@ -41,7 +41,6 @@ public class Main extends Application {
     @Override
     public void stop() throws Exception {
         //FIXME: NullPointerException wenn man sich noch nicht eingeloggt hat und das Fenster geschlossen wird, weil kein ActiveUser existiert
-        //Exception werfen
         userManager.updateFavorites(userManager.getActiveUser(), ItemManager.getInstance().getFavorites().toArray(new String[0]));
         super.stop();
     }
@@ -52,6 +51,12 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         jsonReader.start();
+        try {
+            jsonReader.join();
+        } catch (InterruptedException e) {
+            log.error(e.getMessage());
+        }
+        log.debug("JsonReader Thread is done");
         launch(args);
     }
 }

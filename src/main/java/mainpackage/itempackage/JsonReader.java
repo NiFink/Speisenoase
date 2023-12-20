@@ -25,13 +25,14 @@ public class JsonReader extends Thread {
 
     @Override
     public void run(){
+        log.debug("JsonReader Thread was started");
         createItemlist();
     }
 
     /**
      * Reads Json File which contains data of items and creates list of groceries with read data
      */
-    private void createItemlist(){
+    private synchronized void createItemlist(){
         try{
             itemList = objectMapper.readValue(new File("src/main/resources/json/itemData.json"), new TypeReference<List<Grocery>>() {});
             log.debug("ObjectMapper read itemData.json file and created Item List");
