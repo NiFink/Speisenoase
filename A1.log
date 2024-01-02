@@ -1,20 +1,18 @@
 main DEBUG itempackage.JsonReader - JsonReader instance is being returned
-main DEBUG mainpackage.Main - JsonReader Thread is started
-Thread-2 DEBUG itempackage.JsonReader - JsonReader Thread was started
-Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
-Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
-Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
-Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
-Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
-Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
-Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
-Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
-Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
-Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
-Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
-Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
-Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
-Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
-Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
-Thread-2 DEBUG itempackage.JsonReader - ObjectMapper read itemData.json file and created Item List
-main DEBUG mainpackage.Main - JsonReader Thread is done
+Thread-0 DEBUG itempackage.JsonReader - JsonReader Thread was started
+Thread-0 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-0 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-0 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-0 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-0 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-0 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-0 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-0 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-0 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-0 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-0 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-0 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-0 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-0 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-0 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-0 DEBUG itempackage.JsonReader - ObjectMapper read itemData.json file and created Item List
