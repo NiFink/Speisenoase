@@ -13,7 +13,6 @@ public class JsonReaderTests {
     @Test
     public void ListNotNullTest() {
         jsonReader.start();
-        jsonReader.start();
         try {
             jsonReader.join();
         } catch (InterruptedException e) {

@@ -5,16 +5,13 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
-import mainpackage.ShoppingCart.Purchase;
-import mainpackage.ShoppingCart.ShoppingCart;
-import mainpackage.UserManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class ItemManager {
 
@@ -48,10 +45,10 @@ public class ItemManager {
      * @param id amount of items
      */
     private void setItems(int id) {
-        ArrayList<Item> items = new ArrayList<>();
-        for (int i = 0; i < id; i++) {
-            items.add(ItemFactory.createItem(ItemType.GROCERY, i));
-        }
+        List<Item> items = IntStream.range(0, id)
+                .mapToObj(i -> ItemFactory.createItem(ItemType.GROCERY, i))
+                .collect(Collectors.toCollection(ArrayList::new));
+
         log.debug("List with " + items.size() + " items is created");
         this.items = items;
     }
@@ -61,10 +58,10 @@ public class ItemManager {
      * @param items that ItemNodes are created from
      */
     private void setItemNodes(List<Item> items) {
-        ArrayList<ItemNode> itemNodes = new ArrayList<>();
-        for (Item item : items) {
-            itemNodes.add(new ItemNode(item));
-        }
+        List<ItemNode> itemNodes = items.stream()
+                .map(ItemNode::new)
+                .collect(Collectors.toCollection(ArrayList::new));
+
         log.debug("List with " + items.size() + " Stackpanes of Items is created");
         this.itemNodes = itemNodes;
     }
@@ -74,10 +71,10 @@ public class ItemManager {
      * @param itemNodes that ItemPanes are created from
      */
     private void setItemPanes(List<ItemNode> itemNodes) {
-        ArrayList<StackPane> itemPanes = new ArrayList<>();
-        for (int i = 0; i < items.size(); i++) {
-            itemPanes.add(itemNodes.get(i).getItemPane());
-        }
+        List<StackPane> itemPanes = itemNodes.stream()
+                .map(ItemNode::getItemPane)
+                .collect(Collectors.toCollection(ArrayList::new));
+
         log.debug("List with " + items.size() + " Stackpanes of Items is created");
         this.itemPanes = itemPanes;
     }
@@ -89,16 +86,17 @@ public class ItemManager {
      */
     public FlowPane getItempaneCategory(String category) {
         FlowPane flowPane = new FlowPane();
-        for (int i = 0; i < items.size(); i++) {
-            if (category.equalsIgnoreCase("all") || items.get(i).getCategory().toLowerCase().equals(category)) {
-                flowPane.getChildren().add(itemPanes.get(i));
-            } else if (category.equalsIgnoreCase("favs")){
-                if(getFavorites().contains(items.get(i).getName())){
-                    flowPane.getChildren().add(itemPanes.get(i));
-                }
-            }
-        }
-        log.info("FlowPane with ItemNodes, that are in the category '" + category + "', is created with a size of '" + flowPane.getChildren().size() +  "'");
+
+        List<StackPane> filteredPanes = IntStream.range(0, items.size())
+                .parallel()
+                .filter(i -> (category.equalsIgnoreCase("all") || items.get(i).getCategory().toLowerCase().equals(category)) ||
+                             (category.equalsIgnoreCase("favs") && getFavorites().contains(items.get(i).getName())))
+                .mapToObj(itemPanes::get)
+                .toList();
+
+        flowPane.getChildren().addAll(filteredPanes);
+
+        log.info("FlowPane with ItemNodes, that are in the category '" + category + "', is created with a size of '" + flowPane.getChildren().size() + "'");
         return flowPane;
     }
 
@@ -109,11 +107,12 @@ public class ItemManager {
      */
     public FlowPane getItempaneName(String name) {
         FlowPane flowPane = new FlowPane();
-        for (int i = 0; i < items.size(); i++) {
-            if (items.get(i).getName().toLowerCase().contains(name.toLowerCase())) {
-                flowPane.getChildren().add(itemPanes.get(i));
-            }
-        }
+
+        List<StackPane> filteredPanes = IntStream.range(0, items.size())
+                .parallel()
+                .filter(i -> items.get(i).getName().toLowerCase().contains(name.toLowerCase()))
+                .mapToObj(itemPanes::get)
+                .toList();
 
         if(flowPane.getChildren().size() > 0) {
             log.info("FlowPane with ItemNodes, that contain '" + name + "', is created with a size of '" + flowPane.getChildren().size() +  "'");
@@ -133,12 +132,12 @@ public class ItemManager {
      * @return list of current favorites
      */
     public List<String> getFavorites() {
-        List<String> favorites = new ArrayList<>();
-        for(int i = 0; i < items.size(); i++){
-            if(itemNodes.get(i).isFavorite()){
-                favorites.add(items.get(i).getName());
-            }
-        }
+        List<String> favorites = IntStream.range(0, items.size())
+                .parallel()
+                .filter(i -> itemNodes.get(i).isFavorite())
+                .mapToObj(i -> items.get(i).getName())
+                .collect(Collectors.toList());
+
         log.info("List of favorites is gathered and returned");
         return favorites;
     }

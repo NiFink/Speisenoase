@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -42,6 +43,6 @@ public class JsonReader extends Thread {
     }
 
     public List<Grocery> getItemList(){
-        return itemList;
+        return new ArrayList<>(itemList);
     }
 }
