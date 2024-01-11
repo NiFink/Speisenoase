@@ -114,6 +114,8 @@ public class ItemManager {
                 .mapToObj(itemPanes::get)
                 .toList();
 
+        flowPane.getChildren().addAll(filteredPanes);
+
         if(flowPane.getChildren().size() > 0) {
             log.info("FlowPane with ItemNodes, that contain '" + name + "', is created with a size of '" + flowPane.getChildren().size() +  "'");
         } else {
