@@ -32,8 +32,6 @@ public class ControllerShoppingCart {
     @FXML
     private Label lbEmptyCart;
 
-
-
     private final UserManager userManager = UserManager.getInstance();
     private final ShoppingCart shoppingCart = ShoppingCart.getInstance();
     private static final Logger log = LogManager.getLogger(ItemManager.class);

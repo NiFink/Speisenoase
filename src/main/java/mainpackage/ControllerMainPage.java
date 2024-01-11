@@ -24,22 +24,12 @@ public class ControllerMainPage{
     private TextField tbSearch;
     @FXML
     private Button btProfil;
-    private ItemManager itemManager;
-    private UserManager userManager;
-
-    public void setUserManager(UserManager userManager) {
-        this.userManager = userManager;
-    }
-    public void setItemManager(ItemManager itemManager) {
-        this.itemManager = itemManager;
-    }
+    private final ItemManager itemManager = ItemManager.getInstance();
+    private final UserManager userManager = UserManager.getInstance();
     private static final Logger log = LogManager.getLogger(ControllerMainPage.class);
 
 
     public void initialize() {
-        setUserManager(UserManager.getInstance());
-        setItemManager(ItemManager.getInstance());
-
         lbCartAmount_static = lbCartAmount;
         lbCartAmount_static.setText("" + ShoppingCart.getInstance().getTotalAmount());
 

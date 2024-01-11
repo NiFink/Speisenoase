@@ -45,34 +45,20 @@ public class ControllerProfil {
     private VBox vbAccountDeletion;
     @FXML
     private VBox vbDefault;
-
     private final int maxCharacters = 20;
-
-
-
-
 
     private final ControllerMainPage controllerMainPage = new ControllerMainPage();
     private static final Logger log = LogManager.getLogger(ControllerProfil.class);
-    private UserManager userManager;
-    private ItemManager itemManager = ItemManager.getInstance();
-
-    public void setUserManager(UserManager userManager) {
-        this.userManager = userManager;
-    }
-
-
+    private final UserManager userManager = UserManager.getInstance();
+    private final ItemManager itemManager = ItemManager.getInstance();
 
     public void initialize(){
-        setUserManager(UserManager.getInstance());
         User user = userManager.getActiveUser();
         lbUsername.setText(user.getUserName());
         lbUserEmail.setText(user.getUserEmail());
         tbUsername.setText(user.getUserName());
         tbEmail.setText(user.getUserEmail());
         tbUsername.setFocusTraversable(false);
-        //pbPassword.setFocusTraversable(false);
-
     }
 
     @FXML
