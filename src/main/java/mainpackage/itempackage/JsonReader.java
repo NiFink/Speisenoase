@@ -15,7 +15,7 @@ public class JsonReader extends Thread {
     private List<Grocery> itemList;
     private final ObjectMapper objectMapper = new ObjectMapper();
     private static final Logger log = LogManager.getLogger(JsonReader.class);
-    public static JsonReader instance;
+    private static JsonReader instance;
     public static JsonReader getInstance(){
         if(instance == null){
             instance = new JsonReader();

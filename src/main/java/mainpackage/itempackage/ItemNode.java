@@ -217,7 +217,4 @@ public class ItemNode {
         return name;
     }
 
-    public double getPrice() {
-        return price;
-    }
 }
