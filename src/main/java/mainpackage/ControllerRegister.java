@@ -37,7 +37,7 @@ public class ControllerRegister {
     private final UserManager userManager = UserManager.getInstance();
     private static final Logger log = LogManager.getLogger(ControllerRegister.class);
     @FXML
-    private void checkRegisterClick(ActionEvent event) throws IOException, ParseException {
+    private void checkRegisterClick() throws IOException, ParseException {
 
         if(!tbUsername.getText().isBlank() && !pbPassword.getText().isBlank() && !pbPasswordcheck.getText().isBlank() && !tbEmail.getText().isBlank()) {
             if(!pbPassword.getText().equals(pbPasswordcheck.getText())) {
@@ -64,15 +64,14 @@ public class ControllerRegister {
         }
     }
 
-
     @FXML
-    private void checkBackClick(ActionEvent event) {
+    private void checkBackClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("Login.fxml", "Login");
 
     }
     @FXML
-    private void checkExitClick(ActionEvent event) {
+    private void checkExitClick() {
         System.exit(0);
     }
 
