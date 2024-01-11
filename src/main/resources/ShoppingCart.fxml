@@ -81,7 +81,7 @@
                <content>
                   <VBox fx:id="vboxPurchase" prefHeight="437.0" prefWidth="533.0">
                      <children>
-                        <Label fx:id="lbEmptyCart" alignment="CENTER" disable="true" prefHeight="431.0" prefWidth="533.0" text="You have to enter something to me!">
+                        <Label fx:id="lbEmptyCart" alignment="CENTER" disable="true" prefHeight="431.0" prefWidth="533.0" text="You have to enter something to your cart if you want to checkout  " wrapText="true">
                            <graphic>
                               <ImageView fitHeight="90.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

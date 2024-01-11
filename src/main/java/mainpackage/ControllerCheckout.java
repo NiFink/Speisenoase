@@ -38,7 +38,6 @@ public class ControllerCheckout {
 
     private final UserManager userManager = UserManager.getInstance();
     private final ShoppingCart shoppingCart = ShoppingCart.getInstance();
-    private final ItemManager itemManager = ItemManager.getInstance();
 
 
 
@@ -81,7 +80,7 @@ public class ControllerCheckout {
         sceneSwitcher.switchTo("LastPage.fxml", "LastPage");
     }
     @FXML
-    private void btBuyhover(MouseEvent event) {
+    private void btBuyhover() {
         invertColorsOnHover(btBuy);
     }
     private void invertColorsOnHover(Button button) {

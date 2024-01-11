@@ -25,7 +25,7 @@
    <top>
       <AnchorPane prefHeight="55.0" prefWidth="775.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btExit" layoutX="822.0" layoutY="15.0" mnemonicParsing="false" onAction="#checkbtExitClick" style="-fx-background-color: #01212E;" text="X" textFill="WHITE" visible="false" />
+            <Button fx:id="btExit" layoutX="822.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #01212E;" text="X" textFill="WHITE" visible="false" />
          </children>
       </AnchorPane>
    </top>

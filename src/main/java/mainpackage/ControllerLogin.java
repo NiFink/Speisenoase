@@ -31,19 +31,15 @@ public class ControllerLogin {
 
 
     @FXML
-    private void checkbtLoginClick(ActionEvent event) throws IOException {
+    private void checkbtLoginClick() throws IOException {
         validateLogin();
     }
     @FXML
-    private void checkbtRegisterClick(ActionEvent event) throws IOException{
+    private void checkbtRegisterClick() throws IOException{
 
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("Register.fxml", "Register");
         log.debug("Register scene has been loaded");
-    }
-    @FXML
-    private void checkbtExitClick(ActionEvent event) {
-        System.exit(0);
     }
     @FXML
     private void validateLogin() throws IOException{

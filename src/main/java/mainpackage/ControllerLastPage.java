@@ -32,10 +32,6 @@ public class ControllerLastPage{
     @FXML
     private Button btHome;
     @FXML
-    private Button btBack;
-    @FXML
-    private ImageView btBackImage;
-    @FXML
     private Button btPurchase;
     @FXML
     private Button btProfil;
@@ -130,7 +126,7 @@ public class ControllerLastPage{
 
 
     @FXML
-    private void hoverbtHome(MouseEvent event) {
+    private void hoverbtHome() {
         invertColorsOnHover(btHome);
     }
 
