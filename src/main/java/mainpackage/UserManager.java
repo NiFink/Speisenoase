@@ -72,12 +72,12 @@ public class UserManager {
             JsonNode userNode = userData.get(username);
             User user = objectMapper.treeToValue(userNode, User.class);
             if(user == null){
-                logger.debug("wrong username :(");
+                logger.debug("wrong username");
                 return false;
             }
             if(!password.equals(user.getPassword())){
 
-                logger.debug("incorrect password :(");
+                logger.debug("incorrect password");
                 return false;
             }
 
@@ -195,7 +195,7 @@ public class UserManager {
          JsonNode updatedUserData = userData;
          PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
          objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
-         logger.debug("successfully deleted: " + user);
+         logger.debug("following user is no longer in userData: \n" + user);
     }
 
 
