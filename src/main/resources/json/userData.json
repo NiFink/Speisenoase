@@ -98,5 +98,15 @@
     "lastName" : null,
     "address" : null,
     "city" : null
+  },
+  "IAmATestUser" : {
+    "userName" : "IAmATestUser",
+    "userEmail" : "email@email.email",
+    "password" : "secure",
+    "favourites" : [ ],
+    "firstName" : null,
+    "lastName" : null,
+    "address" : null,
+    "city" : null
   }
 }
