@@ -1,75 +1,22 @@
-main DEBUG mainpackage.UserManager - Failed registration - username is not available
-main DEBUG mainpackage.UserManager - successfully logged in as IAmATestUser
-main DEBUG mainpackage.UserManager - incorrect password
-main DEBUG mainpackage.UserManager - wrong username
-main DEBUG mainpackage.UserManager - following user is no longer in userData: 
- user: 
- name: IAmATestUser
- email: email@email.email
- password: secure
- favourite Items: []
-main DEBUG mainpackage.UserManager - added  user: 
- name: IAmATestUser
- email: email@email.email
- password: secure
- favourite Items: []
- successfully
-main DEBUG mainpackage.UserManager - Failed registration - username is not available
-main DEBUG mainpackage.UserManager - added  user: 
- name: ThisIsATestUser
- email: TestEmail
- password: TestPassword
- favourite Items: []
- successfully
-main DEBUG mainpackage.UserManager - following user is no longer in userData: 
- user: 
- name: ThisIsATestUser
- email: TestEmail
- password: TestPassword
- favourite Items: []
-main DEBUG mainpackage.UserManager - following user is no longer in userData: 
- user: 
- name: ThisIsATestUser
- email: TestEmail
- password: TestPassword
- favourite Items: []
-main DEBUG mainpackage.UserManager - Failed registration - username is not available
-main DEBUG mainpackage.UserManager - successfully logged in as IAmATestUser
-main DEBUG mainpackage.UserManager - following user is no longer in userData: 
- user: 
- name: IAmATestUser
- email: email@email.email
- password: secure
- favourite Items: []
-main DEBUG mainpackage.UserManager - wrong username
-main DEBUG mainpackage.UserManager - following user is no longer in userData: 
- user: 
- name: IAmATestUser
- email: email@email.email
- password: secure
- favourite Items: []
-main DEBUG mainpackage.UserManager - added  user: 
- name: IAmATestUser
- email: email@email.email
- password: secure
- favourite Items: []
- successfully
-main DEBUG mainpackage.UserManager - updated userdata successfully
-main DEBUG mainpackage.UserManager - IAmATestUser 's email: email@email.email updated to : newEmail
-main DEBUG mainpackage.UserManager - updated userdata successfully
-main DEBUG mainpackage.UserManager - IAmATestUser 's password: secure updated to : 1234
-main DEBUG mainpackage.UserManager - updated userdata successfully
-main DEBUG mainpackage.UserManager - IAmATestUser 's favourites: [] updated to : [Apple, Pear]
-main DEBUG mainpackage.UserManager - updated userdata successfully
-main DEBUG mainpackage.UserManager - IAmATestUser 's delivery data has been updated to: Test User, address: testStreet 12, testCity.
-main DEBUG mainpackage.UserManager - updated userdata successfully
-main DEBUG mainpackage.UserManager - IAmATestUser 's name updated to : TestUsersNewName
-main DEBUG mainpackage.UserManager - successfully logged in as TestUsersNewName
-main DEBUG mainpackage.UserManager - following user is no longer in userData: 
- user: 
- name: TestUsersNewName
- email: newEmail
- password: 1234
- favourite Items: [Apple, Pear]
- full name: Test User
- address: testStreet 12, testCity
+main DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-2 DEBUG itempackage.JsonReader - JsonReader Thread was started
+Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-2 DEBUG itempackage.JsonReader - JsonReader instance is being returned
+Thread-2 DEBUG itempackage.JsonReader - ObjectMapper read itemData.json file and created Item List
+main DEBUG mainpackage.Main - JsonReader Thread is done
+JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - Register.fxml: loaded successfully
+JavaFX Application Thread DEBUG mainpackage.ControllerLogin - Register scene has been loaded
+JavaFX Application Thread DEBUG mainpackage.Sceneswitcher - Login.fxml: loaded successfully

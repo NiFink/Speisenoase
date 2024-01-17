@@ -40,8 +40,10 @@ public class Main extends Application {
 
     @Override
     public void stop() throws Exception {
-        //FIXME: NullPointerException wenn man sich noch nicht eingeloggt hat und das Fenster geschlossen wird, weil kein ActiveUser existiert
-        userManager.updateFavorites(userManager.getActiveUser(), ItemManager.getInstance().getFavorites().toArray(new String[0]));
+        String stage = Sceneswitcher.getInstance().getStage();
+        if(!Objects.equals(stage, "Speisenoase") && !Objects.equals(stage, "Login") && !Objects.equals(stage, "Register")){
+            userManager.updateFavorites(userManager.getActiveUser(), ItemManager.getInstance().getFavorites().toArray(new String[0]));
+        }
         super.stop();
     }
 

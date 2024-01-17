@@ -50,4 +50,8 @@ public class Sceneswitcher {
             e.printStackTrace();
         }
     }
+
+    public String getStage() {
+        return stage.getTitle();
+    }
 }
