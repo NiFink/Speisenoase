@@ -189,6 +189,8 @@ public class ControllerProfil {
             userManager.changePassword(userManager.getActiveUser(), pbNewPassword.getText());
             passwordChange.setDisable(true);
             passwordChange.setVisible(false);
+            vbDefault.setDisable(false);
+            vbDefault.setVisible(true);
         }
     }
 

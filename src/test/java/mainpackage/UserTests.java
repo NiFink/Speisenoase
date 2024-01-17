@@ -31,12 +31,13 @@ public class UserTests {
     public void testRegistration() throws IOException, ParseException {
 
         assertFalse(userManager.registerNewUser("IAmATestUser", "email@email.email", "secure" ), "user already exists");
+        userManager.deleteUser(userManager.getActiveUser());
 
         assertTrue(userManager.registerNewUser("ThisIsATestUser", "TestEmail", "TestPassword"));
         assertEquals(userManager.getActiveUser().getUserName(),"ThisIsATestUser");
         assertEquals(userManager.getActiveUser().getPassword(),"TestPassword");
         assertEquals(userManager.getActiveUser().getUserEmail(),"TestEmail");
-        userManager.deleteUser(userManager.getActiveUser());
+
 
     }
 
