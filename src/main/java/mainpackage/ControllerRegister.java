@@ -59,7 +59,7 @@ public class ControllerRegister {
             }
             else {
                 lbRegisterfailed.setText("Username is not available anymore.");
-                log.warn("Registeration failed, username taken");
+                log.warn("Registration failed, username taken");
             }
 
 
