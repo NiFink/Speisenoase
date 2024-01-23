@@ -3,66 +3,67 @@ package mainpackage;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import mainpackage.Exceptions.WrongEntriesException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import java.io.*;
 import java.util.Arrays;
 
 public class UserManager {
 
-   private User activeUser;
-   private static UserManager instance;
+    private User activeUser;
+    private static UserManager instance;
 
     private static final Logger logger = LogManager.getLogger(UserManager.class);
 
-    public static UserManager getInstance(){
+    public static UserManager getInstance() {
 
-        if(instance == null){
+        if (instance == null) {
             instance = new UserManager();
         }
         return instance;
     }
 
-     boolean registerNewUser(String username, String userEmail, String userPassword) {
+    boolean registerNewUser(String username, String userEmail, String userPassword) {
 
         User user = new User(userEmail, username, userPassword);
 
-         ObjectMapper objectMapper = new ObjectMapper();
+        ObjectMapper objectMapper = new ObjectMapper();
 
-         try {
+        try {
 
-             //getting current userData from json file:
+            //getting current userData from json file:
 
-             ObjectNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/json/userData.json"));
+            ObjectNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/json/userData.json"));
 
-             if (userData.get(username) == null) {
+            if (userData.get(username) == null) {
 
-                 // adding updated user as node:
+                // adding updated user as node:
 
-                 JsonNode newUser = objectMapper.valueToTree(user);
+                JsonNode newUser = objectMapper.valueToTree(user);
 
-                 userData.set(user.getUserName(), newUser);
+                userData.set(user.getUserName(), newUser);
 
-                 JsonNode updatedUserData = userData;
+                JsonNode updatedUserData = userData;
 
-                 //writing new data node to json file:
-                 PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
-                 objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
-                 logger.debug("added " + user + "\n successfully");
-                 setActiveUser(user);
-                 return true;
+                //writing new data node to json file:
+                PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
+                objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
+                logger.debug("added " + user + "\n successfully");
+                setActiveUser(user);
+                return true;
 
 
-             } else {
-                 logger.debug("Failed registration - username is not available");
+            } else {
+                logger.debug("Failed registration - username is not available");
 
-             }
-         }
-         catch(IOException e){
-             logger.error("IOException: " + e.getMessage());
-         }
+            }
+        } catch (IOException e) {
+            logger.error("IOException: " + e.getMessage());
+        }
 
-         return false;
+        return false;
 
     }
 
@@ -70,39 +71,31 @@ public class UserManager {
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        try{
+        try {
             JsonNode userData = objectMapper.readTree(new File("src/main/resources/json/userData.json"));
             JsonNode userNode = userData.get(username);
             User user = objectMapper.treeToValue(userNode, User.class);
-            if(user == null){
+            if (user == null) {
                 logger.debug("wrong username");
-                return false;
+                throw new WrongEntriesException();
             }
-            if(!password.equals(user.getPassword())){
-
+            if (!password.equals(user.getPassword())) {
                 logger.debug("incorrect password");
-                return false;
-            }
-
-            else {
+                throw new WrongEntriesException();
+            } else {
                 logger.debug("successfully logged in as " + username);
                 setActiveUser(user);
                 return true;
             }
-        }
-
-        catch(IOException e){
+        } catch (IOException e) {
             logger.error("IOException." + e.getMessage());
             return false;
         }
-
-
-
     }
 
     public boolean updateUserData(User oldUser, User newUser) {
 
-         ObjectMapper objectMapper = new ObjectMapper();
+        ObjectMapper objectMapper = new ObjectMapper();
 
         //getting current userData from json file:
         try {
@@ -128,15 +121,13 @@ public class UserManager {
                 logger.debug("updated userdata successfully");
                 return true;
             }
-        }
-
-            catch(IOException e){
+        } catch (IOException e) {
             logger.error("IOException: " + e.getMessage());
             return false;
-            }
+        }
 
-            logger.debug("update failed - username exists already");
-            return false;
+        logger.debug("update failed - username exists already");
+        return false;
 
 
     }
@@ -144,32 +135,32 @@ public class UserManager {
     void changePassword(User user, String newpassword) {
 
 
-             User newUser = new User(user);
-             newUser.setPassword(newpassword);
+        User newUser = new User(user);
+        newUser.setPassword(newpassword);
 
-             if(updateUserData(user, newUser));
-             logger.debug(user.getUserName() + " 's password: " + user.getPassword() + " updated to : " + newUser.getPassword());
-             user.setPassword(newpassword);
+        if (updateUserData(user, newUser)) ;
+        logger.debug(user.getUserName() + " 's password: " + user.getPassword() + " updated to : " + newUser.getPassword());
+        user.setPassword(newpassword);
 
     }
 
     boolean changeUsername(User user, String newUserName) {
 
-         User newUser = new User(user);
-         newUser.setUserName(newUserName);
-         if(updateUserData(user, newUser)){
-             logger.debug(user.getUserName() + " 's name updated to : " + newUser.getUserName());
-             user.setUserName(newUserName);
-             return true;
-         }
-         return false;
+        User newUser = new User(user);
+        newUser.setUserName(newUserName);
+        if (updateUserData(user, newUser)) {
+            logger.debug(user.getUserName() + " 's name updated to : " + newUser.getUserName());
+            user.setUserName(newUserName);
+            return true;
+        }
+        return false;
     }
 
     void changeUserEmail(User user, String newEmail) {
 
         User newUser = new User(user);
         newUser.setUserEmail(newEmail);
-        if(updateUserData(user, newUser)){
+        if (updateUserData(user, newUser)) {
             logger.debug(user.getUserName() + " 's email: " + user.getUserEmail() + " updated to : " + newUser.getUserEmail());
             user.setUserEmail(newEmail);
         }
@@ -177,18 +168,18 @@ public class UserManager {
 
     public void updateFavorites(User user, String[] favourites) {
 
-         User newUser = new User(user);
-         newUser.setFavourites(favourites);
-         if(updateUserData(user, newUser)) {
-             logger.debug(user.getUserName() + " 's favourites: " + Arrays.toString(user.getFavourites()) + " updated to : " + Arrays.toString(newUser.getFavourites()));
-             user.setFavourites(favourites);
-         }
+        User newUser = new User(user);
+        newUser.setFavourites(favourites);
+        if (updateUserData(user, newUser)) {
+            logger.debug(user.getUserName() + " 's favourites: " + Arrays.toString(user.getFavourites()) + " updated to : " + Arrays.toString(newUser.getFavourites()));
+            user.setFavourites(favourites);
+        }
 
     }
 
     void updateDeliveryInfo(User user, String firstName, String lastName, String address, String city) {
         User newUser = new User(user, firstName, lastName, address, city);
-        if(updateUserData(user, newUser)) {
+        if (updateUserData(user, newUser)) {
             logger.debug((user.getUserName() + " 's delivery data has been updated to: " + firstName + " " + lastName + ", address: " + address + ", " + city + "."));
             user.setFirstName(firstName);
             user.setLastName(lastName);
@@ -200,22 +191,18 @@ public class UserManager {
 
     void deleteUser(User user) {
 
-         ObjectMapper objectMapper = new ObjectMapper();
-         try {
-             ObjectNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/json/userData.json"));
-             userData.remove(user.getUserName());
-             JsonNode updatedUserData = userData;
-             PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
-             objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
-             logger.debug("following user is no longer in userData: \n" + user);
-         }
-         catch(IOException e){
-             logger.error("IOException: " + e.getMessage());
-         }
-         }
-
-
-
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            ObjectNode userData = (ObjectNode) objectMapper.readTree(new File("src/main/resources/json/userData.json"));
+            userData.remove(user.getUserName());
+            JsonNode updatedUserData = userData;
+            PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/json/userData.json")));
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(writer, updatedUserData);
+            logger.debug("following user is no longer in userData: \n" + user);
+        } catch (IOException e) {
+            logger.error("IOException: " + e.getMessage());
+        }
+    }
 
 
     public User getActiveUser() {

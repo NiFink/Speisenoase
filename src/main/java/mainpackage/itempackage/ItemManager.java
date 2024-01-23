@@ -41,7 +41,7 @@ public class ItemManager {
     }
 
     /**
-     * Creates items with the ItemFactory and sets list of items with a amount of 'id'
+     * Creates items with the ItemFactory and sets list of items with an amount of 'id'
      * @param id amount of items
      */
     private void setItems(int id) {

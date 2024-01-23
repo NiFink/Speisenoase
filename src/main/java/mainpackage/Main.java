@@ -10,6 +10,7 @@ import mainpackage.itempackage.JsonReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 
@@ -20,14 +21,19 @@ public class Main extends Application {
     private final UserManager userManager = UserManager.getInstance();
     private static final JsonReader jsonReader = JsonReader.getInstance();
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) {
 
         Main.stage  = primaryStage;
 
 
         URL fxmlFileUrl = getClass().getClassLoader().getResource("Login.fxml");
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(fxmlFileUrl));
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(Objects.requireNonNull(fxmlFileUrl));
+        } catch (IOException ioe) {
+            log.error(ioe.getMessage());
+        }
 
         primaryStage.setTitle("Speisenoase");
         primaryStage.setScene(new Scene(root, 860, 550));
@@ -39,12 +45,16 @@ public class Main extends Application {
     }
 
     @Override
-    public void stop() throws Exception {
+    public void stop() {
         String stage = Sceneswitcher.getInstance().getStage();
         if(!Objects.equals(stage, "Speisenoase") && !Objects.equals(stage, "Login") && !Objects.equals(stage, "Register")){
             userManager.updateFavorites(userManager.getActiveUser(), ItemManager.getInstance().getFavorites().toArray(new String[0]));
         }
-        super.stop();
+        try {
+            super.stop();
+        } catch (Exception e) {
+            log.error(e.getMessage());
+        }
     }
 
     public static Stage getStage(){
