@@ -16,9 +16,6 @@ import org.apache.logging.log4j.Logger;
 public class ControllerMainPage{
 
     @FXML
-    private Label lbCartAmount;
-    public static Label lbCartAmount_static;
-    @FXML
     private ScrollPane scrollPaneItems;
     @FXML
     private TextField tbSearch;
@@ -30,9 +27,6 @@ public class ControllerMainPage{
 
 
     public void initialize() {
-        lbCartAmount_static = lbCartAmount;
-        lbCartAmount_static.setText("" + ShoppingCart.getInstance().getTotalAmount());
-
         itemManager.loadNodes(15);
         scrollPaneItems.setContent(itemManager.getItempaneCategory("all"));
         btProfil.setText(userManager.getActiveUser().getUserName());
@@ -83,10 +77,5 @@ public class ControllerMainPage{
     private void checkBtShoppingCartClick() {
         Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
         sceneSwitcher.switchTo("ShoppingCart.fxml", "ShoppingCart");
-    }
-
-    @FXML
-    public void updateCartAmountLabel(int amount){
-        lbCartAmount_static.setText("" + amount);
     }
 }

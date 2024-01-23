@@ -23,7 +23,6 @@ public class ShoppingCart {
 
     public void addPurchase(Purchase purchase) {
         purchaseList.add(purchase);
-        new ControllerMainPage().updateCartAmountLabel(getTotalAmount());
         log.info("Added " + purchase.getAmount() + " " + purchase.getName() + " to the shopping cart");
     }
 
@@ -37,7 +36,6 @@ public class ShoppingCart {
         } else {
             purchaseList.add(new Purchase(purchaseStr, price, amountToAdd));
         }
-        new ControllerMainPage().updateCartAmountLabel(getTotalAmount());
         log.info("Updated amount of " + purchaseStr + " in the shopping cart");
     }
 

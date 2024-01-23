@@ -20,5 +20,6 @@ public class ItemFactory {
             return grocery;
         }
         return null;
+        //TODO: Exception werfen + error loggen
     }
 }

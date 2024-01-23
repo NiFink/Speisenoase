@@ -57,7 +57,7 @@ public class ControllerLogin {
                 throw new WrongEntriesException();
             }
         } catch (WrongEntriesException wee){
-            System.err.println("Fehlermeldung: " + wee.getMessage());
+            log.warn("Fehlermeldung: " + wee.getMessage());
         }
     }
 }
