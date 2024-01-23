@@ -49,7 +49,7 @@ public class ControllerLogin {
                 lbLoginfailed.setText("Please check your entries.");
             }
         } catch (WrongEntriesException wee) {
-            log.error("WrongEntriesException. " + wee.getMessage());
+            log.warn("WrongEntriesException. " + wee.getMessage());
         }
     }
 }

@@ -1,5 +1,6 @@
 package mainpackage.itempackage;
 
+import mainpackage.Exceptions.InvalidTypeException;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -14,12 +15,18 @@ public class ItemFactory {
      * @return Item
      */
     public static Item createItem(ItemType type, int id){
-        if(type == ItemType.GROCERY){
-            Grocery grocery = new Grocery().createGrocery(id);
-            log.debug("Item with id: " + id + " of type: " + type + " is being created");
-            return grocery;
+        try{
+            if(type == ItemType.GROCERY){
+                Grocery grocery = new Grocery().createGrocery(id);
+                log.debug("Item with id: " + id + " of type: " + type + " is being created");
+                return grocery;
+            }
+            else {
+                throw new InvalidTypeException();
+            }
+        } catch (InvalidTypeException ite){
+            log.warn("InvalidTypeException. " + ite.getMessage());
+            return null;
         }
-        return null;
-        //TODO: Exception werfen + error loggen
     }
 }
