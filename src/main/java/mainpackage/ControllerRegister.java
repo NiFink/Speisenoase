@@ -57,6 +57,12 @@ public class ControllerRegister {
                 sceneSwitcher.switchTo("MainPage.fxml", "Mainpage");
                 log.debug("Registered successfully");
             }
+            else {
+                lbRegisterfailed.setText("Username is not available anymore.");
+                log.warn("Registration failed, username taken");
+            }
+
+
         }
         else{
             lbRegisterfailed.setText("Please fill in all fields.");

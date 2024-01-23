@@ -69,12 +69,11 @@ public class ControllerProfil {
         tbUsername.setText(user.getUserName());
         tbEmail.setText(user.getUserEmail());
         tbUsername.setFocusTraversable(false);
-        //pbPassword.setFocusTraversable(false);
 
     }
 
     @FXML
-    private void confirmUsername(MouseEvent event) throws IOException {
+    private void confirmUsername(MouseEvent event) {
         if(tbUsername.getText().isBlank()){
             lbErrorUsername.setText("Username can't vanish into thin air!");
             lbErrorUsername.setVisible(true);
@@ -102,7 +101,7 @@ public class ControllerProfil {
     }
 
     @FXML
-    private void changeUserEmail() throws IOException {
+    private void changeUserEmail() {
         if(tbEmail.getText().isBlank()){
             lbErrorEmail.setText("Please enter your email address.");
             lbErrorEmail.setVisible(true);
@@ -144,11 +143,12 @@ public class ControllerProfil {
 
     }
     @FXML
-    private  void deleteAccount() throws IOException {
+    private  void deleteAccount() {
         userManager.deleteUser(userManager.getActiveUser());
-        //userManager.setActiveUser(null);
         Sceneswitcher sceneswitcher = Sceneswitcher.getInstance();
         sceneswitcher.switchTo("Login.fxml", "Login");
+        userManager.setActiveUser(null);
+
     }
     @FXML
     private void enablePasswordChange(){
@@ -167,7 +167,7 @@ public class ControllerProfil {
     }
 
     @FXML
-    private void changePassword() throws IOException {
+    private void changePassword() {
 
         if(pbPassword.getText().isBlank() || pbNewPassword.getText().isBlank()){
             lbErrorPassword.setText("Please fill in all fields!");
@@ -189,16 +189,18 @@ public class ControllerProfil {
             userManager.changePassword(userManager.getActiveUser(), pbNewPassword.getText());
             passwordChange.setDisable(true);
             passwordChange.setVisible(false);
+            vbDefault.setDisable(false);
+            vbDefault.setVisible(true);
         }
     }
 
     @FXML
-    private void logOut() throws IOException {
-        //userManager.setActiveUser(null);
+    private void logOut() {
         userManager.updateFavorites(userManager.getActiveUser(), ItemManager.getInstance().getFavorites().toArray(new String[0]));
         ShoppingCart.getInstance().clearShoppingCart();
         Sceneswitcher sceneswitcher = Sceneswitcher.getInstance();
         sceneswitcher.switchTo("Login.fxml", "Login");
+        userManager.setActiveUser(null);
     }
 
 

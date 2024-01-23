@@ -8,49 +8,49 @@ import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-import java.io.IOException;
 
-public class UserTests {
+public class UserManagerTests {
     public UserManager userManager = UserManager.getInstance();
 
     private final User testUser = new User("email@email.email", "IAmATestUser", "secure");
 
 
     @Before
-    public void setUp() throws IOException, ParseException {
+    public void setUp() {
         userManager.registerNewUser("IAmATestUser", "email@email.email", "secure");
     }
 
     @After
-    public void deleteTestUser() throws IOException {
+    public void deleteTestUser() {
         userManager.deleteUser(userManager.getActiveUser());
 
     }
 
     @Test
-    public void testRegistration() throws IOException, ParseException {
+    public void testRegistration() {
 
         assertFalse(userManager.registerNewUser("IAmATestUser", "email@email.email", "secure" ), "user already exists");
+        userManager.deleteUser(userManager.getActiveUser());
 
         assertTrue(userManager.registerNewUser("ThisIsATestUser", "TestEmail", "TestPassword"));
         assertEquals(userManager.getActiveUser().getUserName(),"ThisIsATestUser");
         assertEquals(userManager.getActiveUser().getPassword(),"TestPassword");
         assertEquals(userManager.getActiveUser().getUserEmail(),"TestEmail");
-        userManager.deleteUser(userManager.getActiveUser());
+
 
     }
 
     @Test
-    public void testLogin() throws IOException {
+    public void testLogin() {
 
         assertTrue(userManager.userLoginCheck("IAmATestUser", "secure"));
-        assertFalse(userManager.userLoginCheck("IAmATestUser", "1234"));
-        assertFalse(userManager.userLoginCheck("ThisIsATestUser", "secure"));
+        assertFalse(userManager.userLoginCheck("IAmATestUser", "1234"), "wrong user password");
+        assertFalse(userManager.userLoginCheck("ThisIsATestUser", "secure"), "wrong user name");
         assertEquals(userManager.getActiveUser().getUserName(), "IAmATestUser");
     }
 
     @Test
-    public void testUserUpdates() throws IOException {
+    public void testUserUpdates() {
 
         String[] favorites = new String[]{"Apple", "Pear"};
         userManager.changeUserEmail(testUser, "newEmail");
@@ -68,7 +68,7 @@ public class UserTests {
     }
 
     @Test
-    public void testDeleteUser() throws IOException {
+    public void testDeleteUser() {
         assertTrue(userManager.userLoginCheck("IAmATestUser", "secure"));
         userManager.deleteUser(userManager.getActiveUser());
         assertFalse(userManager.userLoginCheck("IAmATestUser", "secure"));
