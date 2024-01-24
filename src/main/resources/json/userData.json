@@ -79,21 +79,11 @@
     "address" : null,
     "city" : null
   },
-  "22222" : {
-    "userName" : "22222",
-    "userEmail" : "fnspkfnpsnpsnf.f@3.com",
-    "password" : "1",
-    "favourites" : [ ],
-    "firstName" : "1",
-    "lastName" : "!",
-    "address" : "FFG",
-    "city" : "FFFF"
-  },
-  "asdfdsafasdfasdf" : {
-    "userName" : "asdfdsafasdfasdf",
-    "userEmail" : "asdf@asdf.de",
-    "password" : "asdf",
-    "favourites" : [ ],
+  "TestUser" : {
+    "userName" : "TestUser",
+    "userEmail" : "test@test.de",
+    "password" : "test",
+    "favourites" : [ "Apple", "Banana", "Cucumber" ],
     "firstName" : null,
     "lastName" : null,
     "address" : null,
