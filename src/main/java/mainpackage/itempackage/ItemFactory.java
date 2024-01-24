@@ -22,11 +22,11 @@ public class ItemFactory {
                 return grocery;
             }
             else {
-                throw new InvalidTypeException();
+                throw new InvalidTypeException(type);
             }
         } catch (InvalidTypeException ite){
             log.warn("InvalidTypeException. " + ite.getMessage());
-            return null;
+            throw ite;
         }
     }
 }
