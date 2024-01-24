@@ -1,6 +1,7 @@
 package mainpackage;
 
 
+import mainpackage.Exceptions.WrongEntriesException;
 import org.json.simple.parser.ParseException;
 import org.junit.After;
 import org.junit.Before;
@@ -42,10 +43,13 @@ public class UserManagerTests {
 
     @Test
     public void testLogin() {
-
         assertTrue(userManager.userLoginCheck("IAmATestUser", "secure"));
-        assertFalse(userManager.userLoginCheck("IAmATestUser", "1234"), "wrong user password");
-        assertFalse(userManager.userLoginCheck("ThisIsATestUser", "secure"), "wrong user name");
+        assertThrows(WrongEntriesException.class, () -> {
+            userManager.userLoginCheck("IAmATestUser", "1234");
+        });
+        assertThrows(WrongEntriesException.class, () -> {
+            assertFalse(userManager.userLoginCheck("ThisIsATestUser", "secure"));
+        });
         assertEquals(userManager.getActiveUser().getUserName(), "IAmATestUser");
     }
 
@@ -71,7 +75,8 @@ public class UserManagerTests {
     public void testDeleteUser() {
         assertTrue(userManager.userLoginCheck("IAmATestUser", "secure"));
         userManager.deleteUser(userManager.getActiveUser());
-        assertFalse(userManager.userLoginCheck("IAmATestUser", "secure"));
-
+        assertThrows(WrongEntriesException.class, () -> {
+            userManager.userLoginCheck("IAmATestUser", "secure");
+        });
     }
 }

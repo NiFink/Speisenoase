@@ -1,14 +1,4 @@
 {
-  "Jan" : {
-    "userName" : "Jan",
-    "userEmail" : "Jan@gmail.com",
-    "password" : "password",
-    "favourites" : [ "Banana", "Grapes" ],
-    "firstName" : "Jan",
-    "lastName" : "Sander",
-    "address" : "Blabla",
-    "city" : "Bla"
-  },
   "Nils" : {
     "userName" : "Nils",
     "userEmail" : "Nils@gmail.com",
