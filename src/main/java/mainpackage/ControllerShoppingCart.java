@@ -60,9 +60,6 @@ public class ControllerShoppingCart {
     @FXML
     private void checkBtCheckoutClick() {
         if(!shoppingCart.getPurchaseList().isEmpty()){
-            for (Purchase element : shoppingCart.getPurchaseList()) {
-                System.out.println(element.getName());
-            }
             Sceneswitcher sceneSwitcher = Sceneswitcher.getInstance();
             sceneSwitcher.switchTo("Checkout.fxml", "Checkout");
         }

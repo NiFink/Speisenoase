@@ -63,11 +63,11 @@
     "userName" : "asdf",
     "userEmail" : "test@test.test",
     "password" : "asdf",
-    "favourites" : [ "Apple", "Banana", "Cucumber" ],
+    "favourites" : [ "Apple", "Banana", "Cucumber", "Bread", "Flour" ],
     "firstName" : "asdf",
     "lastName" : "asdfasf",
-    "address" : "",
-    "city" : ""
+    "address" : "asdf Straße ",
+    "city" : "asdf Stadt"
   },
   "TestUser" : {
     "userName" : "TestUser",
