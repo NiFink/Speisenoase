@@ -138,12 +138,9 @@ public class ControllerCheckout {
             tfCity.setText(userManager.getActiveUser().getCity());
         }
     }
-    private void setUserAddress() throws IOException {
-
+    private void setUserAddress() {
         if(!tfFirstName.getText().isBlank() || !tfLastName.getText().isBlank() || !tfAddress.getText().isBlank() || !tfCity.getText().isBlank()){
         userManager.updateDeliveryInfo(userManager.getActiveUser(), tfFirstName.getText(), tfLastName.getText(), tfAddress.getText(), tfCity.getText());
         }
-        //TODO: error label
-
     }
 }

@@ -64,10 +64,10 @@
     "userEmail" : "test@test.test",
     "password" : "asdf",
     "favourites" : [ "Apple", "Banana", "Cucumber" ],
-    "firstName" : null,
-    "lastName" : null,
-    "address" : null,
-    "city" : null
+    "firstName" : "asdf",
+    "lastName" : "asdfasf",
+    "address" : "",
+    "city" : ""
   },
   "TestUser" : {
     "userName" : "TestUser",

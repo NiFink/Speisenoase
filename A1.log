@@ -24,31 +24,6 @@ main DEBUG mainpackage.UserManager - added  user:
  password: secure
  favourite Items: []
  successfully
-main DEBUG mainpackage.UserManager - Failed registration - username is not available
-main DEBUG mainpackage.UserManager - following user is no longer in userData: 
- user: 
- name: IAmATestUser
- email: email@email.email
- password: secure
- favourite Items: []
-main DEBUG mainpackage.UserManager - added  user: 
- name: ThisIsATestUser
- email: TestEmail
- password: TestPassword
- favourite Items: []
- successfully
-main DEBUG mainpackage.UserManager - following user is no longer in userData: 
- user: 
- name: ThisIsATestUser
- email: TestEmail
- password: TestPassword
- favourite Items: []
-main DEBUG mainpackage.UserManager - added  user: 
- name: IAmATestUser
- email: email@email.email
- password: secure
- favourite Items: []
- successfully
 main DEBUG mainpackage.UserManager - updated userdata successfully
 main DEBUG mainpackage.UserManager - IAmATestUser 's email: email@email.email updated to : newEmail
 main DEBUG mainpackage.UserManager - updated userdata successfully
@@ -82,4 +57,29 @@ main DEBUG mainpackage.UserManager - following user is no longer in userData:
  name: IAmATestUser
  email: email@email.email
  password: secure
+ favourite Items: []
+main DEBUG mainpackage.UserManager - added  user: 
+ name: IAmATestUser
+ email: email@email.email
+ password: secure
+ favourite Items: []
+ successfully
+main DEBUG mainpackage.UserManager - Failed registration - username is not available
+main DEBUG mainpackage.UserManager - following user is no longer in userData: 
+ user: 
+ name: IAmATestUser
+ email: email@email.email
+ password: secure
+ favourite Items: []
+main DEBUG mainpackage.UserManager - added  user: 
+ name: ThisIsATestUser
+ email: TestEmail
+ password: TestPassword
+ favourite Items: []
+ successfully
+main DEBUG mainpackage.UserManager - following user is no longer in userData: 
+ user: 
+ name: ThisIsATestUser
+ email: TestEmail
+ password: TestPassword
  favourite Items: []

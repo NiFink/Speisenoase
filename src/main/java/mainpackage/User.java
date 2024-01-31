@@ -111,7 +111,7 @@ public class User {
     }
 
     public String[] getFavourites() {
-        return Objects.requireNonNullElseGet(favourites, () -> new String[0]);
+        return Arrays.copyOf(favourites, favourites.length);
     }
 
     public void setFavourites(String[] favourites) {

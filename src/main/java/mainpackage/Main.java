@@ -25,7 +25,6 @@ public class Main extends Application {
 
         Main.stage  = primaryStage;
 
-
         URL fxmlFileUrl = getClass().getClassLoader().getResource("Login.fxml");
 
         Parent root = null;
@@ -39,8 +38,6 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 860, 550));
         primaryStage.setResizable(false);
 
-        //windowsbar hide
-        //stage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
     }
 
